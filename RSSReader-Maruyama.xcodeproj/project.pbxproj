@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0097EC152500AF22006779BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC142500AF22006779BE /* AppDelegate.swift */; };
+		0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC162500AF22006779BE /* SceneDelegate.swift */; };
+		0097EC192500AF22006779BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC182500AF22006779BE /* ViewController.swift */; };
+		0097EC1C2500AF22006779BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0097EC1A2500AF22006779BE /* Main.storyboard */; };
+		0097EC1E2500AF25006779BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0097EC1D2500AF25006779BE /* Assets.xcassets */; };
+		0097EC212500AF25006779BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0097EC1F2500AF25006779BE /* LaunchScreen.storyboard */; };
+		0097EC2C2500AF25006779BE /* RSSReader_MaruyamaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC2B2500AF25006779BE /* RSSReader_MaruyamaTests.swift */; };
+		0097EC372500AF25006779BE /* RSSReader_MaruyamaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC362500AF25006779BE /* RSSReader_MaruyamaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0097EC282500AF25006779BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0097EC092500AF22006779BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0097EC102500AF22006779BE;
+			remoteInfo = "RSSReader-Maruyama";
+		};
+		0097EC332500AF25006779BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0097EC092500AF22006779BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0097EC102500AF22006779BE;
+			remoteInfo = "RSSReader-Maruyama";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0097EC112500AF22006779BE /* RSSReader-Maruyama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSSReader-Maruyama.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0097EC142500AF22006779BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0097EC162500AF22006779BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0097EC182500AF22006779BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0097EC1B2500AF22006779BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0097EC1D2500AF25006779BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0097EC202500AF25006779BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0097EC222500AF25006779BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0097EC272500AF25006779BE /* RSSReader-MaruyamaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RSSReader-MaruyamaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0097EC2B2500AF25006779BE /* RSSReader_MaruyamaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSReader_MaruyamaTests.swift; sourceTree = "<group>"; };
+		0097EC2D2500AF25006779BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0097EC322500AF25006779BE /* RSSReader-MaruyamaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RSSReader-MaruyamaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0097EC362500AF25006779BE /* RSSReader_MaruyamaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSReader_MaruyamaUITests.swift; sourceTree = "<group>"; };
+		0097EC382500AF25006779BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0097EC0E2500AF22006779BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0097EC242500AF25006779BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0097EC2F2500AF25006779BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0097EC082500AF22006779BE = {
+			isa = PBXGroup;
+			children = (
+				0097EC132500AF22006779BE /* RSSReader-Maruyama */,
+				0097EC2A2500AF25006779BE /* RSSReader-MaruyamaTests */,
+				0097EC352500AF25006779BE /* RSSReader-MaruyamaUITests */,
+				0097EC122500AF22006779BE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0097EC122500AF22006779BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0097EC112500AF22006779BE /* RSSReader-Maruyama.app */,
+				0097EC272500AF25006779BE /* RSSReader-MaruyamaTests.xctest */,
+				0097EC322500AF25006779BE /* RSSReader-MaruyamaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0097EC132500AF22006779BE /* RSSReader-Maruyama */ = {
+			isa = PBXGroup;
+			children = (
+				0097EC142500AF22006779BE /* AppDelegate.swift */,
+				0097EC162500AF22006779BE /* SceneDelegate.swift */,
+				0097EC182500AF22006779BE /* ViewController.swift */,
+				0097EC1A2500AF22006779BE /* Main.storyboard */,
+				0097EC1D2500AF25006779BE /* Assets.xcassets */,
+				0097EC1F2500AF25006779BE /* LaunchScreen.storyboard */,
+				0097EC222500AF25006779BE /* Info.plist */,
+			);
+			path = "RSSReader-Maruyama";
+			sourceTree = "<group>";
+		};
+		0097EC2A2500AF25006779BE /* RSSReader-MaruyamaTests */ = {
+			isa = PBXGroup;
+			children = (
+				0097EC2B2500AF25006779BE /* RSSReader_MaruyamaTests.swift */,
+				0097EC2D2500AF25006779BE /* Info.plist */,
+			);
+			path = "RSSReader-MaruyamaTests";
+			sourceTree = "<group>";
+		};
+		0097EC352500AF25006779BE /* RSSReader-MaruyamaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0097EC362500AF25006779BE /* RSSReader_MaruyamaUITests.swift */,
+				0097EC382500AF25006779BE /* Info.plist */,
+			);
+			path = "RSSReader-MaruyamaUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0097EC102500AF22006779BE /* RSSReader-Maruyama */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0097EC3B2500AF25006779BE /* Build configuration list for PBXNativeTarget "RSSReader-Maruyama" */;
+			buildPhases = (
+				0097EC0D2500AF22006779BE /* Sources */,
+				0097EC0E2500AF22006779BE /* Frameworks */,
+				0097EC0F2500AF22006779BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RSSReader-Maruyama";
+			productName = "RSSReader-Maruyama";
+			productReference = 0097EC112500AF22006779BE /* RSSReader-Maruyama.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0097EC262500AF25006779BE /* RSSReader-MaruyamaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0097EC3E2500AF25006779BE /* Build configuration list for PBXNativeTarget "RSSReader-MaruyamaTests" */;
+			buildPhases = (
+				0097EC232500AF25006779BE /* Sources */,
+				0097EC242500AF25006779BE /* Frameworks */,
+				0097EC252500AF25006779BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0097EC292500AF25006779BE /* PBXTargetDependency */,
+			);
+			name = "RSSReader-MaruyamaTests";
+			productName = "RSSReader-MaruyamaTests";
+			productReference = 0097EC272500AF25006779BE /* RSSReader-MaruyamaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0097EC312500AF25006779BE /* RSSReader-MaruyamaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0097EC412500AF25006779BE /* Build configuration list for PBXNativeTarget "RSSReader-MaruyamaUITests" */;
+			buildPhases = (
+				0097EC2E2500AF25006779BE /* Sources */,
+				0097EC2F2500AF25006779BE /* Frameworks */,
+				0097EC302500AF25006779BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0097EC342500AF25006779BE /* PBXTargetDependency */,
+			);
+			name = "RSSReader-MaruyamaUITests";
+			productName = "RSSReader-MaruyamaUITests";
+			productReference = 0097EC322500AF25006779BE /* RSSReader-MaruyamaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0097EC092500AF22006779BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "丸山翔";
+				TargetAttributes = {
+					0097EC102500AF22006779BE = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					0097EC262500AF25006779BE = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 0097EC102500AF22006779BE;
+					};
+					0097EC312500AF25006779BE = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = 0097EC102500AF22006779BE;
+					};
+				};
+			};
+			buildConfigurationList = 0097EC0C2500AF22006779BE /* Build configuration list for PBXProject "RSSReader-Maruyama" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0097EC082500AF22006779BE;
+			productRefGroup = 0097EC122500AF22006779BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0097EC102500AF22006779BE /* RSSReader-Maruyama */,
+				0097EC262500AF25006779BE /* RSSReader-MaruyamaTests */,
+				0097EC312500AF25006779BE /* RSSReader-MaruyamaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0097EC0F2500AF22006779BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0097EC212500AF25006779BE /* LaunchScreen.storyboard in Resources */,
+				0097EC1E2500AF25006779BE /* Assets.xcassets in Resources */,
+				0097EC1C2500AF22006779BE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0097EC252500AF25006779BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0097EC302500AF25006779BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0097EC0D2500AF22006779BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0097EC192500AF22006779BE /* ViewController.swift in Sources */,
+				0097EC152500AF22006779BE /* AppDelegate.swift in Sources */,
+				0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0097EC232500AF25006779BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0097EC2C2500AF25006779BE /* RSSReader_MaruyamaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0097EC2E2500AF25006779BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0097EC372500AF25006779BE /* RSSReader_MaruyamaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0097EC292500AF25006779BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0097EC102500AF22006779BE /* RSSReader-Maruyama */;
+			targetProxy = 0097EC282500AF25006779BE /* PBXContainerItemProxy */;
+		};
+		0097EC342500AF25006779BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0097EC102500AF22006779BE /* RSSReader-Maruyama */;
+			targetProxy = 0097EC332500AF25006779BE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0097EC1A2500AF22006779BE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0097EC1B2500AF22006779BE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0097EC1F2500AF25006779BE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0097EC202500AF25006779BE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0097EC392500AF25006779BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0097EC3A2500AF25006779BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0097EC3C2500AF25006779BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S5X79GSR83;
+				INFOPLIST_FILE = "RSSReader-Maruyama/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maruyama.RSSReader-Maruyama";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0097EC3D2500AF25006779BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S5X79GSR83;
+				INFOPLIST_FILE = "RSSReader-Maruyama/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maruyama.RSSReader-Maruyama";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0097EC3F2500AF25006779BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S5X79GSR83;
+				INFOPLIST_FILE = "RSSReader-MaruyamaTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maruyama.RSSReader-MaruyamaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RSSReader-Maruyama.app/RSSReader-Maruyama";
+			};
+			name = Debug;
+		};
+		0097EC402500AF25006779BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S5X79GSR83;
+				INFOPLIST_FILE = "RSSReader-MaruyamaTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maruyama.RSSReader-MaruyamaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RSSReader-Maruyama.app/RSSReader-Maruyama";
+			};
+			name = Release;
+		};
+		0097EC422500AF25006779BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S5X79GSR83;
+				INFOPLIST_FILE = "RSSReader-MaruyamaUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maruyama.RSSReader-MaruyamaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "RSSReader-Maruyama";
+			};
+			name = Debug;
+		};
+		0097EC432500AF25006779BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S5X79GSR83;
+				INFOPLIST_FILE = "RSSReader-MaruyamaUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.maruyama.RSSReader-MaruyamaUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "RSSReader-Maruyama";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0097EC0C2500AF22006779BE /* Build configuration list for PBXProject "RSSReader-Maruyama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0097EC392500AF25006779BE /* Debug */,
+				0097EC3A2500AF25006779BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0097EC3B2500AF25006779BE /* Build configuration list for PBXNativeTarget "RSSReader-Maruyama" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0097EC3C2500AF25006779BE /* Debug */,
+				0097EC3D2500AF25006779BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0097EC3E2500AF25006779BE /* Build configuration list for PBXNativeTarget "RSSReader-MaruyamaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0097EC3F2500AF25006779BE /* Debug */,
+				0097EC402500AF25006779BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0097EC412500AF25006779BE /* Build configuration list for PBXNativeTarget "RSSReader-MaruyamaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0097EC422500AF25006779BE /* Debug */,
+				0097EC432500AF25006779BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0097EC092500AF22006779BE /* Project object */;
+}
