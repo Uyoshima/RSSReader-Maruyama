@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vfk-8M-jVs">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--あとで読む-->
+        <scene sceneID="W4N-jG-2GL">
+            <objects>
+                <viewController id="Bpf-Vi-gJ6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4ex-wI-lVj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="L3c-wP-4sw"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="あとで読む" id="chh-XZ-oFb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYj-VL-cED" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="977" y="462"/>
+        </scene>
+        <!--記事一覧-->
+        <scene sceneID="e7F-3R-mnG">
+            <objects>
+                <viewController id="Eo4-EX-HX6" customClass="ItemListViewController" customModule="RSSReader_Maruyama" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L4f-4c-l4A">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0g-a3-sCh">
+                                <rect key="frame" x="125" y="227" width="164" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ログアウト"/>
+                                <connections>
+                                    <action selector="didPushLogout:" destination="Eo4-EX-HX6" eventType="touchUpInside" id="ixe-PW-wSQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="vYv-bl-w8J"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="記事一覧" id="pGB-wv-POo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zEa-cg-fOj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976.81159420289862" y="-216.29464285714286"/>
+        </scene>
+        <!--Item List Tab Bar Controller-->
+        <scene sceneID="Fnc-eR-95p">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Vfk-8M-jVs" customClass="ItemListTabBarController" customModule="RSSReader_Maruyama" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cg7-2J-7Be">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Eo4-EX-HX6" kind="relationship" relationship="viewControllers" id="3Tp-Nq-yEm"/>
+                        <segue destination="Bpf-Vi-gJ6" kind="relationship" relationship="viewControllers" id="F6s-am-C04"/>
+                        <segue destination="Z8f-Ko-8Qs" kind="show" identifier="login" id="u7l-2y-nMa"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JUK-xa-n9I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="83.705357142857139"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="gld-bF-QSu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" id="Z8f-Ko-8Qs" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cXw-rQ-eT9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2I9-7S-nXh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-44" y="502"/>
+        </scene>
+    </scenes>
+</document>

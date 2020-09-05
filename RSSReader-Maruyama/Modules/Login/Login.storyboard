@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MhV-2f-8sa">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="NZv-3w-MKP">
+            <objects>
+                <viewController id="pkc-Df-1YM" customClass="LoginViewController" customModule="RSSReader_Maruyama" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RNC-EK-imw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jfv-E4-KOy">
+                                <rect key="frame" x="30" y="408.5" width="354" height="353.5"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SNSアカウントでログインしましょう。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5O-ct-Dm7">
+                                <rect key="frame" x="0.0" y="338" width="414" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mCt-Cd-LnK" firstAttribute="bottom" secondItem="jfv-E4-KOy" secondAttribute="bottom" constant="100" id="3C1-la-356"/>
+                            <constraint firstItem="y5O-ct-Dm7" firstAttribute="leading" secondItem="mCt-Cd-LnK" secondAttribute="leading" id="Gm8-CK-sEK"/>
+                            <constraint firstItem="y5O-ct-Dm7" firstAttribute="trailing" secondItem="mCt-Cd-LnK" secondAttribute="trailing" id="H0G-QY-8gD"/>
+                            <constraint firstItem="y5O-ct-Dm7" firstAttribute="leading" secondItem="mCt-Cd-LnK" secondAttribute="leading" id="Mm3-f6-DlR"/>
+                            <constraint firstItem="mCt-Cd-LnK" firstAttribute="trailing" secondItem="jfv-E4-KOy" secondAttribute="trailing" constant="30" id="TrT-HW-Mf8"/>
+                            <constraint firstItem="jfv-E4-KOy" firstAttribute="leading" secondItem="mCt-Cd-LnK" secondAttribute="leading" constant="30" id="ZSJ-cF-k5m"/>
+                            <constraint firstItem="jfv-E4-KOy" firstAttribute="top" secondItem="y5O-ct-Dm7" secondAttribute="bottom" constant="50" id="i96-b7-Qvk"/>
+                            <constraint firstItem="mCt-Cd-LnK" firstAttribute="trailing" secondItem="y5O-ct-Dm7" secondAttribute="trailing" id="t9S-cR-ggg"/>
+                            <constraint firstItem="y5O-ct-Dm7" firstAttribute="centerY" secondItem="RNC-EK-imw" secondAttribute="centerY" constant="-100" id="yeN-94-ZKN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mCt-Cd-LnK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bjj-hN-ULm"/>
+                    <connections>
+                        <outlet property="loginButtonStackView" destination="jfv-E4-KOy" id="Cbg-zg-4bI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0r-Kt-XJr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ibh-5T-pF9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MhV-2f-8sa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="emD-Pu-O9p">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pkc-Df-1YM" kind="relationship" relationship="rootViewController" id="Djf-Nh-IMZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H3v-Pt-rNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>

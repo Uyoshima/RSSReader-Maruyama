@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import FBSDKCoreKit
+import GoogleSignIn
+import Keys
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,8 +17,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        ApplicationDelegate.shared.application( application, didFinishLaunchingWithOptions: launchOptions )
+        
+        let keys = RSSReaderMaruyamaKeys()
+//        Google SignIn：クライアントIDの設定
+        GIDSignIn.sharedInstance()?.clientID = keys.gIDSignInClientID
+//        FacebookAppIDの設定
+        Settings.appID = keys.facebookAppID
+        
         return true
+    }
+
+    func application( _ app:UIApplication, open url:URL, options: [UIApplication.OpenURLOptionsKey :Any] = [:] ) -> Bool {
+        ApplicationDelegate.shared.application( app, open: url,
+                                                sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                                                annotation: options[UIApplication.OpenURLOptionsKey.annotation] )
+        
+        if GIDSignIn.sharedInstance()!.handle(url) {
+            return true
+        }
+        return false
     }
 
     // MARK: UISceneSession Lifecycle
