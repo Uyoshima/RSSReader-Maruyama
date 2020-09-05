@@ -107,10 +107,10 @@ class LoginViewController: UIViewController
     
     
     fileprivate func loginSuccessAction(userID: String) {
-        self.userDataManager.saveUserData(userData: User(userID: userID))
+        self.userDataManager.saveUserData(user: User(userID: userID))
         // ログイン処理確認の画面遷移てテスト。実際はFeed選択画面へ
-        // self.performSegue(withIdentifier: SELECT_FEEDS_SEGUE_IDENTIFIER, sender: nil)
-        self.dismiss(animated: true, completion: nil)
+         self.performSegue(withIdentifier: SELECT_FEEDS_SEGUE_IDENTIFIER, sender: nil)
+//        self.dismiss(animated: true, completion: nil)
     }
     
     

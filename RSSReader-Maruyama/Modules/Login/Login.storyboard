@@ -42,6 +42,7 @@
                     <navigationItem key="navigationItem" id="bjj-hN-ULm"/>
                     <connections>
                         <outlet property="loginButtonStackView" destination="jfv-E4-KOy" id="Cbg-zg-4bI"/>
+                        <segue destination="6Ls-gF-etD" kind="show" identifier="selectFeeds" id="a3s-cB-TB5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0r-Kt-XJr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -65,6 +66,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H3v-Pt-rNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--SelectFeeds-->
+        <scene sceneID="w9z-mC-eUn">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SelectFeeds" id="6Ls-gF-etD" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Hil-sV-XPO"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eFM-gW-Z3r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1775" y="138"/>
         </scene>
     </scenes>
 </document>

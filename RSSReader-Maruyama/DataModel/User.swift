@@ -8,19 +8,9 @@
 
 import UIKit
 
-class User: NSObject, NSCoding {
+class User: NSObject, Codable {
     
     let userID: String!
-    
-    func encode(with coder: NSCoder) {
-        coder.encode(userID, forKey: "userID")
-    }
-    
-    required init?(coder: NSCoder) {
-        userID = coder.decodeObject(forKey: "userID") as! String
-    }
-    
-
     
     init(userID: String!) {
         self.userID = userID

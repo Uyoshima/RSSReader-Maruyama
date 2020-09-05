@@ -24,9 +24,17 @@ class UserDataManager: NSObject {
         }
     }
     
-    func saveUserData(userData: User) {
-        let data = try? NSKeyedArchiver.archivedData(withRootObject: userData, requiringSecureCoding: false)
-        self.userDefault.set(data, forKey: UD_USER_DATA_KEY)
+    func getUserData() -> User {
+        let userData = self.userDefault.object(forKey: UD_USER_DATA_KEY) as! Data
+        
+        let user = try! JSONDecoder().decode(User.self, from: userData)
+    
+        return user
+    }
+    
+    func saveUserData(user: User) {
+        let UserData = try? JSONEncoder().encode(user)
+        self.userDefault.set(UserData, forKey: UD_USER_DATA_KEY)
     }
     
     func removeUserData() {

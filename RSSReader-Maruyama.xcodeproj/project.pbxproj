@@ -19,6 +19,12 @@
 		0097EC512500FE50006779BE /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC502500FE50006779BE /* UserDataManager.swift */; };
 		0097EC532500FEA8006779BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC522500FEA8006779BE /* User.swift */; };
 		009D91732502033E00189902 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009D91722502033E00189902 /* LoginButton.swift */; };
+		00C9302C2503538E00BE1638 /* FeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C9302B2503538E00BE1638 /* FeedTableCell.swift */; };
+		00C9302E2503539A00BE1638 /* FeedTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00C9302D2503539A00BE1638 /* FeedTableCell.xib */; };
+		00DB02D22503521D003D4AFC /* SelectFeedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB02D12503521D003D4AFC /* SelectFeedsViewController.swift */; };
+		00DB02D42503522A003D4AFC /* SelectFeeds.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00DB02D32503522A003D4AFC /* SelectFeeds.storyboard */; };
+		00DB02D72503525F003D4AFC /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB02D62503525F003D4AFC /* Feed.swift */; };
+		00DB02D925035271003D4AFC /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB02D825035271003D4AFC /* FeedManager.swift */; };
 		00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D43250142CE00F48858 /* ItemListViewController.swift */; };
 		00F64D46250142DB00F48858 /* ItemList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F64D45250142DB00F48858 /* ItemList.storyboard */; };
 		00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D482501444400F48858 /* ItemListTabBarController.swift */; };
@@ -64,6 +70,12 @@
 		0097EC502500FE50006779BE /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		0097EC522500FEA8006779BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		009D91722502033E00189902 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		00C9302B2503538E00BE1638 /* FeedTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableCell.swift; sourceTree = "<group>"; };
+		00C9302D2503539A00BE1638 /* FeedTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedTableCell.xib; sourceTree = "<group>"; };
+		00DB02D12503521D003D4AFC /* SelectFeedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeedsViewController.swift; sourceTree = "<group>"; };
+		00DB02D32503522A003D4AFC /* SelectFeeds.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectFeeds.storyboard; sourceTree = "<group>"; };
+		00DB02D62503525F003D4AFC /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		00DB02D825035271003D4AFC /* FeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
 		00F64D43250142CE00F48858 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		00F64D45250142DB00F48858 /* ItemList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemList.storyboard; sourceTree = "<group>"; };
 		00F64D482501444400F48858 /* ItemListTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListTabBarController.swift; sourceTree = "<group>"; };
@@ -113,6 +125,8 @@
 			children = (
 				00028CBA2502395600431E21 /* ItemList */,
 				00028CBB2502397200431E21 /* Login */,
+				00DB02D525035232003D4AFC /* SelectFeeds */,
+				00C9302F250353A000BE1638 /* FeedTableCell */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -201,10 +215,29 @@
 			path = "RSSReader-MaruyamaUITests";
 			sourceTree = "<group>";
 		};
+		00C9302F250353A000BE1638 /* FeedTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				00C9302D2503539A00BE1638 /* FeedTableCell.xib */,
+				00C9302B2503538E00BE1638 /* FeedTableCell.swift */,
+			);
+			path = FeedTableCell;
+			sourceTree = "<group>";
+		};
+		00DB02D525035232003D4AFC /* SelectFeeds */ = {
+			isa = PBXGroup;
+			children = (
+				00DB02D32503522A003D4AFC /* SelectFeeds.storyboard */,
+				00DB02D12503521D003D4AFC /* SelectFeedsViewController.swift */,
+			);
+			path = SelectFeeds;
+			sourceTree = "<group>";
+		};
 		00F64D4C2501557100F48858 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
 				0097EC522500FEA8006779BE /* User.swift */,
+				00DB02D62503525F003D4AFC /* Feed.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -213,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				0097EC502500FE50006779BE /* UserDataManager.swift */,
+				00DB02D825035271003D4AFC /* FeedManager.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -353,8 +387,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0097EC482500C31E006779BE /* Login.storyboard in Resources */,
+				00DB02D42503522A003D4AFC /* SelectFeeds.storyboard in Resources */,
 				00F64D46250142DB00F48858 /* ItemList.storyboard in Resources */,
 				0097EC212500AF25006779BE /* LaunchScreen.storyboard in Resources */,
+				00C9302E2503539A00BE1638 /* FeedTableCell.xib in Resources */,
 				0097EC1E2500AF25006779BE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,13 +554,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				00F64D4B25014A3600F48858 /* NotificationName+Extension.swift in Sources */,
+				00C9302C2503538E00BE1638 /* FeedTableCell.swift in Sources */,
 				00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */,
 				0097EC462500C30F006779BE /* LoginViewController.swift in Sources */,
+				00DB02D925035271003D4AFC /* FeedManager.swift in Sources */,
 				0097EC152500AF22006779BE /* AppDelegate.swift in Sources */,
+				00DB02D72503525F003D4AFC /* Feed.swift in Sources */,
 				00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */,
 				009D91732502033E00189902 /* LoginButton.swift in Sources */,
 				0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */,
 				0097EC532500FEA8006779BE /* User.swift in Sources */,
+				00DB02D22503521D003D4AFC /* SelectFeedsViewController.swift in Sources */,
 				0097EC512500FE50006779BE /* UserDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
