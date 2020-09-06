@@ -15,12 +15,11 @@ class ItemListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
     }
+    
     @IBAction func didPushLogout(_ sender: Any) {
         let userDataManager = UserDataManager()
         userDataManager.delete()
-        
         // ログアウト
         logoutFromFacebook()
         logoutFromGoogle()

@@ -60,8 +60,7 @@ class LoginViewController: UIViewController
         let permission: [Permission] = [ .publicProfile, .email ]
         loginManager.logIn(permissions: permission, viewController: self) { (result) in
             switch result {
-            case .success:
-                self.successLoginWithFacebook()
+            case .success:  self.successLoginWithFacebook()
             case .failed(_): break
             default: break
             }

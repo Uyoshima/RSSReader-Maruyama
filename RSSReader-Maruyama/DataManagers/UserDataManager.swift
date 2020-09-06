@@ -13,7 +13,6 @@ class UserDataManager {
     private let USER_DATA_KEY = "userData"
     lazy var userDefaults = UserDefaults.standard
 
-    
     func exists() -> Bool {
         let user = userDefaults.data(forKey: USER_DATA_KEY)
         
@@ -24,9 +23,7 @@ class UserDataManager {
         guard let userData = userDefaults.data(forKey: USER_DATA_KEY) else {
             return nil
         }
-        let user = try? JSONDecoder().decode(User.self, from: userData)
-    
-        return user
+        return try? JSONDecoder().decode(User.self, from: userData)
     }
     
     func save(user: User) {
