@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        ApplicationDelegate.shared.application( application, didFinishLaunchingWithOptions: launchOptions )
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         let keys = RSSReaderMaruyamaKeys()
 //        Google SignIn：クライアントIDの設定
@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ApplicationDelegate.shared.application(app,
                                                open: url,
                                                sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-                                               annotation: options[UIApplication.OpenURLOptionsKey.annotation] )
+                                               annotation: options[UIApplication.OpenURLOptionsKey.annotation])
         
         if GIDSignIn.sharedInstance()!.handle(url) {
             return true

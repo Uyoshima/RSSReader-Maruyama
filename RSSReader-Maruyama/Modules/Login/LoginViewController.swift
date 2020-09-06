@@ -50,7 +50,7 @@ class LoginViewController: UIViewController {
 //    MARK: Facebook SignIn Action
     @objc func didPushLoginButtonFacebook() {
         let loginManager = LoginManager()
-        let permission: [Permission] = [ .publicProfile, .email ]
+        let permission: [Permission] = [.publicProfile, .email]
         loginManager.logIn(permissions: permission, viewController: self) { (result) in
             switch result {
             case .success:  self.successLoginWithFacebook()
