@@ -28,19 +28,20 @@ class LoginButton: UIButton
     
     func custom(text: String, icon: String) {
         
-     self.clearsContextBeforeDrawing = true
-     self.translatesAutoresizingMaskIntoConstraints = false
-     self.heightAnchor.constraint(equalToConstant: 45).isActive = true
-     self.layer.masksToBounds = true
-     self.layer.cornerRadius = 8
-     self.layer.borderWidth = 1.5
-     self.layer.borderColor = UIColor.black.cgColor
-     self.backgroundColor = .white
-     self.setTitleColor(.black, for: .normal)
-     self.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-     self.setTitle(text, for: .normal)
+     clearsContextBeforeDrawing = true
+     translatesAutoresizingMaskIntoConstraints = false
+     heightAnchor.constraint(equalToConstant: 45).isActive = true
+     layer.masksToBounds = true
+     layer.cornerRadius = 8
+     layer.borderWidth = 1.5
+     layer.borderColor = UIColor.black.cgColor
+     backgroundColor = .white
+     setTitleColor(.black, for: .normal)
+     titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+     setTitle(text, for: .normal)
+        
      let iconView = UIImageView()
-     self.addSubview(iconView)
+     addSubview(iconView)
      iconView.contentMode = .scaleAspectFit
      iconView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
      iconView.translatesAutoresizingMaskIntoConstraints = false

@@ -19,7 +19,7 @@ class ItemListViewController: UIViewController {
     }
     @IBAction func didPushLogout(_ sender: Any) {
         let userDataManager = UserDataManager()
-        userDataManager.removeUserData()
+        userDataManager.delete()
         
         // ログアウト
         logoutFromFacebook()

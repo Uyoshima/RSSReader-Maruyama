@@ -174,8 +174,8 @@
 				0097EC162500AF22006779BE /* SceneDelegate.swift */,
 				00028CBC2502398D00431E21 /* Extensions */,
 				00028CB92502393E00431E21 /* Modules */,
-				00F64D4D2501559F00F48858 /* DataManager */,
-				00F64D4C2501557100F48858 /* DataModel */,
+				00F64D4D2501559F00F48858 /* DataManagers */,
+				00F64D4C2501557100F48858 /* Models */,
 				0097EC1D2500AF25006779BE /* Assets.xcassets */,
 				0097EC1F2500AF25006779BE /* LaunchScreen.storyboard */,
 				0097EC222500AF25006779BE /* Info.plist */,
@@ -201,20 +201,20 @@
 			path = "RSSReader-MaruyamaUITests";
 			sourceTree = "<group>";
 		};
-		00F64D4C2501557100F48858 /* DataModel */ = {
+		00F64D4C2501557100F48858 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				0097EC522500FEA8006779BE /* User.swift */,
 			);
-			path = DataModel;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		00F64D4D2501559F00F48858 /* DataManager */ = {
+		00F64D4D2501559F00F48858 /* DataManagers */ = {
 			isa = PBXGroup;
 			children = (
 				0097EC502500FE50006779BE /* UserDataManager.swift */,
 			);
-			path = DataManager;
+			path = DataManagers;
 			sourceTree = "<group>";
 		};
 		452DC4B2AD9A75D461A10F51 /* Frameworks */ = {

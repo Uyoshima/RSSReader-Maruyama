@@ -8,11 +8,8 @@
 
 import UIKit
 
-class User: NSObject, Codable {
+struct User: Codable {
     
-    let userID: String!
+    let id: String
     
-    init(userID: String!) {
-        self.userID = userID
-    }
 }

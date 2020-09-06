@@ -16,7 +16,7 @@ class LoginViewController: UIViewController
 {
     
     @IBOutlet weak var loginButtonStackView: UIStackView!
-    private let SELECT_FEEDS_SEGUE_IDENTIFIER = "selectFeeds"
+    private let SELECT_FEEDS_SEGUE_ID = "selectFeeds"
     
     fileprivate let userDataManager = UserDataManager()
     
@@ -46,9 +46,9 @@ class LoginViewController: UIViewController
         button_apple.heightAnchor.constraint(equalToConstant: 45).isActive = true
         
         
-        self.loginButtonStackView.addArrangedSubview(button_fb)
-        self.loginButtonStackView.addArrangedSubview(button_google)
-        self.loginButtonStackView.addArrangedSubview(button_apple)
+        loginButtonStackView.addArrangedSubview(button_fb)
+        loginButtonStackView.addArrangedSubview(button_google)
+        loginButtonStackView.addArrangedSubview(button_apple)
         
     }
     
@@ -107,10 +107,10 @@ class LoginViewController: UIViewController
     
     
     fileprivate func loginSuccessAction(userID: String) {
-        self.userDataManager.saveUserData(user: User(userID: userID))
+        userDataManager.save(user: User(id: userID))
         // ログイン処理確認の画面遷移てテスト。実際はFeed選択画面へ
         // self.performSegue(withIdentifier: SELECT_FEEDS_SEGUE_IDENTIFIER, sender: nil)
-        self.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     
@@ -129,7 +129,7 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
 {
     
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        return self.view.window!
+        return view.window!
     }
     
 }
@@ -141,7 +141,7 @@ extension LoginViewController: GIDSignInDelegate
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil {
             // ログイン成功
-            self.loginSuccessAction(userID: user.userID)
+            loginSuccessAction(userID: user.userID)
         } else {
             // ログイン失敗した場合
             print("error: \(error!.localizedDescription)")
