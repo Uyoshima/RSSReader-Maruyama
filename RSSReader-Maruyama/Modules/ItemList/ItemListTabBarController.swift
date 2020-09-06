@@ -26,8 +26,8 @@ class ItemListTabBarController: UITabBarController {
     
     
     func loginChack() -> Bool {
-          let userDataManager = UserDataManager()
-          return userDataManager.exists()
+        let userDataManager = UserDataManager()
+        return userDataManager.exists()
     }
 
     
@@ -37,7 +37,6 @@ class ItemListTabBarController: UITabBarController {
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "login" {
             let loginViewController = segue.destination as! UINavigationController
             loginViewController.modalPresentationStyle = .overFullScreen
