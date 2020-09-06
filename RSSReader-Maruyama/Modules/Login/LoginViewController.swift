@@ -24,7 +24,8 @@ class LoginViewController: UIViewController {
         setupLoginButtons()
     }
     
-//MARK:- Setup SignIn Button
+    // MARK: - Setup SignIn Button
+    
     private func setupLoginButtons() {
         // Facebook
         let button_fb = LoginButton()
@@ -47,7 +48,9 @@ class LoginViewController: UIViewController {
         loginButtonStackView.addArrangedSubview(button_apple)
     }
     
-//    MARK: Facebook SignIn Action
+
+    // MARK: - Facebook SignIn Action
+    
     @objc func didPushLoginButtonFacebook() {
         let loginManager = LoginManager()
         let permission: [Permission] = [.publicProfile, .email]
@@ -67,14 +70,16 @@ class LoginViewController: UIViewController {
         }
     }
     
-//    MARK: Apple ID SignIn Action
+    // MARK: - Google SignIn Action
+    
     @objc func didPushLoginButtonGoogle() {
         GIDSignIn.sharedInstance()?.delegate = self
         // ログインを実行
         GIDSignIn.sharedInstance()?.signIn()
     }
     
-//    MARK: Apple ID SignIn Action
+    // MARK: - Apple ID SignIn Action
+    
     @objc func didPushLoginButtonApple() {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
         let request = appleIDProvider.createRequest()
@@ -93,8 +98,10 @@ class LoginViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 }
-//MARK:- Delegate
-//MARK: Apple SignIn
+
+// MARK: - Delegate
+// MARK: - Apple SignIn
+
 extension LoginViewController: ASAuthorizationControllerDelegate
 {
     
@@ -107,7 +114,8 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
     }
 }
 
-//MARK: Google SignIn
+// MARK: - Google SignIn
+
 extension LoginViewController: GIDSignInDelegate
 {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {

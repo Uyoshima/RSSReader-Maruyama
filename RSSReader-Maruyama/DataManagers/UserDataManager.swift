@@ -10,17 +10,16 @@ import UIKit
 
 class UserDataManager {
     
-    private let USER_DATA_KEY = "userData"
     lazy var userDefaults = UserDefaults.standard
 
     func exists() -> Bool {
-        let user = userDefaults.data(forKey: USER_DATA_KEY)
+        let user = userDefaults.data(forKey: UserDefaults.Keys.userData.rawValue)
         
         return user != nil
     }
     
     func load() -> User? {
-        guard let userData = userDefaults.data(forKey: USER_DATA_KEY) else {
+        guard let userData = userDefaults.data(forKey: UserDefaults.Keys.userData.rawValue) else {
             return nil
         }
         return try? JSONDecoder().decode(User.self, from: userData)
@@ -28,11 +27,11 @@ class UserDataManager {
     
     func save(user: User) {
         let userData = try? JSONEncoder().encode(user)
-        userDefaults.set(userData, forKey: USER_DATA_KEY)
+        userDefaults.set(userData, forKey: UserDefaults.Keys.userData.rawValue)
     }
     
     func delete() {
-        userDefaults.removeObject(forKey: USER_DATA_KEY)
+        userDefaults.removeObject(forKey: UserDefaults.Keys.userData.rawValue)
     }
     
 }
