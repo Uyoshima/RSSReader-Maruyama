@@ -27,7 +27,6 @@ class ItemListViewController: UIViewController {
         NotificationCenter.default.post(name: .didLogOut, object: nil)
     }
     
-    
     private func logoutFromFacebook() {
         let manager = FBSDKLoginKit.LoginManager()
         manager.logOut()

@@ -14,27 +14,22 @@ class ItemListTabBarController: UITabBarController {
         super.viewDidLoad()
     }
     
-    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if !loginChack() {
             performSegue(withIdentifier: "login", sender: nil)
         }
-        
         NotificationCenter.default.addObserver(self, selector: #selector(showLoginViewController), name: .didLogOut, object: nil)
     }
-    
     
     func loginChack() -> Bool {
         let userDataManager = UserDataManager()
         return userDataManager.exists()
     }
 
-    
     @objc fileprivate func showLoginViewController() {
         performSegue(withIdentifier: "login", sender: nil)
     }
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "login" {
