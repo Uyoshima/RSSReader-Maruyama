@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		002C6DC22505138E00914046 /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C6DC12505138E00914046 /* UserDefaults+Keys.swift */; };
+		002C6DC425066EBF00914046 /* IconableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C6DC325066EBF00914046 /* IconableButton.swift */; };
 		0097EC152500AF22006779BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC142500AF22006779BE /* AppDelegate.swift */; };
 		0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC162500AF22006779BE /* SceneDelegate.swift */; };
 		0097EC1E2500AF25006779BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0097EC1D2500AF25006779BE /* Assets.xcassets */; };
@@ -19,7 +20,6 @@
 		0097EC4B2500C4E8006779BE /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0097EC4A2500C4E8006779BE /* AuthenticationServices.framework */; };
 		0097EC512500FE50006779BE /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC502500FE50006779BE /* UserRepository.swift */; };
 		0097EC532500FEA8006779BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC522500FEA8006779BE /* User.swift */; };
-		009D91732502033E00189902 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009D91722502033E00189902 /* LoginButton.swift */; };
 		00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D43250142CE00F48858 /* ItemListViewController.swift */; };
 		00F64D46250142DB00F48858 /* ItemList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F64D45250142DB00F48858 /* ItemList.storyboard */; };
 		00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D482501444400F48858 /* ItemListTabBarController.swift */; };
@@ -48,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		002C6DC12505138E00914046 /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
+		002C6DC325066EBF00914046 /* IconableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconableButton.swift; sourceTree = "<group>"; };
 		0097EC112500AF22006779BE /* RSSReader-Maruyama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSSReader-Maruyama.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0097EC142500AF22006779BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0097EC162500AF22006779BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		0097EC4A2500C4E8006779BE /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		0097EC502500FE50006779BE /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		0097EC522500FEA8006779BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		009D91722502033E00189902 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		00F64D43250142CE00F48858 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		00F64D45250142DB00F48858 /* ItemList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemList.storyboard; sourceTree = "<group>"; };
 		00F64D482501444400F48858 /* ItemListTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListTabBarController.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 			children = (
 				0097EC472500C31E006779BE /* Login.storyboard */,
 				0097EC452500C30F006779BE /* LoginViewController.swift */,
-				009D91722502033E00189902 /* LoginButton.swift */,
+				002C6DC325066EBF00914046 /* IconableButton.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -522,11 +522,11 @@
 			files = (
 				00F64D4B25014A3600F48858 /* NotificationName+Extension.swift in Sources */,
 				00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */,
+				002C6DC425066EBF00914046 /* IconableButton.swift in Sources */,
 				002C6DC22505138E00914046 /* UserDefaults+Keys.swift in Sources */,
 				0097EC462500C30F006779BE /* LoginViewController.swift in Sources */,
 				0097EC152500AF22006779BE /* AppDelegate.swift in Sources */,
 				00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */,
-				009D91732502033E00189902 /* LoginButton.swift in Sources */,
 				0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */,
 				0097EC532500FEA8006779BE /* User.swift in Sources */,
 				0097EC512500FE50006779BE /* UserRepository.swift in Sources */,

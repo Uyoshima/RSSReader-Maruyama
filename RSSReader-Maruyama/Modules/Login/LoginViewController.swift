@@ -21,37 +21,23 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLoginButtons()
+        setupAppleSignInButtons()
     }
     
     // MARK: - Setup SignIn Button
     
-    private func setupLoginButtons() {
-        // Facebook
-        let button_fb = LoginButton()
-        button_fb.custom(text: "Facebookアカウントでログイン", icon: "fb")
-        button_fb.addTarget(self, action: #selector(didPushLoginButtonFacebook), for: .touchUpInside)
-        
-        // Google
-        let button_google = LoginButton()
-        button_google.custom(text: "Googleアカウントでログイン", icon: "google")
-        button_google.addTarget(self, action: #selector(didPushLoginButtonGoogle), for: .touchUpInside)
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-
+    private func setupAppleSignInButtons() {
         // Apple
         let button_apple = ASAuthorizationAppleIDButton()
         button_apple.addTarget(self, action: #selector(didPushLoginButtonApple), for: .touchUpInside)
         button_apple.heightAnchor.constraint(equalToConstant: 45).isActive = true
         
-        loginButtonStackView.addArrangedSubview(button_fb)
-        loginButtonStackView.addArrangedSubview(button_google)
         loginButtonStackView.addArrangedSubview(button_apple)
     }
     
-
     // MARK: - Facebook SignIn Action
     
-    @objc func didPushLoginButtonFacebook() {
+    @IBAction func didPushLoginButtonFacebook() {
         let loginManager = LoginManager()
         let permission: [Permission] = [.publicProfile, .email]
         loginManager.logIn(permissions: permission, viewController: self) { (result) in
@@ -72,7 +58,7 @@ class LoginViewController: UIViewController {
     
     // MARK: - Google SignIn Action
     
-    @objc func didPushLoginButtonGoogle() {
+    @IBAction func didPushLoginButtonGoogle() {
         GIDSignIn.sharedInstance()?.delegate = self
         // ログインを実行
         GIDSignIn.sharedInstance()?.signIn()
