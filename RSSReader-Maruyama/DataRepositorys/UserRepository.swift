@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserDataManager {
+class UserRepository {
     
     lazy var userDefaults = UserDefaults.standard
 

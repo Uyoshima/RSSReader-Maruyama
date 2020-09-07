@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButtonStackView: UIStackView!
     private let SELECT_FEEDS_SEGUE_ID = "selectFeeds"
     
-    fileprivate let userDataManager = UserDataManager()
+    fileprivate let userRepository = UserRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,7 +92,7 @@ class LoginViewController: UIViewController {
     }
     
     fileprivate func loginSuccessAction(userID: String) {
-        userDataManager.save(user: User(id: userID))
+        userRepository.save(user: User(id: userID))
         // ログイン処理確認の画面遷移てテスト。実際はFeed選択画面へ
         // self.performSegue(withIdentifier: SELECT_FEEDS_SEGUE_IDENTIFIER, sender: nil)
         dismiss(animated: true, completion: nil)

@@ -23,8 +23,8 @@ class ItemListTabBarController: UITabBarController {
     }
     
     func loginChack() -> Bool {
-        let userDataManager = UserDataManager()
-        return userDataManager.exists()
+        let userRepository = UserRepository()
+        return userRepository.exists()
     }
 
     @objc fileprivate func showLoginViewController() {
