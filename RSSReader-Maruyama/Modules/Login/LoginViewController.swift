@@ -15,24 +15,22 @@ import GoogleSignIn
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginButtonStackView: UIStackView!
+    
+    private lazy var appleLoginButton: ASAuthorizationAppleIDButton = {
+        let appleLoginButton = ASAuthorizationAppleIDButton()
+        appleLoginButton.addTarget(self, action: #selector(didPushLoginButtonApple), for: .touchUpInside)
+        appleLoginButton.heightAnchor.constraint(equalToConstant: 45).isActive = true
+        
+        return appleLoginButton
+    }()
+    
     private let SELECT_FEEDS_SEGUE_ID = "selectFeeds"
     
     fileprivate let userRepository = UserRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupAppleSignInButtons()
-    }
-    
-    // MARK: - Setup SignIn Button
-    
-    private func setupAppleSignInButtons() {
-        // Apple
-        let button_apple = ASAuthorizationAppleIDButton()
-        button_apple.addTarget(self, action: #selector(didPushLoginButtonApple), for: .touchUpInside)
-        button_apple.heightAnchor.constraint(equalToConstant: 45).isActive = true
-        
-        loginButtonStackView.addArrangedSubview(button_apple)
+        loginButtonStackView.addArrangedSubview(appleLoginButton)
     }
     
     // MARK: - Facebook SignIn Action
