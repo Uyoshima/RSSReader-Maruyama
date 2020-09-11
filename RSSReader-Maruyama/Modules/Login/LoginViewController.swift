@@ -31,38 +31,53 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButtonStackView.addArrangedSubview(appleLoginButton)
+        GIDSignIn.sharedInstance()?.presentingViewController = self
     }
     
-    // MARK: - Facebook SignIn Action
-    
-    @IBAction func didPushLoginButtonFacebook() {
-        let loginManager = LoginManager()
-        let permission: [Permission] = [.publicProfile, .email]
-        loginManager.logIn(permissions: permission, viewController: self) { (result) in
-            switch result {
-            case .success:  self.successLoginWithFacebook()
-            case .failed(_): break
-            default: break
-            }
-        }
+    fileprivate func loginSuccessAction(userID: String) {
+        userRepository.save(user: User(id: userID))
+        // ログイン処理確認の画面遷移てテスト。実際はFeed選択画面へ
+        // self.performSegue(withIdentifier: SELECT_FEEDS_SEGUE_IDENTIFIER, sender: nil)
+        dismiss(animated: true, completion: nil)
     }
-    
-    fileprivate func successLoginWithFacebook() {
-        if let accessToken = AccessToken.current {
-            print("\(accessToken.userID)")
-            loginSuccessAction(userID: accessToken.userID)
-        }
-    }
-    
-    // MARK: - Google SignIn Action
-    
+}
+
+// MARK: - Google Login Action
+
+extension LoginViewController {
     @IBAction func didPushLoginButtonGoogle() {
         GIDSignIn.sharedInstance()?.delegate = self
         // ログインを実行
         GIDSignIn.sharedInstance()?.signIn()
     }
-    
-    // MARK: - Apple ID SignIn Action
+}
+
+// MARK: - Facebook Login Action
+
+extension LoginViewController {
+     @IBAction func didPushLoginButtonFacebook() {
+         let loginManager = LoginManager()
+         let permission: [Permission] = [.publicProfile, .email]
+         loginManager.logIn(permissions: permission, viewController: self) { (result) in
+             switch result {
+             case .success:  self.successLoginWithFacebook()
+             case .failed(_): break
+             default: break
+             }
+         }
+     }
+     
+    func successLoginWithFacebook() {
+         if let accessToken = AccessToken.current {
+             print("\(accessToken.userID)")
+             loginSuccessAction(userID: accessToken.userID)
+         }
+     }
+}
+
+// MARK: - Apple ID Login Action
+
+extension LoginViewController {
     
     @objc func didPushLoginButtonApple() {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
@@ -74,25 +89,16 @@ class LoginViewController: UIViewController {
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
     }
-    
-    fileprivate func loginSuccessAction(userID: String) {
-        userRepository.save(user: User(id: userID))
-        // ログイン処理確認の画面遷移てテスト。実際はFeed選択画面へ
-        // self.performSegue(withIdentifier: SELECT_FEEDS_SEGUE_IDENTIFIER, sender: nil)
-        dismiss(animated: true, completion: nil)
-    }
 }
 
 // MARK: - Delegate
 // MARK: - Apple SignIn
 
-extension LoginViewController: ASAuthorizationControllerDelegate
-{
+extension LoginViewController: ASAuthorizationControllerDelegate {
     
 }
 
-extension LoginViewController: ASAuthorizationControllerPresentationContextProviding
-{
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return view.window!
     }
@@ -100,8 +106,7 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
 
 // MARK: - Google SignIn
 
-extension LoginViewController: GIDSignInDelegate
-{
+extension LoginViewController: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil {
             // ログイン成功
