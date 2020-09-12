@@ -96,16 +96,13 @@ extension LoginViewController: GIDSignInDelegate {
     
     @IBAction func didPushLoginButtonGoogle() {
         GIDSignIn.sharedInstance()?.delegate = self
-        // ログインを実行
         GIDSignIn.sharedInstance()?.signIn()
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil {
-            // ログイン成功
             loginSuccessAction(userID: user.userID)
         } else {
-            // ログイン失敗した場合
             print("error: \(error!.localizedDescription)")
         }
     }
