@@ -177,7 +177,7 @@
 				0097EC162500AF22006779BE /* SceneDelegate.swift */,
 				00028CBC2502398D00431E21 /* Extensions */,
 				00028CB92502393E00431E21 /* Modules */,
-				00F64D4D2501559F00F48858 /* DataRepositorys */,
+				00F64D4D2501559F00F48858 /* Repositories */,
 				00F64D4C2501557100F48858 /* Models */,
 				0097EC1D2500AF25006779BE /* Assets.xcassets */,
 				0097EC1F2500AF25006779BE /* LaunchScreen.storyboard */,
@@ -212,12 +212,12 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		00F64D4D2501559F00F48858 /* DataRepositorys */ = {
+		00F64D4D2501559F00F48858 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
 				0097EC502500FE50006779BE /* UserRepository.swift */,
 			);
-			path = DataRepositorys;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		452DC4B2AD9A75D461A10F51 /* Frameworks */ = {
