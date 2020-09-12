@@ -42,16 +42,6 @@ class LoginViewController: UIViewController {
     }
 }
 
-// MARK: - Google Login Action
-
-extension LoginViewController {
-    @IBAction func didPushLoginButtonGoogle() {
-        GIDSignIn.sharedInstance()?.delegate = self
-        // ログインを実行
-        GIDSignIn.sharedInstance()?.signIn()
-    }
-}
-
 // MARK: - Facebook Login Action
 
 extension LoginViewController {
@@ -75,9 +65,14 @@ extension LoginViewController {
      }
 }
 
-// MARK: - Apple ID Login Action
+// MARK: - Delegate
+// MARK: - Apple SignIn
 
-extension LoginViewController {
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    
+}
+
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
     
     @objc func didPushLoginButtonApple() {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
@@ -89,16 +84,7 @@ extension LoginViewController {
         authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
     }
-}
-
-// MARK: - Delegate
-// MARK: - Apple SignIn
-
-extension LoginViewController: ASAuthorizationControllerDelegate {
     
-}
-
-extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return view.window!
     }
@@ -107,6 +93,13 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
 // MARK: - Google SignIn
 
 extension LoginViewController: GIDSignInDelegate {
+    
+    @IBAction func didPushLoginButtonGoogle() {
+        GIDSignIn.sharedInstance()?.delegate = self
+        // ログインを実行
+        GIDSignIn.sharedInstance()?.signIn()
+    }
+    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil {
             // ログイン成功
