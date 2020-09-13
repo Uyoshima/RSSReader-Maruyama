@@ -36,12 +36,11 @@ class LoginViewController: UIViewController {
     
     fileprivate func loginSuccessAction(userID: String) {
         userRepository.save(user: User(id: userID))
-        // ログイン処理確認の画面遷移てテスト。実際はFeed選択画面へ
-        // self.performSegue(withIdentifier: SELECT_FEEDS_SEGUE_IDENTIFIER, sender: nil)
         dismiss(animated: true, completion: nil)
     }
 }
 
+// MARK: - Extensions
 // MARK: - Facebook Login Action
 
 extension LoginViewController {
@@ -65,14 +64,10 @@ extension LoginViewController {
      }
 }
 
-// MARK: - Delegate
+// MARK: - Extensions
 // MARK: - Apple SignIn
 
-extension LoginViewController: ASAuthorizationControllerDelegate {
-    
-}
-
-extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding, ASAuthorizationControllerDelegate {
     
     @objc func didPushLoginButtonApple() {
         let appleIDProvider = ASAuthorizationAppleIDProvider()
@@ -90,6 +85,7 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
     }
 }
 
+// MARK: - Extensions
 // MARK: - Google SignIn
 
 extension LoginViewController: GIDSignInDelegate {
