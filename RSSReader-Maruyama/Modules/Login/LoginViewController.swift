@@ -31,6 +31,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButtonStackView.addArrangedSubview(appleLoginButton)
+        GIDSignIn.sharedInstance()?.delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
     }
     
@@ -91,7 +92,6 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
 extension LoginViewController: GIDSignInDelegate {
     
     @IBAction func didPushLoginButtonGoogle() {
-        GIDSignIn.sharedInstance()?.delegate = self
         GIDSignIn.sharedInstance()?.signIn()
     }
     
