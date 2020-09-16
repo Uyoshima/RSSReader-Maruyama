@@ -39,10 +39,20 @@ class LoginViewController: UIViewController {
         userRepository.save(user: User(id: userID))
         dismiss(animated: true, completion: nil)
     }
+    
+    fileprivate func showAlert(title: String, message: String, actions:[UIAlertAction]) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        for action in actions {
+            alert.addAction(action)
+        }
+        
+        present(alert, animated: true, completion: nil)
+    }
 }
 
 // MARK: - Extensions
-// MARK: - Facebook Login Action
+// MARK: - Facebook Login
 
 extension LoginViewController {
      @IBAction func didPushLoginButtonFacebook() {
@@ -51,7 +61,9 @@ extension LoginViewController {
          loginManager.logIn(permissions: permission, viewController: self) { (result) in
              switch result {
              case .success:  self.successLoginWithFacebook()
-             case .failed(_): break
+             case .failed(let error):
+                let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
+                self.showAlert(title: "ログインエラー", message: "error: \(error.localizedDescription)", actions: [closeAction])
              default: break
              }
          }
@@ -59,7 +71,7 @@ extension LoginViewController {
      
     func successLoginWithFacebook() {
          if let accessToken = AccessToken.current {
-             print("\(accessToken.userID)")
+            Logger.debug("Facebookログイン完了 ユーザーID [\(accessToken.userID)]")
              loginSuccessAction(userID: accessToken.userID)
          }
      }
@@ -99,7 +111,8 @@ extension LoginViewController: GIDSignInDelegate {
         if error == nil {
             loginSuccessAction(userID: user.userID)
         } else {
-            print("error: \(error!.localizedDescription)")
+            let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
+            self.showAlert(title: "ログインエラー", message: "error: \(error!.localizedDescription)", actions: [closeAction])
         }
     }
 }
