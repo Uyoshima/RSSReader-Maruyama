@@ -35,9 +35,14 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance()?.presentingViewController = self
     }
     
-    private func loginSuccessAction(userID: String) {
+    private func didLoginSuccessAction(userID: String) {
         userRepository.save(user: User(id: userID))
         dismiss(animated: true, completion: nil)
+    }
+    
+    private func didLoginFailed(errorMessage: String) {
+        let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
+        self.showAlert(title: "ログインエラー", message: "error: \(errorMessage)", actions: [closeAction])
     }
     
 }
@@ -51,10 +56,11 @@ extension LoginViewController {
         let permission: [Permission] = [.publicProfile, .email]
         loginManager.logIn(permissions: permission, viewController: self) { (result) in
             switch result {
-            case .success:  self.successLoginWithFacebook()
+            case .success:
+                self.successLoginWithFacebook()
             case .failed(let error):
-                let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
-                self.showAlert(title: "ログインエラー", message: "error: \(error.localizedDescription)", actions: [closeAction])
+                Logger.error("Facebookログイン失敗 [\(error.localizedDescription)]")
+                self.didLoginFailed(errorMessage: error.localizedDescription)
             default: break
             }
         }
@@ -63,7 +69,11 @@ extension LoginViewController {
     func successLoginWithFacebook() {
         if let accessToken = AccessToken.current {
             Logger.debug("Facebookログイン完了 ユーザーID [\(accessToken.userID)]")
-            loginSuccessAction(userID: accessToken.userID)
+            didLoginSuccessAction(userID: accessToken.userID)
+        }
+        else {
+            Logger.error("Facebookログイン失敗 ユーザーID不明")
+            didLoginFailed(errorMessage: "Facebookログイン失敗 ユーザーID不明")
         }
     }
 }
@@ -89,20 +99,25 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         var userID: String
+        
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
             userID = appleIDCredential.user
+            
         case let passwordCredential as ASPasswordCredential:
             userID = passwordCredential.user
+            
         default:
-            userID = "ユーザーID不明"
+            didLoginFailed(errorMessage: "Appleログイン失敗 ユーザーID不明")
+            return
         }
         Logger.debug("Appleログイン完了 ユーザーID [\(userID)]")
+        didLoginSuccessAction(userID: userID)
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
-        showAlert(title: "ログインエラー", message: "\(error.localizedDescription)", actions: [closeAction])
+        Logger.error("Appleログイン失敗 [\(error.localizedDescription)]")
+        didLoginFailed(errorMessage: error.localizedDescription)
     }
 }
 
@@ -117,10 +132,10 @@ extension LoginViewController: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil {
             Logger.debug("Googleログイン完了 ユーザーID [\(user.userID ?? "ユーザーID nil")]")
-            loginSuccessAction(userID: user.userID)
+            didLoginSuccessAction(userID: user.userID)
         } else {
-            let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
-            showAlert(title: "ログインエラー", message: "error: \(error!.localizedDescription)", actions: [closeAction])
+            Logger.error("Googleログイン失敗 [\(error.localizedDescription)]")
+            didLoginFailed(errorMessage: error.localizedDescription)
         }
     }
 }
