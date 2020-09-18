@@ -40,15 +40,6 @@ class LoginViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    private func showAlert(title: String, message: String, actions:[UIAlertAction]) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        for action in actions {
-            alert.addAction(action)
-        }
-        
-        present(alert, animated: true, completion: nil)
-    }
 }
 
 // MARK: - Extensions
@@ -129,7 +120,7 @@ extension LoginViewController: GIDSignInDelegate {
             loginSuccessAction(userID: user.userID)
         } else {
             let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
-            self.showAlert(title: "ログインエラー", message: "error: \(error!.localizedDescription)", actions: [closeAction])
+            showAlert(title: "ログインエラー", message: "error: \(error!.localizedDescription)", actions: [closeAction])
         }
     }
 }
