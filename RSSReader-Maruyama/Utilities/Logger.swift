@@ -10,13 +10,7 @@ import Foundation
 
 public struct Logger {
 
-    private static var dateString: String {
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
-        
-        return formatter.string(from: date)
-    }
+    private static let DATE_FORMAT = "yyyy/MM/dd HH:mm:ss"
     
     public enum LogLevel: String {
         case verbose
@@ -47,15 +41,9 @@ public struct Logger {
         assertionFailure(message)
     }
     
-    private static func className(from filePath: String) -> String {
-        let fileName = filePath.components(separatedBy: "/").last
-        
-        return fileName?.components(separatedBy: ".").first ?? ""
-    }
-    
     private static func printToConsole(logLevel: LogLevel, file:String, function: String, line: Int, message: String) {
         #if DEBUG
-        print("\(dateString) [\(logLevel.rawValue.uppercased())] \(className(from: file)).\(function) #\(line): \(message)")
+        print("\(Date().formatted(format: DATE_FORMAT)) [\(logLevel.rawValue.uppercased())] \(file.fileName).\(function) #\(line): \(message)")
         #endif
     }
 }
