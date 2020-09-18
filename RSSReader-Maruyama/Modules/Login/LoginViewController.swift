@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     
     private let SELECT_FEEDS_SEGUE_ID = "selectFeeds"
     
-    fileprivate let userRepository = UserRepository()
+    private let userRepository = UserRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +35,12 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance()?.presentingViewController = self
     }
     
-    fileprivate func loginSuccessAction(userID: String) {
+    private func loginSuccessAction(userID: String) {
         userRepository.save(user: User(id: userID))
         dismiss(animated: true, completion: nil)
     }
     
-    fileprivate func showAlert(title: String, message: String, actions:[UIAlertAction]) {
+    private func showAlert(title: String, message: String, actions:[UIAlertAction]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         for action in actions {
@@ -55,29 +55,28 @@ class LoginViewController: UIViewController {
 // MARK: - Facebook Login
 
 extension LoginViewController {
-     @IBAction func didPushLoginButtonFacebook() {
-         let loginManager = LoginManager()
-         let permission: [Permission] = [.publicProfile, .email]
-         loginManager.logIn(permissions: permission, viewController: self) { (result) in
-             switch result {
-             case .success:  self.successLoginWithFacebook()
-             case .failed(let error):
+    @IBAction func didPushLoginButtonFacebook() {
+        let loginManager = LoginManager()
+        let permission: [Permission] = [.publicProfile, .email]
+        loginManager.logIn(permissions: permission, viewController: self) { (result) in
+            switch result {
+            case .success:  self.successLoginWithFacebook()
+            case .failed(let error):
                 let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
                 self.showAlert(title: "ログインエラー", message: "error: \(error.localizedDescription)", actions: [closeAction])
-             default: break
-             }
-         }
-     }
-     
+            default: break
+            }
+        }
+    }
+    
     func successLoginWithFacebook() {
-         if let accessToken = AccessToken.current {
+        if let accessToken = AccessToken.current {
             Logger.debug("Facebookログイン完了 ユーザーID [\(accessToken.userID)]")
-             loginSuccessAction(userID: accessToken.userID)
-         }
-     }
+            loginSuccessAction(userID: accessToken.userID)
+        }
+    }
 }
 
-// MARK: - Extensions
 // MARK: - Apple SignIn
 
 extension LoginViewController: ASAuthorizationControllerPresentationContextProviding, ASAuthorizationControllerDelegate {
@@ -96,9 +95,26 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return view.window!
     }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        var userID: String
+        switch authorization.credential {
+        case let appleIDCredential as ASAuthorizationAppleIDCredential:
+            userID = appleIDCredential.user
+        case let passwordCredential as ASPasswordCredential:
+            userID = passwordCredential.user
+        default:
+            userID = "ユーザーID不明"
+        }
+        Logger.debug("Appleログイン完了 ユーザーID [\(userID)]")
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
+        showAlert(title: "ログインエラー", message: "\(error.localizedDescription)", actions: [closeAction])
+    }
 }
 
-// MARK: - Extensions
 // MARK: - Google SignIn
 
 extension LoginViewController: GIDSignInDelegate {
@@ -109,6 +125,7 @@ extension LoginViewController: GIDSignInDelegate {
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil {
+            Logger.debug("Googleログイン完了 ユーザーID [\(user.userID ?? "ユーザーID nil")]")
             loginSuccessAction(userID: user.userID)
         } else {
             let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)

@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Logger {
-
+    
     private static let DATE_FORMAT = "yyyy/MM/dd HH:mm:ss"
     
     public enum LogLevel: String {

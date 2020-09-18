@@ -10,7 +10,7 @@ import UIKit
 
 @IBDesignable
 class IconableButton: UIButton {
-
+    
     lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
         addSubview(imageView)
@@ -57,10 +57,10 @@ class IconableButton: UIButton {
         setup()
     }
     
-   override func prepareForInterfaceBuilder() {
-       super.prepareForInterfaceBuilder()
-       setup()
-   }
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        setup()
+    }
     
     private func setup() {
         layer.cornerRadius = cornerRadius

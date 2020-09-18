@@ -9,7 +9,7 @@
 import UIKit
 
 class ItemListTabBarController: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -26,7 +26,7 @@ class ItemListTabBarController: UITabBarController {
         let userRepository = UserRepository()
         return userRepository.exists()
     }
-
+    
     @objc fileprivate func showLoginViewController() {
         performSegue(withIdentifier: "login", sender: nil)
     }
@@ -37,5 +37,5 @@ class ItemListTabBarController: UITabBarController {
             loginViewController.modalPresentationStyle = .overFullScreen
         }
     }
-
+    
 }

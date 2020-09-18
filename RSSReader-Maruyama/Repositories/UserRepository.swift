@@ -11,7 +11,7 @@ import UIKit
 class UserRepository {
     
     lazy var userDefaults = UserDefaults.standard
-
+    
     func exists() -> Bool {
         let user = userDefaults.data(forKey: UserDefaults.Keys.userData.rawValue)
         
