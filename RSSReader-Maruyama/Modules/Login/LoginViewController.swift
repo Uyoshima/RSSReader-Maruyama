@@ -23,9 +23,7 @@ class LoginViewController: UIViewController {
         
         return appleLoginButton
     }()
-    
-    private let SELECT_FEEDS_SEGUE_ID = "selectFeeds"
-    
+        
     private let userRepository = UserRepository()
     
     override func viewDidLoad() {
@@ -35,14 +33,14 @@ class LoginViewController: UIViewController {
         GIDSignIn.sharedInstance()?.presentingViewController = self
     }
     
-    private func didLoginSuccessAction(userID: String) {
+    private func didLoginSuccess(userID: String) {
         userRepository.save(user: User(id: userID))
         dismiss(animated: true, completion: nil)
     }
     
     private func didLoginFailed(errorMessage: String) {
         let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
-        self.showAlert(title: "ログインエラー", message: "error: \(errorMessage)", actions: [closeAction])
+        showAlert(title: "ログインエラー", message: "error: \(errorMessage)", actions: [closeAction])
     }
     
 }
@@ -67,14 +65,13 @@ extension LoginViewController {
     }
     
     func successLoginWithFacebook() {
-        if let accessToken = AccessToken.current {
-            Logger.debug("Facebookログイン完了 ユーザーID [\(accessToken.userID)]")
-            didLoginSuccessAction(userID: accessToken.userID)
-        }
-        else {
+        guard let accessToken = AccessToken.current else {
             Logger.error("Facebookログイン失敗 ユーザーID不明")
             didLoginFailed(errorMessage: "Facebookログイン失敗 ユーザーID不明")
+            return
         }
+        Logger.debug("Facebookログイン完了 ユーザーID [\(accessToken.userID)]")
+        didLoginSuccess(userID: accessToken.userID)
     }
 }
 
@@ -112,7 +109,7 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
             return
         }
         Logger.debug("Appleログイン完了 ユーザーID [\(userID)]")
-        didLoginSuccessAction(userID: userID)
+        didLoginSuccess(userID: userID)
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
@@ -132,7 +129,7 @@ extension LoginViewController: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil {
             Logger.debug("Googleログイン完了 ユーザーID [\(user.userID ?? "ユーザーID nil")]")
-            didLoginSuccessAction(userID: user.userID)
+            didLoginSuccess(userID: user.userID)
         } else {
             Logger.error("Googleログイン失敗 [\(error.localizedDescription)]")
             didLoginFailed(errorMessage: error.localizedDescription)
