@@ -20,6 +20,16 @@ class ItemListViewController: UIViewController {
     @IBAction func didPushLogout(_ sender: Any) {
         let userRepository = UserRepository()
         userRepository.delete()
+        
+        let userSettingRepository = UserSettingRepository()
+        userSettingRepository.delete()
+        
+        let feedRepository = FeedRepository()
+        feedRepository.delete()
+        
+        let itemRepository = ItemRepository()
+        itemRepository.delete()
+        
         // ログアウト
         logoutFromFacebook()
         logoutFromGoogle()

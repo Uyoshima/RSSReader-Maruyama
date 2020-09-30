@@ -24,6 +24,9 @@
 		0097EC532500FEA8006779BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC522500FEA8006779BE /* User.swift */; };
 		00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */; };
 		00DEC6B62515018F004A3BD0 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */; };
+		00DEC6BB2524E740004A3BD0 /* FeedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6BA2524E740004A3BD0 /* FeedRepository.swift */; };
+		00DEC6C02524E7C6004A3BD0 /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6BF2524E7C6004A3BD0 /* ItemRepository.swift */; };
+		00DEC6C52524E84D004A3BD0 /* UserSettingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6C42524E84D004A3BD0 /* UserSettingRepository.swift */; };
 		00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D43250142CE00F48858 /* ItemListViewController.swift */; };
 		00F64D46250142DB00F48858 /* ItemList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F64D45250142DB00F48858 /* ItemList.storyboard */; };
 		00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D482501444400F48858 /* ItemListTabBarController.swift */; };
@@ -74,6 +77,9 @@
 		0097EC522500FEA8006779BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensioin.swift"; sourceTree = "<group>"; };
 		00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		00DEC6BA2524E740004A3BD0 /* FeedRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRepository.swift; sourceTree = "<group>"; };
+		00DEC6BF2524E7C6004A3BD0 /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
+		00DEC6C42524E84D004A3BD0 /* UserSettingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingRepository.swift; sourceTree = "<group>"; };
 		00F64D43250142CE00F48858 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		00F64D45250142DB00F48858 /* ItemList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemList.storyboard; sourceTree = "<group>"; };
 		00F64D482501444400F48858 /* ItemListTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListTabBarController.swift; sourceTree = "<group>"; };
@@ -236,6 +242,9 @@
 			isa = PBXGroup;
 			children = (
 				0097EC502500FE50006779BE /* UserRepository.swift */,
+				00DEC6C42524E84D004A3BD0 /* UserSettingRepository.swift */,
+				00DEC6BA2524E740004A3BD0 /* FeedRepository.swift */,
+				00DEC6BF2524E7C6004A3BD0 /* ItemRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -543,16 +552,19 @@
 				00F64D4B25014A3600F48858 /* NotificationName+Extension.swift in Sources */,
 				00339E6A25120531000B2121 /* Logger.swift in Sources */,
 				00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */,
+				00DEC6BB2524E740004A3BD0 /* FeedRepository.swift in Sources */,
 				002C6DC425066EBF00914046 /* IconableButton.swift in Sources */,
 				00DEC6B62515018F004A3BD0 /* UIViewController+Extension.swift in Sources */,
 				00339E7025149712000B2121 /* String+Extension.swift in Sources */,
 				002C6DC22505138E00914046 /* UserDefaults+Keys.swift in Sources */,
 				0097EC462500C30F006779BE /* LoginViewController.swift in Sources */,
+				00DEC6C52524E84D004A3BD0 /* UserSettingRepository.swift in Sources */,
 				0097EC152500AF22006779BE /* AppDelegate.swift in Sources */,
 				00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */,
 				0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */,
 				0097EC532500FEA8006779BE /* User.swift in Sources */,
 				0097EC512500FE50006779BE /* UserRepository.swift in Sources */,
+				00DEC6C02524E7C6004A3BD0 /* ItemRepository.swift in Sources */,
 				00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
