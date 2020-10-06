@@ -8,13 +8,18 @@
 
 import UIKit
 import AuthenticationServices
-import FBSDKCoreKit
-import FBSDKLoginKit
-import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var loginButtonStackView: UIStackView!
+    private lazy var authenticationService: AuthenticationService = {
+        let authenticationStrategyLocator = AuthenticationStrategyLocator()
+        authenticationStrategyLocator.add(type: .apple, strategy: AppleAuthenticationStrategy(delegate: self, presentingViewController: self))
+        authenticationStrategyLocator.add(type: .google, strategy: GoogleAuthenticationStrategy(delegate: self, presentingViewController: self))
+        authenticationStrategyLocator.add(type: .facebook, strategy: FacebookAuthenticationStrategy(delegate: self, presentingViewController: self))
+        
+        return AuthenticationService(locator: authenticationStrategyLocator)
+    }()
     
     private lazy var appleLoginButton: ASAuthorizationAppleIDButton = {
         let appleLoginButton = ASAuthorizationAppleIDButton()
@@ -23,18 +28,16 @@ class LoginViewController: UIViewController {
         
         return appleLoginButton
     }()
-        
+    
     private let userRepository = UserRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loginButtonStackView.addArrangedSubview(appleLoginButton)
-        GIDSignIn.sharedInstance()?.delegate = self
-        GIDSignIn.sharedInstance()?.presentingViewController = self
     }
     
-    private func didLoginSuccess(userID: String) {
-        userRepository.save(user: User(id: userID))
+    private func didLoginSuccess(user: User) {
+        userRepository.save(user: user)
         dismiss(animated: true, completion: nil)
     }
     
@@ -43,96 +46,44 @@ class LoginViewController: UIViewController {
         showAlert(title: "ログインエラー", message: "error: \(errorMessage)", actions: [closeAction])
     }
     
+    // MARK : - Button Action
+    
+    @objc func didPushLoginButtonApple() {
+        authenticationService.login(.apple)
+    }
+    
+    @IBAction func didPushLoginButtonGoogle() {
+        authenticationService.login(.google)
+    }
+    
+    @IBAction func didPushLoginButtonFacebook() {
+        authenticationService.login(.facebook)
+    }
+    
 }
 
 // MARK: - Extensions
-// MARK: - Facebook Login
 
-extension LoginViewController {
-    @IBAction func didPushLoginButtonFacebook() {
-        let loginManager = LoginManager()
-        let permission: [Permission] = [.publicProfile, .email]
-        loginManager.logIn(permissions: permission, viewController: self) { (result) in
-            switch result {
-            case .success:
-                self.successLoginWithFacebook()
-            case .failed(let error):
-                Logger.error("Facebookログイン失敗 [\(error.localizedDescription)]")
-                self.didLoginFailed(errorMessage: error.localizedDescription)
-            default: break
-            }
+extension LoginViewController: AuthenticationDelegate {
+    func didLogin(_ result: Result<User, Error>) {
+        switch result {
+        case .success(let user):
+            self.didLoginSuccess(user: user)
+        case .failure(let error):
+            self.didLoginFailed(errorMessage: error.localizedDescription)
         }
     }
     
-    func successLoginWithFacebook() {
-        guard let accessToken = AccessToken.current else {
-            Logger.error("Facebookログイン失敗 ユーザーID不明")
-            didLoginFailed(errorMessage: "Facebookログイン失敗 ユーザーID不明")
-            return
-        }
-        Logger.debug("Facebookログイン完了 ユーザーID [\(accessToken.userID)]")
-        didLoginSuccess(userID: accessToken.userID)
-    }
-}
-
-// MARK: - Apple SignIn
-
-extension LoginViewController: ASAuthorizationControllerPresentationContextProviding, ASAuthorizationControllerDelegate {
-    
-    @objc func didPushLoginButtonApple() {
-        let appleIDProvider = ASAuthorizationAppleIDProvider()
-        let request = appleIDProvider.createRequest()
-        request.requestedScopes = [.fullName, .email]
-        
-        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-        authorizationController.delegate = self
-        authorizationController.presentationContextProvider = self
-        authorizationController.performRequests()
-    }
-    
-    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        return view.window!
-    }
-    
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        var userID: String
-        
-        switch authorization.credential {
-        case let appleIDCredential as ASAuthorizationAppleIDCredential:
-            userID = appleIDCredential.user
-            
-        case let passwordCredential as ASPasswordCredential:
-            userID = passwordCredential.user
-            
-        default:
-            didLoginFailed(errorMessage: "Appleログイン失敗 ユーザーID不明")
-            return
-        }
-        Logger.debug("Appleログイン完了 ユーザーID [\(userID)]")
-        didLoginSuccess(userID: userID)
-    }
-    
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        Logger.error("Appleログイン失敗 [\(error.localizedDescription)]")
-        didLoginFailed(errorMessage: error.localizedDescription)
-    }
-}
-
-// MARK: - Google SignIn
-
-extension LoginViewController: GIDSignInDelegate {
-    
-    @IBAction func didPushLoginButtonGoogle() {
-        GIDSignIn.sharedInstance()?.signIn()
-    }
-    
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if error == nil {
-            Logger.debug("Googleログイン完了 ユーザーID [\(user.userID ?? "ユーザーID nil")]")
-            didLoginSuccess(userID: user.userID)
-        } else {
-            Logger.error("Googleログイン失敗 [\(error.localizedDescription)]")
-            didLoginFailed(errorMessage: error.localizedDescription)
+    func didLogout(_ result: Result<Void, Error>) {
+        switch result {
+        case .success():
+            let userRepository = UserRepository()
+            userRepository.delete()
+            break
+        case .failure(_):
+            break
         }
     }
+    
+    
 }

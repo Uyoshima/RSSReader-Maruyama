@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MhV-2f-8sa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MhV-2f-8sa">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +20,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jfv-E4-KOy">
                                 <rect key="frame" x="30" y="662" width="354" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dos-ye-fQ2" customClass="IconableButton" customModule="RSSReader_Maruyama" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dos-ye-fQ2" customClass="IconableButton" customModule="RSSReader_Maruyama" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="354" height="45"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -44,7 +46,7 @@
                                             <action selector="didPushLoginButtonFacebook" destination="pkc-Df-1YM" eventType="touchUpInside" id="MBr-rB-Jle"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gtl-Q2-Azg" customClass="IconableButton" customModule="RSSReader_Maruyama" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gtl-Q2-Azg" customClass="IconableButton" customModule="RSSReader_Maruyama" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55" width="354" height="45"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -76,7 +78,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mCt-Cd-LnK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="mCt-Cd-LnK" firstAttribute="bottom" secondItem="jfv-E4-KOy" secondAttribute="bottom" constant="100" id="3C1-la-356"/>
                             <constraint firstItem="y5O-ct-Dm7" firstAttribute="leading" secondItem="mCt-Cd-LnK" secondAttribute="leading" id="Gm8-CK-sEK"/>
@@ -87,7 +90,6 @@
                             <constraint firstItem="mCt-Cd-LnK" firstAttribute="trailing" secondItem="y5O-ct-Dm7" secondAttribute="trailing" id="t9S-cR-ggg"/>
                             <constraint firstItem="y5O-ct-Dm7" firstAttribute="centerY" secondItem="RNC-EK-imw" secondAttribute="centerY" constant="-100" id="yeN-94-ZKN"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="mCt-Cd-LnK"/>
                     </view>
                     <navigationItem key="navigationItem" id="bjj-hN-ULm"/>
                     <connections>
@@ -117,8 +119,19 @@
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Dos-ye-fQ2">
+            <size key="intrinsicContentSize" width="153" height="32"/>
+        </designable>
+        <designable name="Gtl-Q2-Azg">
+            <size key="intrinsicContentSize" width="134" height="32"/>
+        </designable>
+    </designables>
     <resources>
         <image name="fb" width="154.5" height="155"/>
         <image name="google" width="100" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

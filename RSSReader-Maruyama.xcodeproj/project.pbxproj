@@ -27,6 +27,12 @@
 		00DEC6BB2524E740004A3BD0 /* FeedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6BA2524E740004A3BD0 /* FeedRepository.swift */; };
 		00DEC6C02524E7C6004A3BD0 /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6BF2524E7C6004A3BD0 /* ItemRepository.swift */; };
 		00DEC6C52524E84D004A3BD0 /* UserSettingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6C42524E84D004A3BD0 /* UserSettingRepository.swift */; };
+		00DEC7172527146C004A3BD0 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC7162527146C004A3BD0 /* AuthenticationService.swift */; };
+		00DEC71D25271517004A3BD0 /* AuthenticationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC71C25271517004A3BD0 /* AuthenticationStrategy.swift */; };
+		00DEC72E2527161D004A3BD0 /* AppleAuthenticationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC72D2527161D004A3BD0 /* AppleAuthenticationStrategy.swift */; };
+		00DEC7332527164D004A3BD0 /* GoogleAuthenticationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC7322527164D004A3BD0 /* GoogleAuthenticationStrategy.swift */; };
+		00DEC7382527166E004A3BD0 /* FacebookAuthenticationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC7372527166E004A3BD0 /* FacebookAuthenticationStrategy.swift */; };
+		00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC76C25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift */; };
 		00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D43250142CE00F48858 /* ItemListViewController.swift */; };
 		00F64D46250142DB00F48858 /* ItemList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F64D45250142DB00F48858 /* ItemList.storyboard */; };
 		00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D482501444400F48858 /* ItemListTabBarController.swift */; };
@@ -80,6 +86,12 @@
 		00DEC6BA2524E740004A3BD0 /* FeedRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRepository.swift; sourceTree = "<group>"; };
 		00DEC6BF2524E7C6004A3BD0 /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
 		00DEC6C42524E84D004A3BD0 /* UserSettingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingRepository.swift; sourceTree = "<group>"; };
+		00DEC7162527146C004A3BD0 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		00DEC71C25271517004A3BD0 /* AuthenticationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationStrategy.swift; path = ../Protocols/AuthenticationStrategy.swift; sourceTree = "<group>"; };
+		00DEC72D2527161D004A3BD0 /* AppleAuthenticationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthenticationStrategy.swift; sourceTree = "<group>"; };
+		00DEC7322527164D004A3BD0 /* GoogleAuthenticationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthenticationStrategy.swift; sourceTree = "<group>"; };
+		00DEC7372527166E004A3BD0 /* FacebookAuthenticationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuthenticationStrategy.swift; sourceTree = "<group>"; };
+		00DEC76C25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationStrategyLocator.swift; sourceTree = "<group>"; };
 		00F64D43250142CE00F48858 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		00F64D45250142DB00F48858 /* ItemList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemList.storyboard; sourceTree = "<group>"; };
 		00F64D482501444400F48858 /* ItemListTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListTabBarController.swift; sourceTree = "<group>"; };
@@ -205,6 +217,9 @@
 				00028CB92502393E00431E21 /* Modules */,
 				00F64D4D2501559F00F48858 /* Repositories */,
 				00F64D4C2501557100F48858 /* Models */,
+				00DEC7152527123B004A3BD0 /* Serviceis */,
+				00DEC72425271559004A3BD0 /* Strategies */,
+				00DEC76B25273F98004A3BD0 /* Locators */,
 				0097EC1D2500AF25006779BE /* Assets.xcassets */,
 				0097EC1F2500AF25006779BE /* LaunchScreen.storyboard */,
 				0097EC222500AF25006779BE /* Info.plist */,
@@ -228,6 +243,33 @@
 				0097EC382500AF25006779BE /* Info.plist */,
 			);
 			path = "RSSReader-MaruyamaUITests";
+			sourceTree = "<group>";
+		};
+		00DEC7152527123B004A3BD0 /* Serviceis */ = {
+			isa = PBXGroup;
+			children = (
+				00DEC7162527146C004A3BD0 /* AuthenticationService.swift */,
+			);
+			path = Serviceis;
+			sourceTree = "<group>";
+		};
+		00DEC72425271559004A3BD0 /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				00DEC71C25271517004A3BD0 /* AuthenticationStrategy.swift */,
+				00DEC72D2527161D004A3BD0 /* AppleAuthenticationStrategy.swift */,
+				00DEC7372527166E004A3BD0 /* FacebookAuthenticationStrategy.swift */,
+				00DEC7322527164D004A3BD0 /* GoogleAuthenticationStrategy.swift */,
+			);
+			path = Strategies;
+			sourceTree = "<group>";
+		};
+		00DEC76B25273F98004A3BD0 /* Locators */ = {
+			isa = PBXGroup;
+			children = (
+				00DEC76C25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift */,
+			);
+			path = Locators;
 			sourceTree = "<group>";
 		};
 		00F64D4C2501557100F48858 /* Models */ = {
@@ -552,7 +594,9 @@
 				00F64D4B25014A3600F48858 /* NotificationName+Extension.swift in Sources */,
 				00339E6A25120531000B2121 /* Logger.swift in Sources */,
 				00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */,
+				00DEC7172527146C004A3BD0 /* AuthenticationService.swift in Sources */,
 				00DEC6BB2524E740004A3BD0 /* FeedRepository.swift in Sources */,
+				00DEC7382527166E004A3BD0 /* FacebookAuthenticationStrategy.swift in Sources */,
 				002C6DC425066EBF00914046 /* IconableButton.swift in Sources */,
 				00DEC6B62515018F004A3BD0 /* UIViewController+Extension.swift in Sources */,
 				00339E7025149712000B2121 /* String+Extension.swift in Sources */,
@@ -562,8 +606,12 @@
 				0097EC152500AF22006779BE /* AppDelegate.swift in Sources */,
 				00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */,
 				0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */,
+				00DEC72E2527161D004A3BD0 /* AppleAuthenticationStrategy.swift in Sources */,
 				0097EC532500FEA8006779BE /* User.swift in Sources */,
+				00DEC7332527164D004A3BD0 /* GoogleAuthenticationStrategy.swift in Sources */,
 				0097EC512500FE50006779BE /* UserRepository.swift in Sources */,
+				00DEC71D25271517004A3BD0 /* AuthenticationStrategy.swift in Sources */,
+				00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */,
 				00DEC6C02524E7C6004A3BD0 /* ItemRepository.swift in Sources */,
 				00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */,
 			);

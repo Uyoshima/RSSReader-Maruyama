@@ -9,7 +9,6 @@
 import UIKit
 
 struct User: Codable {
-    
     let id: String
-    
+    let type: AuthenticationType
 }
