@@ -22,11 +22,9 @@
 		0097EC4B2500C4E8006779BE /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0097EC4A2500C4E8006779BE /* AuthenticationServices.framework */; };
 		0097EC512500FE50006779BE /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC502500FE50006779BE /* UserRepository.swift */; };
 		0097EC532500FEA8006779BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC522500FEA8006779BE /* User.swift */; };
+		00BE6F6B252FF8DC003E0477 /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE6F6A252FF8DC003E0477 /* KeychainItem.swift */; };
 		00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */; };
 		00DEC6B62515018F004A3BD0 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */; };
-		00DEC6BB2524E740004A3BD0 /* FeedRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6BA2524E740004A3BD0 /* FeedRepository.swift */; };
-		00DEC6C02524E7C6004A3BD0 /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6BF2524E7C6004A3BD0 /* ItemRepository.swift */; };
-		00DEC6C52524E84D004A3BD0 /* UserSettingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6C42524E84D004A3BD0 /* UserSettingRepository.swift */; };
 		00DEC7172527146C004A3BD0 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC7162527146C004A3BD0 /* AuthenticationService.swift */; };
 		00DEC71D25271517004A3BD0 /* AuthenticationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC71C25271517004A3BD0 /* AuthenticationStrategy.swift */; };
 		00DEC72E2527161D004A3BD0 /* AppleAuthenticationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC72D2527161D004A3BD0 /* AppleAuthenticationStrategy.swift */; };
@@ -36,7 +34,6 @@
 		00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D43250142CE00F48858 /* ItemListViewController.swift */; };
 		00F64D46250142DB00F48858 /* ItemList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F64D45250142DB00F48858 /* ItemList.storyboard */; };
 		00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D482501444400F48858 /* ItemListTabBarController.swift */; };
-		00F64D4B25014A3600F48858 /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D4A25014A3600F48858 /* NotificationName+Extension.swift */; };
 		41661EF94F0F8CAC38E96D9D /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7E1306333728E5718229EE /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework */; };
 		8BC9050736C23C78627EF887 /* Pods_RSSReader_Maruyama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A702F7A9537EA0A1522B6A60 /* Pods_RSSReader_Maruyama.framework */; };
 		9C889FFED5D43705EBC007D5 /* Pods_RSSReader_MaruyamaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3364534928C3D390C305D65E /* Pods_RSSReader_MaruyamaTests.framework */; };
@@ -81,11 +78,9 @@
 		0097EC4A2500C4E8006779BE /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		0097EC502500FE50006779BE /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		0097EC522500FEA8006779BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		00BE6F6A252FF8DC003E0477 /* KeychainItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
 		00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensioin.swift"; sourceTree = "<group>"; };
 		00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		00DEC6BA2524E740004A3BD0 /* FeedRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRepository.swift; sourceTree = "<group>"; };
-		00DEC6BF2524E7C6004A3BD0 /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
-		00DEC6C42524E84D004A3BD0 /* UserSettingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingRepository.swift; sourceTree = "<group>"; };
 		00DEC7162527146C004A3BD0 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 		00DEC71C25271517004A3BD0 /* AuthenticationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationStrategy.swift; path = ../Protocols/AuthenticationStrategy.swift; sourceTree = "<group>"; };
 		00DEC72D2527161D004A3BD0 /* AppleAuthenticationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthenticationStrategy.swift; sourceTree = "<group>"; };
@@ -95,7 +90,6 @@
 		00F64D43250142CE00F48858 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		00F64D45250142DB00F48858 /* ItemList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemList.storyboard; sourceTree = "<group>"; };
 		00F64D482501444400F48858 /* ItemListTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListTabBarController.swift; sourceTree = "<group>"; };
-		00F64D4A25014A3600F48858 /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		1A7E1306333728E5718229EE /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3364534928C3D390C305D65E /* Pods_RSSReader_MaruyamaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSSReader_MaruyamaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65AB743606714C932764B31D /* Pods-RSSReader-MaruyamaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSReader-MaruyamaTests.release.xcconfig"; path = "Target Support Files/Pods-RSSReader-MaruyamaTests/Pods-RSSReader-MaruyamaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -168,7 +162,6 @@
 		00028CBC2502398D00431E21 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				00F64D4A25014A3600F48858 /* NotificationName+Extension.swift */,
 				002C6DC12505138E00914046 /* UserDefaults+Keys.swift */,
 				00339E6F25149712000B2121 /* String+Extension.swift */,
 				00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */,
@@ -220,8 +213,7 @@
 				00DEC7152527123B004A3BD0 /* Serviceis */,
 				00DEC72425271559004A3BD0 /* Strategies */,
 				00DEC76B25273F98004A3BD0 /* Locators */,
-				0097EC1D2500AF25006779BE /* Assets.xcassets */,
-				0097EC1F2500AF25006779BE /* LaunchScreen.storyboard */,
+				00BE6F69252FF8B9003E0477 /* Supporting Files */,
 				0097EC222500AF25006779BE /* Info.plist */,
 			);
 			path = "RSSReader-Maruyama";
@@ -243,6 +235,16 @@
 				0097EC382500AF25006779BE /* Info.plist */,
 			);
 			path = "RSSReader-MaruyamaUITests";
+			sourceTree = "<group>";
+		};
+		00BE6F69252FF8B9003E0477 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00BE6F6A252FF8DC003E0477 /* KeychainItem.swift */,
+				0097EC1D2500AF25006779BE /* Assets.xcassets */,
+				0097EC1F2500AF25006779BE /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		00DEC7152527123B004A3BD0 /* Serviceis */ = {
@@ -284,9 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				0097EC502500FE50006779BE /* UserRepository.swift */,
-				00DEC6C42524E84D004A3BD0 /* UserSettingRepository.swift */,
-				00DEC6BA2524E740004A3BD0 /* FeedRepository.swift */,
-				00DEC6BF2524E7C6004A3BD0 /* ItemRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -591,18 +590,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00F64D4B25014A3600F48858 /* NotificationName+Extension.swift in Sources */,
 				00339E6A25120531000B2121 /* Logger.swift in Sources */,
 				00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */,
 				00DEC7172527146C004A3BD0 /* AuthenticationService.swift in Sources */,
-				00DEC6BB2524E740004A3BD0 /* FeedRepository.swift in Sources */,
 				00DEC7382527166E004A3BD0 /* FacebookAuthenticationStrategy.swift in Sources */,
 				002C6DC425066EBF00914046 /* IconableButton.swift in Sources */,
 				00DEC6B62515018F004A3BD0 /* UIViewController+Extension.swift in Sources */,
+				00BE6F6B252FF8DC003E0477 /* KeychainItem.swift in Sources */,
 				00339E7025149712000B2121 /* String+Extension.swift in Sources */,
 				002C6DC22505138E00914046 /* UserDefaults+Keys.swift in Sources */,
 				0097EC462500C30F006779BE /* LoginViewController.swift in Sources */,
-				00DEC6C52524E84D004A3BD0 /* UserSettingRepository.swift in Sources */,
 				0097EC152500AF22006779BE /* AppDelegate.swift in Sources */,
 				00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */,
 				0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */,
@@ -612,7 +609,6 @@
 				0097EC512500FE50006779BE /* UserRepository.swift in Sources */,
 				00DEC71D25271517004A3BD0 /* AuthenticationStrategy.swift in Sources */,
 				00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */,
-				00DEC6C02524E7C6004A3BD0 /* ItemRepository.swift in Sources */,
 				00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

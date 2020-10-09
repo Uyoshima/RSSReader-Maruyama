@@ -12,7 +12,6 @@ import AuthenticationServices
 class AppleAuthenticationStrategy: NSObject, AuthenticationStrategy {
     var delegate: AuthenticationDelegate
     var presentingViewController: UIViewController
-    var handler: ((Result<User, Error>) -> Void)?
     
     init(delegate: AuthenticationDelegate, presentingViewController: UIViewController) {
         self.presentingViewController = presentingViewController
@@ -31,13 +30,22 @@ class AppleAuthenticationStrategy: NSObject, AuthenticationStrategy {
     }
     
     func logout(_ user: User) {
+        KeychainItem.deleteUserIdentifierFromKeychain()
+        delegate.didLogout(.success(()))
+    }
+    
+    private func saveUserInKeychain(_ userIdentifier: String) {
+        do {
+            try KeychainItem(service: "com.maruyama.RSSReader-Maruyama", account: "userIdentifier").saveItem(userIdentifier)
+        } catch {
+            print("Unable to save userIdentifier to keychain.")
+        }
     }
 }
 
 extension AppleAuthenticationStrategy: ASAuthorizationControllerPresentationContextProviding, ASAuthorizationControllerDelegate {
-    
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        return self.presentingViewController.view.window!
+        return presentingViewController.view.window!
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
@@ -45,13 +53,15 @@ extension AppleAuthenticationStrategy: ASAuthorizationControllerPresentationCont
         
         switch authorization.credential {
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
-            userID = appleIDCredential.user
+            let userIdentifier = appleIDCredential.user
+            userID = userIdentifier
+            saveUserInKeychain(userIdentifier)
             
         case let passwordCredential as ASPasswordCredential:
             userID = passwordCredential.user
             
         default:
-            delegate.didLogin(.failure(SocialServiceAuthError.unkownID))
+            delegate.didLogin(.failure(AuthenticationServiceAuthError.unkownID))
             return
         }
         Logger.debug("Appleログイン完了 ユーザーID [\(userID)]")

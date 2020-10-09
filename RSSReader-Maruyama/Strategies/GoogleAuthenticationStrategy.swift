@@ -31,7 +31,6 @@ class GoogleAuthenticationStrategy: NSObject, AuthenticationStrategy {
 
 // MARK: - Google SignIn
 extension GoogleAuthenticationStrategy: GIDSignInDelegate {
-    
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if error == nil {
             Logger.debug("Googleログイン完了 ユーザーID [\(user.userID ?? "ユーザーID nil")]")

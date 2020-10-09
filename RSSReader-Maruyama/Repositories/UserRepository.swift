@@ -9,7 +9,6 @@
 import UIKit
 
 class UserRepository {
-    
     lazy var userDefaults = UserDefaults.standard
     
     func exists() -> Bool {
@@ -33,5 +32,4 @@ class UserRepository {
     func delete() {
         userDefaults.removeObject(forKey: UserDefaults.Keys.userData.rawValue)
     }
-    
 }

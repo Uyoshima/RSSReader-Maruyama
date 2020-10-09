@@ -10,7 +10,6 @@ import UIKit
 
 @IBDesignable
 class IconableButton: UIButton {
-    
     lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
         addSubview(imageView)
@@ -67,5 +66,4 @@ class IconableButton: UIButton {
         layer.borderWidth = borderWidth
         layer.borderColor = borderColor.cgColor
     }
-    
 }

@@ -14,7 +14,7 @@ enum AuthenticationType: String, Codable {
     case google
 }
 
-enum SocialServiceAuthError: Error {
+enum AuthenticationServiceAuthError: Error {
     case unkownID
     
     var localizedDescription: String {

@@ -7,12 +7,8 @@
 //
 
 import UIKit
-import GoogleSignIn
-import FBSDKCoreKit
-import FBSDKLoginKit
 
 class ItemListViewController: UIViewController {
-    
     private lazy var authenticationService: AuthenticationService = {
         let authenticationStrategyLocator = AuthenticationStrategyLocator()
         authenticationStrategyLocator.add(type: .apple, strategy: AppleAuthenticationStrategy(delegate: self, presentingViewController: self))
@@ -75,6 +71,4 @@ extension ItemListViewController: AuthenticationDelegate {
             break
         }
     }
-    
-    
 }

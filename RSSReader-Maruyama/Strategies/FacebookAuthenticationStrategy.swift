@@ -41,15 +41,15 @@ class FacebookAuthenticationStrategy: AuthenticationStrategy {
     
     private func didsuccessLogin(_ accessToken: AccessToken?) {
         guard let accessToken = AccessToken.current else {
-            didFailureLogin(SocialServiceAuthError.unkownID)
+            didFailureLogin(AuthenticationServiceAuthError.unkownID)
             return
         }
-        self.delegate.didLogin(.success(User(id: accessToken.userID, type: .facebook)))
+        delegate.didLogin(.success(User(id: accessToken.userID, type: .facebook)))
     }
     
     private func didFailureLogin(_ error: Error) {
         Logger.debug("Facebookログイン失敗 [\(error.localizedDescription)]")
-        self.delegate.didLogin(.failure(error))
+        delegate.didLogin(.failure(error))
     }
     
     func logout(_ user: User) {
@@ -57,5 +57,4 @@ class FacebookAuthenticationStrategy: AuthenticationStrategy {
         manager.logOut()
         delegate.didLogout(.success(()))
     }
-    
 }

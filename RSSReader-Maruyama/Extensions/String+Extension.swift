@@ -9,7 +9,6 @@
 import UIKit
 
 extension String {
-    
     public var lastPathComponent: String {
         return (self as NSString).lastPathComponent
     }

@@ -10,7 +10,6 @@ import UIKit
 import AuthenticationServices
 
 class LoginViewController: UIViewController {
-    
     @IBOutlet weak var loginButtonStackView: UIStackView!
     private lazy var authenticationService: AuthenticationService = {
         let authenticationStrategyLocator = AuthenticationStrategyLocator()
@@ -84,6 +83,4 @@ extension LoginViewController: AuthenticationDelegate {
             break
         }
     }
-    
-    
 }
