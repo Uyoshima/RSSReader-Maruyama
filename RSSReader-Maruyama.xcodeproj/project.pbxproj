@@ -22,7 +22,6 @@
 		0097EC4B2500C4E8006779BE /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0097EC4A2500C4E8006779BE /* AuthenticationServices.framework */; };
 		0097EC512500FE50006779BE /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC502500FE50006779BE /* UserRepository.swift */; };
 		0097EC532500FEA8006779BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC522500FEA8006779BE /* User.swift */; };
-		00BE6F6B252FF8DC003E0477 /* KeychainItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BE6F6A252FF8DC003E0477 /* KeychainItem.swift */; };
 		00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */; };
 		00DEC6B62515018F004A3BD0 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */; };
 		00DEC7172527146C004A3BD0 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC7162527146C004A3BD0 /* AuthenticationService.swift */; };
@@ -78,7 +77,6 @@
 		0097EC4A2500C4E8006779BE /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		0097EC502500FE50006779BE /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		0097EC522500FEA8006779BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		00BE6F6A252FF8DC003E0477 /* KeychainItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItem.swift; sourceTree = "<group>"; };
 		00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensioin.swift"; sourceTree = "<group>"; };
 		00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		00DEC7162527146C004A3BD0 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
@@ -240,7 +238,6 @@
 		00BE6F69252FF8B9003E0477 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				00BE6F6A252FF8DC003E0477 /* KeychainItem.swift */,
 				0097EC1D2500AF25006779BE /* Assets.xcassets */,
 				0097EC1F2500AF25006779BE /* LaunchScreen.storyboard */,
 			);
@@ -596,7 +593,6 @@
 				00DEC7382527166E004A3BD0 /* FacebookAuthenticationStrategy.swift in Sources */,
 				002C6DC425066EBF00914046 /* IconableButton.swift in Sources */,
 				00DEC6B62515018F004A3BD0 /* UIViewController+Extension.swift in Sources */,
-				00BE6F6B252FF8DC003E0477 /* KeychainItem.swift in Sources */,
 				00339E7025149712000B2121 /* String+Extension.swift in Sources */,
 				002C6DC22505138E00914046 /* UserDefaults+Keys.swift in Sources */,
 				0097EC462500C30F006779BE /* LoginViewController.swift in Sources */,

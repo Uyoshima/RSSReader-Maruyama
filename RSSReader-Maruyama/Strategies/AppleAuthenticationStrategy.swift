@@ -30,16 +30,7 @@ class AppleAuthenticationStrategy: NSObject, AuthenticationStrategy {
     }
     
     func logout(_ user: User) {
-        KeychainItem.deleteUserIdentifierFromKeychain()
         delegate.didLogout(.success(()))
-    }
-    
-    private func saveUserInKeychain(_ userIdentifier: String) {
-        do {
-            try KeychainItem(service: "com.maruyama.RSSReader-Maruyama", account: "userIdentifier").saveItem(userIdentifier)
-        } catch {
-            print("Unable to save userIdentifier to keychain.")
-        }
     }
 }
 
@@ -55,7 +46,6 @@ extension AppleAuthenticationStrategy: ASAuthorizationControllerPresentationCont
         case let appleIDCredential as ASAuthorizationAppleIDCredential:
             let userIdentifier = appleIDCredential.user
             userID = userIdentifier
-            saveUserInKeychain(userIdentifier)
             
         case let passwordCredential as ASPasswordCredential:
             userID = passwordCredential.user

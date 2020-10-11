@@ -67,9 +67,9 @@ extension LoginViewController: AuthenticationDelegate {
     func didLogin(_ result: Result<User, Error>) {
         switch result {
         case .success(let user):
-            self.didLoginSuccess(user: user)
+            didLoginSuccess(user: user)
         case .failure(let error):
-            self.didLoginFailed(errorMessage: error.localizedDescription)
+            didLoginFailed(errorMessage: error.localizedDescription)
         }
     }
     
