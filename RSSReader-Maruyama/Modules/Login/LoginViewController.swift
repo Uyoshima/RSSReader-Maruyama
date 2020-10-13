@@ -37,12 +37,17 @@ class LoginViewController: UIViewController {
     
     private func didLoginSuccess(user: User) {
         userRepository.save(user: user)
-        dismiss(animated: true, completion: nil)
+        transitionToSelectFeedViewController()
     }
     
     private func didLoginFailed(errorMessage: String) {
         let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
         showAlert(title: "ログインエラー", message: "error: \(errorMessage)", actions: [closeAction])
+    }
+    
+    private func transitionToSelectFeedViewController() {
+        let selectFeed_vc = UIStoryboard.init(name: "SelectFeed", bundle: nil).instantiateInitialViewController()!
+        navigationController?.pushViewController(selectFeed_vc, animated: true)
     }
     
     // MARK : - Button Action
