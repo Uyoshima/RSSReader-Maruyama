@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MhV-2f-8sa">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="NZv-3w-MKP">
+            <objects>
+                <viewController id="pkc-Df-1YM" customClass="LoginViewController" customModule="RSSReader_Maruyama" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RNC-EK-imw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jfv-E4-KOy">
+                                <rect key="frame" x="30" y="662" width="354" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dos-ye-fQ2" customClass="IconableButton" customModule="RSSReader_Maruyama" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="45"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="3Eo-Yn-WGb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Facebookでログイン">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="fb"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didPushLoginButtonFacebook" destination="pkc-Df-1YM" eventType="touchUpInside" id="MBr-rB-Jle"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gtl-Q2-Azg" customClass="IconableButton" customModule="RSSReader_Maruyama" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55" width="354" height="45"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="SXw-y6-Fo6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="Googleでログイン">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="iconImage" value="google"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="didPushLoginButtonGoogle" destination="pkc-Df-1YM" eventType="touchUpInside" id="is0-5C-VI3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SNSアカウントでログインしましょう。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5O-ct-Dm7">
+                                <rect key="frame" x="0.0" y="338" width="414" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mCt-Cd-LnK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mCt-Cd-LnK" firstAttribute="bottom" secondItem="jfv-E4-KOy" secondAttribute="bottom" constant="100" id="3C1-la-356"/>
+                            <constraint firstItem="y5O-ct-Dm7" firstAttribute="leading" secondItem="mCt-Cd-LnK" secondAttribute="leading" id="Gm8-CK-sEK"/>
+                            <constraint firstItem="y5O-ct-Dm7" firstAttribute="trailing" secondItem="mCt-Cd-LnK" secondAttribute="trailing" id="H0G-QY-8gD"/>
+                            <constraint firstItem="y5O-ct-Dm7" firstAttribute="leading" secondItem="mCt-Cd-LnK" secondAttribute="leading" id="Mm3-f6-DlR"/>
+                            <constraint firstItem="mCt-Cd-LnK" firstAttribute="trailing" secondItem="jfv-E4-KOy" secondAttribute="trailing" constant="30" id="TrT-HW-Mf8"/>
+                            <constraint firstItem="jfv-E4-KOy" firstAttribute="leading" secondItem="mCt-Cd-LnK" secondAttribute="leading" constant="30" id="ZSJ-cF-k5m"/>
+                            <constraint firstItem="mCt-Cd-LnK" firstAttribute="trailing" secondItem="y5O-ct-Dm7" secondAttribute="trailing" id="t9S-cR-ggg"/>
+                            <constraint firstItem="y5O-ct-Dm7" firstAttribute="centerY" secondItem="RNC-EK-imw" secondAttribute="centerY" constant="-100" id="yeN-94-ZKN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bjj-hN-ULm"/>
+                    <connections>
+                        <outlet property="loginButtonStackView" destination="jfv-E4-KOy" id="Cbg-zg-4bI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0r-Kt-XJr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ibh-5T-pF9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MhV-2f-8sa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="emD-Pu-O9p">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pkc-Df-1YM" kind="relationship" relationship="rootViewController" id="Djf-Nh-IMZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H3v-Pt-rNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="Dos-ye-fQ2">
+            <size key="intrinsicContentSize" width="153" height="32"/>
+        </designable>
+        <designable name="Gtl-Q2-Azg">
+            <size key="intrinsicContentSize" width="134" height="32"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="fb" width="154.5" height="155"/>
+        <image name="google" width="100" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

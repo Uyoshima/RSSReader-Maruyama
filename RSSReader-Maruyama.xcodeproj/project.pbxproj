@@ -3,18 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		002C6DC22505138E00914046 /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C6DC12505138E00914046 /* UserDefaults+Keys.swift */; };
+		002C6DC425066EBF00914046 /* IconableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C6DC325066EBF00914046 /* IconableButton.swift */; };
+		00339E6A25120531000B2121 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00339E6925120531000B2121 /* Logger.swift */; };
+		00339E7025149712000B2121 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00339E6F25149712000B2121 /* String+Extension.swift */; };
 		0097EC152500AF22006779BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC142500AF22006779BE /* AppDelegate.swift */; };
 		0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC162500AF22006779BE /* SceneDelegate.swift */; };
-		0097EC192500AF22006779BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC182500AF22006779BE /* ViewController.swift */; };
-		0097EC1C2500AF22006779BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0097EC1A2500AF22006779BE /* Main.storyboard */; };
 		0097EC1E2500AF25006779BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0097EC1D2500AF25006779BE /* Assets.xcassets */; };
 		0097EC212500AF25006779BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0097EC1F2500AF25006779BE /* LaunchScreen.storyboard */; };
 		0097EC2C2500AF25006779BE /* RSSReader_MaruyamaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC2B2500AF25006779BE /* RSSReader_MaruyamaTests.swift */; };
 		0097EC372500AF25006779BE /* RSSReader_MaruyamaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC362500AF25006779BE /* RSSReader_MaruyamaUITests.swift */; };
+		0097EC462500C30F006779BE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC452500C30F006779BE /* LoginViewController.swift */; };
+		0097EC482500C31E006779BE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0097EC472500C31E006779BE /* Login.storyboard */; };
+		0097EC4B2500C4E8006779BE /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0097EC4A2500C4E8006779BE /* AuthenticationServices.framework */; };
+		0097EC512500FE50006779BE /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC502500FE50006779BE /* UserRepository.swift */; };
+		0097EC532500FEA8006779BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC522500FEA8006779BE /* User.swift */; };
+		00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */; };
+		00DEC6B62515018F004A3BD0 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */; };
+		00DEC7172527146C004A3BD0 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC7162527146C004A3BD0 /* AuthenticationService.swift */; };
+		00DEC71D25271517004A3BD0 /* AuthenticationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC71C25271517004A3BD0 /* AuthenticationStrategy.swift */; };
+		00DEC72E2527161D004A3BD0 /* AppleAuthenticationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC72D2527161D004A3BD0 /* AppleAuthenticationStrategy.swift */; };
+		00DEC7332527164D004A3BD0 /* GoogleAuthenticationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC7322527164D004A3BD0 /* GoogleAuthenticationStrategy.swift */; };
+		00DEC7382527166E004A3BD0 /* FacebookAuthenticationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC7372527166E004A3BD0 /* FacebookAuthenticationStrategy.swift */; };
+		00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC76C25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift */; };
+		00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D43250142CE00F48858 /* ItemListViewController.swift */; };
+		00F64D46250142DB00F48858 /* ItemList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F64D45250142DB00F48858 /* ItemList.storyboard */; };
+		00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D482501444400F48858 /* ItemListTabBarController.swift */; };
+		41661EF94F0F8CAC38E96D9D /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7E1306333728E5718229EE /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework */; };
+		8BC9050736C23C78627EF887 /* Pods_RSSReader_Maruyama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A702F7A9537EA0A1522B6A60 /* Pods_RSSReader_Maruyama.framework */; };
+		9C889FFED5D43705EBC007D5 /* Pods_RSSReader_MaruyamaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3364534928C3D390C305D65E /* Pods_RSSReader_MaruyamaTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,11 +56,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		002C6DC12505138E00914046 /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
+		002C6DC325066EBF00914046 /* IconableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconableButton.swift; sourceTree = "<group>"; };
+		00339E6925120531000B2121 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		00339E6F25149712000B2121 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		0097EC112500AF22006779BE /* RSSReader-Maruyama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSSReader-Maruyama.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0097EC142500AF22006779BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0097EC162500AF22006779BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0097EC182500AF22006779BE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0097EC1B2500AF22006779BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0097EC1D2500AF25006779BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0097EC202500AF25006779BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0097EC222500AF25006779BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +72,31 @@
 		0097EC322500AF25006779BE /* RSSReader-MaruyamaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RSSReader-MaruyamaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0097EC362500AF25006779BE /* RSSReader_MaruyamaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSReader_MaruyamaUITests.swift; sourceTree = "<group>"; };
 		0097EC382500AF25006779BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0097EC452500C30F006779BE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0097EC472500C31E006779BE /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		0097EC4A2500C4E8006779BE /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		0097EC502500FE50006779BE /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		0097EC522500FEA8006779BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensioin.swift"; sourceTree = "<group>"; };
+		00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		00DEC7162527146C004A3BD0 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		00DEC71C25271517004A3BD0 /* AuthenticationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthenticationStrategy.swift; path = ../Protocols/AuthenticationStrategy.swift; sourceTree = "<group>"; };
+		00DEC72D2527161D004A3BD0 /* AppleAuthenticationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleAuthenticationStrategy.swift; sourceTree = "<group>"; };
+		00DEC7322527164D004A3BD0 /* GoogleAuthenticationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthenticationStrategy.swift; sourceTree = "<group>"; };
+		00DEC7372527166E004A3BD0 /* FacebookAuthenticationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuthenticationStrategy.swift; sourceTree = "<group>"; };
+		00DEC76C25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationStrategyLocator.swift; sourceTree = "<group>"; };
+		00F64D43250142CE00F48858 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
+		00F64D45250142DB00F48858 /* ItemList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemList.storyboard; sourceTree = "<group>"; };
+		00F64D482501444400F48858 /* ItemListTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListTabBarController.swift; sourceTree = "<group>"; };
+		1A7E1306333728E5718229EE /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3364534928C3D390C305D65E /* Pods_RSSReader_MaruyamaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSSReader_MaruyamaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65AB743606714C932764B31D /* Pods-RSSReader-MaruyamaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSReader-MaruyamaTests.release.xcconfig"; path = "Target Support Files/Pods-RSSReader-MaruyamaTests/Pods-RSSReader-MaruyamaTests.release.xcconfig"; sourceTree = "<group>"; };
+		6DAEBF5C582EFADDA2A19E4F /* Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests.debug.xcconfig"; path = "Target Support Files/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6F89A21A1A81800EC465FADE /* Pods-RSSReader-Maruyama.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSReader-Maruyama.release.xcconfig"; path = "Target Support Files/Pods-RSSReader-Maruyama/Pods-RSSReader-Maruyama.release.xcconfig"; sourceTree = "<group>"; };
+		92B2ADA7396624608F838BAC /* Pods-RSSReader-Maruyama.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSReader-Maruyama.debug.xcconfig"; path = "Target Support Files/Pods-RSSReader-Maruyama/Pods-RSSReader-Maruyama.debug.xcconfig"; sourceTree = "<group>"; };
+		A702F7A9537EA0A1522B6A60 /* Pods_RSSReader_Maruyama.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSSReader_Maruyama.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9B068B23970BF31771B394E /* Pods-RSSReader-MaruyamaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSReader-MaruyamaTests.debug.xcconfig"; path = "Target Support Files/Pods-RSSReader-MaruyamaTests/Pods-RSSReader-MaruyamaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE726A2870E577C4A99A6231 /* Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests.release.xcconfig"; path = "Target Support Files/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0097EC4B2500C4E8006779BE /* AuthenticationServices.framework in Frameworks */,
+				8BC9050736C23C78627EF887 /* Pods_RSSReader_Maruyama.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C889FFED5D43705EBC007D5 /* Pods_RSSReader_MaruyamaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +121,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41661EF94F0F8CAC38E96D9D /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00028CB92502393E00431E21 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				00028CBA2502395600431E21 /* ItemList */,
+				00028CBB2502397200431E21 /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		00028CBA2502395600431E21 /* ItemList */ = {
+			isa = PBXGroup;
+			children = (
+				00F64D45250142DB00F48858 /* ItemList.storyboard */,
+				00F64D482501444400F48858 /* ItemListTabBarController.swift */,
+				00F64D43250142CE00F48858 /* ItemListViewController.swift */,
+			);
+			path = ItemList;
+			sourceTree = "<group>";
+		};
+		00028CBB2502397200431E21 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				0097EC472500C31E006779BE /* Login.storyboard */,
+				0097EC452500C30F006779BE /* LoginViewController.swift */,
+				002C6DC325066EBF00914046 /* IconableButton.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		00028CBC2502398D00431E21 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				002C6DC12505138E00914046 /* UserDefaults+Keys.swift */,
+				00339E6F25149712000B2121 /* String+Extension.swift */,
+				00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */,
+				00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		00339E6C251208AD000B2121 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				00339E6925120531000B2121 /* Logger.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		0097EC082500AF22006779BE = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +183,8 @@
 				0097EC2A2500AF25006779BE /* RSSReader-MaruyamaTests */,
 				0097EC352500AF25006779BE /* RSSReader-MaruyamaUITests */,
 				0097EC122500AF22006779BE /* Products */,
+				8811BDE4A99C6252340EC451 /* Pods */,
+				452DC4B2AD9A75D461A10F51 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +203,15 @@
 			children = (
 				0097EC142500AF22006779BE /* AppDelegate.swift */,
 				0097EC162500AF22006779BE /* SceneDelegate.swift */,
-				0097EC182500AF22006779BE /* ViewController.swift */,
-				0097EC1A2500AF22006779BE /* Main.storyboard */,
-				0097EC1D2500AF25006779BE /* Assets.xcassets */,
-				0097EC1F2500AF25006779BE /* LaunchScreen.storyboard */,
+				00028CBC2502398D00431E21 /* Extensions */,
+				00339E6C251208AD000B2121 /* Utilities */,
+				00028CB92502393E00431E21 /* Modules */,
+				00F64D4D2501559F00F48858 /* Repositories */,
+				00F64D4C2501557100F48858 /* Models */,
+				00DEC7152527123B004A3BD0 /* Serviceis */,
+				00DEC72425271559004A3BD0 /* Strategies */,
+				00DEC76B25273F98004A3BD0 /* Locators */,
+				00BE6F69252FF8B9003E0477 /* Supporting Files */,
 				0097EC222500AF25006779BE /* Info.plist */,
 			);
 			path = "RSSReader-Maruyama";
@@ -128,6 +235,82 @@
 			path = "RSSReader-MaruyamaUITests";
 			sourceTree = "<group>";
 		};
+		00BE6F69252FF8B9003E0477 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0097EC1D2500AF25006779BE /* Assets.xcassets */,
+				0097EC1F2500AF25006779BE /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00DEC7152527123B004A3BD0 /* Serviceis */ = {
+			isa = PBXGroup;
+			children = (
+				00DEC7162527146C004A3BD0 /* AuthenticationService.swift */,
+			);
+			path = Serviceis;
+			sourceTree = "<group>";
+		};
+		00DEC72425271559004A3BD0 /* Strategies */ = {
+			isa = PBXGroup;
+			children = (
+				00DEC71C25271517004A3BD0 /* AuthenticationStrategy.swift */,
+				00DEC72D2527161D004A3BD0 /* AppleAuthenticationStrategy.swift */,
+				00DEC7372527166E004A3BD0 /* FacebookAuthenticationStrategy.swift */,
+				00DEC7322527164D004A3BD0 /* GoogleAuthenticationStrategy.swift */,
+			);
+			path = Strategies;
+			sourceTree = "<group>";
+		};
+		00DEC76B25273F98004A3BD0 /* Locators */ = {
+			isa = PBXGroup;
+			children = (
+				00DEC76C25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift */,
+			);
+			path = Locators;
+			sourceTree = "<group>";
+		};
+		00F64D4C2501557100F48858 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0097EC522500FEA8006779BE /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		00F64D4D2501559F00F48858 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				0097EC502500FE50006779BE /* UserRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		452DC4B2AD9A75D461A10F51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0097EC4A2500C4E8006779BE /* AuthenticationServices.framework */,
+				A702F7A9537EA0A1522B6A60 /* Pods_RSSReader_Maruyama.framework */,
+				1A7E1306333728E5718229EE /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework */,
+				3364534928C3D390C305D65E /* Pods_RSSReader_MaruyamaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8811BDE4A99C6252340EC451 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92B2ADA7396624608F838BAC /* Pods-RSSReader-Maruyama.debug.xcconfig */,
+				6F89A21A1A81800EC465FADE /* Pods-RSSReader-Maruyama.release.xcconfig */,
+				6DAEBF5C582EFADDA2A19E4F /* Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests.debug.xcconfig */,
+				EE726A2870E577C4A99A6231 /* Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests.release.xcconfig */,
+				E9B068B23970BF31771B394E /* Pods-RSSReader-MaruyamaTests.debug.xcconfig */,
+				65AB743606714C932764B31D /* Pods-RSSReader-MaruyamaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +318,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0097EC3B2500AF25006779BE /* Build configuration list for PBXNativeTarget "RSSReader-Maruyama" */;
 			buildPhases = (
+				F7FAD8A62395374ADF49CC62 /* [CP] Check Pods Manifest.lock */,
 				0097EC0D2500AF22006779BE /* Sources */,
 				0097EC0E2500AF22006779BE /* Frameworks */,
 				0097EC0F2500AF22006779BE /* Resources */,
+				FD348E1E24FD45A0A510AD37 /* [CP] Embed Pods Frameworks */,
+				6DDFBDCE727469A8772D2D7A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,6 +338,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0097EC3E2500AF25006779BE /* Build configuration list for PBXNativeTarget "RSSReader-MaruyamaTests" */;
 			buildPhases = (
+				04EE37C6217DE2C25C0147F3 /* [CP] Check Pods Manifest.lock */,
 				0097EC232500AF25006779BE /* Sources */,
 				0097EC242500AF25006779BE /* Frameworks */,
 				0097EC252500AF25006779BE /* Resources */,
@@ -170,9 +357,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0097EC412500AF25006779BE /* Build configuration list for PBXNativeTarget "RSSReader-MaruyamaUITests" */;
 			buildPhases = (
+				0ED231CE3FD9B15B4ABBA9F7 /* [CP] Check Pods Manifest.lock */,
 				0097EC2E2500AF25006779BE /* Sources */,
 				0097EC2F2500AF25006779BE /* Frameworks */,
 				0097EC302500AF25006779BE /* Resources */,
+				E94EA4A3F0C2910474D4804A /* [CP] Embed Pods Frameworks */,
+				CEFDD926BABBF80CB99261C3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,9 +422,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0097EC482500C31E006779BE /* Login.storyboard in Resources */,
+				00F64D46250142DB00F48858 /* ItemList.storyboard in Resources */,
 				0097EC212500AF25006779BE /* LaunchScreen.storyboard in Resources */,
 				0097EC1E2500AF25006779BE /* Assets.xcassets in Resources */,
-				0097EC1C2500AF22006779BE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +445,167 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		04EE37C6217DE2C25C0147F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RSSReader-MaruyamaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0ED231CE3FD9B15B4ABBA9F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DDFBDCE727469A8772D2D7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RSSReader-Maruyama/Pods-RSSReader-Maruyama-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RSSReader-Maruyama/Pods-RSSReader-Maruyama-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RSSReader-Maruyama/Pods-RSSReader-Maruyama-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEFDD926BABBF80CB99261C3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E94EA4A3F0C2910474D4804A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests/Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7FAD8A62395374ADF49CC62 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RSSReader-Maruyama-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD348E1E24FD45A0A510AD37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RSSReader-Maruyama/Pods-RSSReader-Maruyama-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RSSReader-Maruyama/Pods-RSSReader-Maruyama-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RSSReader-Maruyama/Pods-RSSReader-Maruyama-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0097EC0D2500AF22006779BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0097EC192500AF22006779BE /* ViewController.swift in Sources */,
+				00339E6A25120531000B2121 /* Logger.swift in Sources */,
+				00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */,
+				00DEC7172527146C004A3BD0 /* AuthenticationService.swift in Sources */,
+				00DEC7382527166E004A3BD0 /* FacebookAuthenticationStrategy.swift in Sources */,
+				002C6DC425066EBF00914046 /* IconableButton.swift in Sources */,
+				00DEC6B62515018F004A3BD0 /* UIViewController+Extension.swift in Sources */,
+				00339E7025149712000B2121 /* String+Extension.swift in Sources */,
+				002C6DC22505138E00914046 /* UserDefaults+Keys.swift in Sources */,
+				0097EC462500C30F006779BE /* LoginViewController.swift in Sources */,
 				0097EC152500AF22006779BE /* AppDelegate.swift in Sources */,
+				00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */,
 				0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */,
+				00DEC72E2527161D004A3BD0 /* AppleAuthenticationStrategy.swift in Sources */,
+				0097EC532500FEA8006779BE /* User.swift in Sources */,
+				00DEC7332527164D004A3BD0 /* GoogleAuthenticationStrategy.swift in Sources */,
+				0097EC512500FE50006779BE /* UserRepository.swift in Sources */,
+				00DEC71D25271517004A3BD0 /* AuthenticationStrategy.swift in Sources */,
+				00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */,
+				00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +641,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0097EC1A2500AF22006779BE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0097EC1B2500AF22006779BE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0097EC1F2500AF25006779BE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -432,6 +768,7 @@
 		};
 		0097EC3C2500AF25006779BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92B2ADA7396624608F838BAC /* Pods-RSSReader-Maruyama.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +787,7 @@
 		};
 		0097EC3D2500AF25006779BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F89A21A1A81800EC465FADE /* Pods-RSSReader-Maruyama.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +806,7 @@
 		};
 		0097EC3F2500AF25006779BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9B068B23970BF31771B394E /* Pods-RSSReader-MaruyamaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +829,7 @@
 		};
 		0097EC402500AF25006779BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65AB743606714C932764B31D /* Pods-RSSReader-MaruyamaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -512,6 +852,7 @@
 		};
 		0097EC422500AF25006779BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DAEBF5C582EFADDA2A19E4F /* Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -532,6 +873,7 @@
 		};
 		0097EC432500AF25006779BE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE726A2870E577C4A99A6231 /* Pods-RSSReader-Maruyama-RSSReader-MaruyamaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
