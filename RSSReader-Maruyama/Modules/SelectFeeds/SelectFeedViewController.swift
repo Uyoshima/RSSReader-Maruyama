@@ -7,12 +7,21 @@
 
 import UIKit
 
+
+/// 購読するFeedを選択、保存するViewController
+/// tableView: 購読可能なFeedを表示。
+/// tableDataSource: tableViewのdataSource
+/// tableDelegate: tableViewのdelegate
+/// feedRepository: Feedのリストや購読中のFeedの取得、保存を行う
+/// isFromLoginView: LoginViewControllerかSettingListViewControllerのどちらで呼ばれたかを判断する為に使用。
 class SelectFeedViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private var tableDataSource: SelectFeedTableDataSource!
     private var tableDelegate = SelectFeedTableDelegate()
     
     private let feedRepository = FeedRepository()
+    
+    var isFromLoginView: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +33,12 @@ class SelectFeedViewController: UIViewController {
         for feed in subscribeFeeds {
             tableView.selectRow(at: IndexPath(row: feed.rawValue, section: 0), animated: false, scrollPosition: .none)
         }
-        
         setNavBarButton()
     }
     
     private func setNavBarButton() {
         let saveButton = UIBarButtonItem(title: "保存", style: .plain, target: self, action: #selector(didPushSaveButton(sender:)))
+        navigationController?.navigationBar.tintColor = .systemGreen
         navigationItem.setRightBarButton(saveButton, animated: true)
     }
     
@@ -47,12 +56,17 @@ class SelectFeedViewController: UIViewController {
     /// - Parameter feeds: 保存したいフィード配列
     private func saveFeedToSubscribe(_ feeds: [Feed]) {
         let isSuccess = feedRepository.saveSubscribe(feeds)
-        if isSuccess {
-            navigationController?.dismiss(animated: true, completion: nil)
-            postNotification(name: Notification.Name.savedSubscribeFeeds)
-        } else {
+        if !isSuccess {
             let closeAction = UIAlertAction(title: "閉じる", style: .default)
             showAlert(title: "エラー", message: "保存失敗", actions: [closeAction])
+            return
+        }
+        
+        postNotification(name: Notification.Name.changeSubscribeFeeds)
+        if isFromLoginView {
+            navigationController?.dismiss(animated: true, completion: nil)
+        } else {
+            navigationController?.popViewController(animated: true)
         }
     }
     
@@ -70,7 +84,6 @@ class SelectFeedViewController: UIViewController {
         for indexPath in sortedIntexPaths {
             selectedFeeds.append(feedRepository.ALL_FEEDS[indexPath.row])
         }
-        
         return selectedFeeds
     }
     

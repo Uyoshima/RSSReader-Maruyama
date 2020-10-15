@@ -12,7 +12,8 @@ class SelectFeedTableDelegate: NSObject {
     
 }
 
-// Extension
+// MARK: - Extension
+
 extension SelectFeedTableDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath)

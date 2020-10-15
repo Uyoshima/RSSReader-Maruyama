@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ItemListCollectionCell" customModule="RSSReader_Maruyama" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="294" height="110"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="294" height="110"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6EG-zc-lwN">
+                        <rect key="frame" x="10" y="10" width="274" height="90"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="8N0-aQ-xGG">
+                                <rect key="frame" x="10" y="10" width="254" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="PubDate Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQx-QL-4AA">
+                                        <rect key="frame" x="0.0" y="0.0" width="76.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lB-PM-Zxh">
+                                        <rect key="frame" x="0.0" y="19.5" width="89" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lK8-mU-XHZ">
+                                        <rect key="frame" x="0.0" y="48" width="113" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I8P-8f-wve">
+                                <rect key="frame" x="229" y="0.0" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="B1l-yM-xvI"/>
+                                    <constraint firstAttribute="height" constant="45" id="cDi-N7-0VO"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <state key="normal" image="label"/>
+                                <connections>
+                                    <action selector="didPushReadLaterButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="uJM-eQ-5nA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="card-background"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="8N0-aQ-xGG" secondAttribute="trailing" constant="10" id="GPD-e1-sdX"/>
+                            <constraint firstItem="8N0-aQ-xGG" firstAttribute="leading" secondItem="6EG-zc-lwN" secondAttribute="leading" constant="10" id="K4m-pg-e3v"/>
+                            <constraint firstItem="I8P-8f-wve" firstAttribute="top" secondItem="6EG-zc-lwN" secondAttribute="top" id="M6G-VN-e4c"/>
+                            <constraint firstItem="8N0-aQ-xGG" firstAttribute="top" secondItem="6EG-zc-lwN" secondAttribute="top" constant="10" id="TMK-oD-SqB"/>
+                            <constraint firstAttribute="bottom" secondItem="8N0-aQ-xGG" secondAttribute="bottom" constant="10" id="cSh-Ry-bKV"/>
+                            <constraint firstAttribute="trailing" secondItem="I8P-8f-wve" secondAttribute="trailing" id="dUN-aA-go0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="6EG-zc-lwN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="3Q2-Lp-C1k"/>
+                <constraint firstItem="6EG-zc-lwN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="S9T-d6-Qux"/>
+                <constraint firstAttribute="trailing" secondItem="6EG-zc-lwN" secondAttribute="trailing" constant="10" id="SDy-Wp-Bao"/>
+                <constraint firstAttribute="bottom" secondItem="6EG-zc-lwN" secondAttribute="bottom" constant="10" id="YEr-TK-XCn"/>
+            </constraints>
+            <size key="customSize" width="294" height="110"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="lK8-mU-XHZ" id="Vw5-UG-A3s"/>
+                <outlet property="pubDateLabel" destination="hQx-QL-4AA" id="z7D-JN-3pL"/>
+                <outlet property="readLaterButton" destination="I8P-8f-wve" id="LLG-kE-5eY"/>
+                <outlet property="titleLabel" destination="4lB-PM-Zxh" id="GH2-Bx-gWC"/>
+                <outlet property="wrapView" destination="6EG-zc-lwN" id="EmP-iL-Uqk"/>
+            </connections>
+            <point key="canvasLocation" x="-350.72463768115944" y="-54.241071428571423"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="label" width="15" height="27.5"/>
+        <namedColor name="card-background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -28,7 +28,8 @@ class SelectFeedTableDataSource: NSObject {
     }
 }
 
-// Extension
+// MARK: - Extension
+
 extension SelectFeedTableDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feeds.count
@@ -47,6 +48,4 @@ extension SelectFeedTableDataSource: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }

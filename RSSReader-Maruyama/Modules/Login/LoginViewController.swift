@@ -46,7 +46,8 @@ class LoginViewController: UIViewController {
     }
     
     private func transitionToSelectFeedViewController() {
-        let selectFeed_vc = UIStoryboard.init(name: "SelectFeed", bundle: nil).instantiateInitialViewController()!
+        let selectFeed_vc = UIStoryboard.init(name: "SelectFeed", bundle: nil).instantiateInitialViewController() as! SelectFeedViewController
+        selectFeed_vc.isFromLoginView = true
         navigationController?.pushViewController(selectFeed_vc, animated: true)
     }
     

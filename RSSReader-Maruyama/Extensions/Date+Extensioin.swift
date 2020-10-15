@@ -15,4 +15,13 @@ extension Date {
         
         return formatter.string(from: self)
     }
+    
+    func toString(_ dateFormat: String) -> String {
+        let formtter = DateFormatter()
+        formtter.locale = Locale(identifier: "ja_JP")
+        formtter.timeZone   = TimeZone(identifier: "Asia/Tokyo")
+        formtter.dateFormat = dateFormat
+        
+        return formtter.string(from: self)
+    }
 }
