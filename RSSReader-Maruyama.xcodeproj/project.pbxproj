@@ -175,8 +175,8 @@
 		00028CBA2502395600431E21 /* ItemList */ = {
 			isa = PBXGroup;
 			children = (
-				00919E2B25394B0600008CC5 /* Table */,
 				00919DF62539459E00008CC5 /* ItemListView */,
+				00919E2B25394B0600008CC5 /* Table */,
 				00F64D45250142DB00F48858 /* ItemList.storyboard */,
 				00F64D482501444400F48858 /* ItemListTabBarController.swift */,
 				00F64D43250142CE00F48858 /* ItemListViewController.swift */,

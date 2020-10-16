@@ -17,6 +17,7 @@ class ItemListTableCell:UITableViewCell, ItemListCellProtocol {
 
     func setContents(item: Item, indexPath: IndexPath) {
         self.item = item
+        pubDateLabel.text = item.pubDate.toString("yyyy年MM月dd日 HH:mm:ss")
         titleLabel.text = item.title
         descriptionLabel.text = item.description_item
     }

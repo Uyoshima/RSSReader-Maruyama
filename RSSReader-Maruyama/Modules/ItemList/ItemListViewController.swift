@@ -18,8 +18,15 @@ class ItemListViewController: UIViewController {
         return AuthenticationService(locator: authenticationStrategyLocator)
     }()
     
+    private var itemListTableView: ItemListTableView!
+    private var feed: Feed = .yahoo_Topic
+    var items: [Item] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        createTableView()
+        addTableView()
+        getItem()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -28,6 +35,32 @@ class ItemListViewController: UIViewController {
             showLoginView()
         }
     }
+    
+    private func createTableView() {
+        itemListTableView = ItemListTableView(frame: view.frame, style: .plain)
+        itemListTableView.itemListDelegate = self
+        itemListTableView.itemListDataSource = self
+    }
+    
+    private func addTableView() {
+        view.addSubview(itemListTableView)
+        itemListTableView.addFillConstraint(to: view)
+    }
+    
+    private func getItem() {
+        for i in 0..<10 {
+            let item = Item(feed: .yahoo_Topic,
+                            title: "記事のタイトル\(i)",
+                            url: "",
+                            description_item: "説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。",
+                            pubDate: Date(),
+                            createDate: Date())
+            items.append(item)
+        }
+        itemListTableView.reloadData()
+    }
+    
+    // 以下、ログイン、ログアウト関係
     
     private func loginChack() -> Bool {
         let userRepository = UserRepository()
@@ -52,6 +85,33 @@ class ItemListViewController: UIViewController {
         let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
         alert.addAction(closeAction)
         present(alert, animated: true, completion: nil)
+    }
+}
+
+// MARK: - Extension
+
+extension ItemListViewController: ItemListDataSource {
+    func numberOfItemInsection(section: Int) -> Int {
+        return items.count
+    }
+    
+    func itemList(itemForRowAt indexPath: IndexPath) -> Item {
+        return items[indexPath.row]
+    }
+}
+
+extension ItemListViewController: ItemListDelegate {
+    func itemList(didSelectedRowAt indexPath: IndexPath) {
+        // TODO: 選択された記事のWebページを表示する。
+    }
+    
+    func addReadLaterAt(indexPath: IndexPath) {
+        // TODO: indexPathの記事を「後で読む」にする。
+    }
+    
+    func removeReadLaterAt(indexPath: IndexPath) {
+        // TODO: 選択された記事に「後で読む」を解除する。
+
     }
 }
 

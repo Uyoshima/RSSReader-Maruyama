@@ -25,34 +25,31 @@
             </objects>
             <point key="canvasLocation" x="977" y="462"/>
         </scene>
-        <!--記事一覧-->
+        <!--Item List View Controller-->
         <scene sceneID="e7F-3R-mnG">
             <objects>
                 <viewController id="Eo4-EX-HX6" customClass="ItemListViewController" customModule="RSSReader_Maruyama" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L4f-4c-l4A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0g-a3-sCh">
-                                <rect key="frame" x="125" y="227" width="164" height="112"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="ログアウト"/>
-                                <connections>
-                                    <action selector="didPushLogout:" destination="Eo4-EX-HX6" eventType="touchUpInside" id="ixe-PW-wSQ"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vYv-bl-w8J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="記事一覧" id="pGB-wv-POo"/>
+                    <navigationItem key="navigationItem" id="Jt8-cn-oAx">
+                        <barButtonItem key="rightBarButtonItem" title="ログアウト" id="anI-aD-0Bp">
+                            <connections>
+                                <action selector="didPushLogout:" destination="Eo4-EX-HX6" id="uag-cE-iLM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <segue destination="Z8f-Ko-8Qs" kind="show" identifier="login" id="9rm-o8-uLh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEa-cg-fOj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="976.81159420289862" y="-216.29464285714286"/>
+            <point key="canvasLocation" x="1886.9565217391305" y="-216.29464285714286"/>
         </scene>
         <!--Item List Tab Bar Controller-->
         <scene sceneID="Fnc-eR-95p">
@@ -65,7 +62,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Eo4-EX-HX6" kind="relationship" relationship="viewControllers" id="3Tp-Nq-yEm"/>
+                        <segue destination="RZw-ah-kh1" kind="relationship" relationship="viewControllers" id="3Tp-Nq-yEm"/>
                         <segue destination="Bpf-Vi-gJ6" kind="relationship" relationship="viewControllers" id="F6s-am-C04"/>
                     </connections>
                 </tabBarController>
@@ -81,7 +78,26 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2I9-7S-nXh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1812" y="-216"/>
+            <point key="canvasLocation" x="2721.0144927536235" y="-216.29464285714286"/>
+        </scene>
+        <!--記事一覧-->
+        <scene sceneID="aWZ-ad-Zj1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RZw-ah-kh1" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="記事一覧" id="pGB-wv-POo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DoB-7R-9nw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Eo4-EX-HX6" kind="relationship" relationship="rootViewController" id="1h3-Ud-BvY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pnA-Mf-sRa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976.81159420289862" y="-216.29464285714286"/>
         </scene>
     </scenes>
     <resources>
