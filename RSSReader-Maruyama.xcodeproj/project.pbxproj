@@ -21,6 +21,7 @@
 		0039633B253552F100DDAF8F /* SelectFeedTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039633A253552F100DDAF8F /* SelectFeedTableDataSource.swift */; };
 		003963402535530200DDAF8F /* SelectFeedTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039633F2535530200DDAF8F /* SelectFeedTableDelegate.swift */; };
 		00919DDA2539350100008CC5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919DD92539350100008CC5 /* Item.swift */; };
+		00919DFB2539459E00008CC5 /* ItemListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919DF72539459E00008CC5 /* ItemListDelegate.swift */; };
 		0097EC152500AF22006779BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC142500AF22006779BE /* AppDelegate.swift */; };
 		0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC162500AF22006779BE /* SceneDelegate.swift */; };
 		0097EC1E2500AF25006779BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0097EC1D2500AF25006779BE /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		0039633A253552F100DDAF8F /* SelectFeedTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeedTableDataSource.swift; sourceTree = "<group>"; };
 		0039633F2535530200DDAF8F /* SelectFeedTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeedTableDelegate.swift; sourceTree = "<group>"; };
 		00919DD92539350100008CC5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		00919DF72539459E00008CC5 /* ItemListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDelegate.swift; sourceTree = "<group>"; };
 		0097EC112500AF22006779BE /* RSSReader-Maruyama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSSReader-Maruyama.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0097EC142500AF22006779BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0097EC162500AF22006779BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		00028CBA2502395600431E21 /* ItemList */ = {
 			isa = PBXGroup;
 			children = (
+				00919DF62539459E00008CC5 /* ItemListView */,
 				00F64D45250142DB00F48858 /* ItemList.storyboard */,
 				00F64D482501444400F48858 /* ItemListTabBarController.swift */,
 				00F64D43250142CE00F48858 /* ItemListViewController.swift */,
@@ -217,6 +220,14 @@
 				0039631D2535434100DDAF8F /* FeedTableCell.swift */,
 			);
 			path = FeedTableCell;
+			sourceTree = "<group>";
+		};
+		00919DF62539459E00008CC5 /* ItemListView */ = {
+			isa = PBXGroup;
+			children = (
+				00919DF72539459E00008CC5 /* ItemListDelegate.swift */,
+			);
+			path = ItemListView;
 			sourceTree = "<group>";
 		};
 		0097EC082500AF22006779BE = {
@@ -658,6 +669,7 @@
 				003963212535434100DDAF8F /* FeedTableCell.swift in Sources */,
 				0097EC512500FE50006779BE /* UserRepository.swift in Sources */,
 				00DEC71D25271517004A3BD0 /* AuthenticationStrategy.swift in Sources */,
+				00919DFB2539459E00008CC5 /* ItemListDelegate.swift in Sources */,
 				00919DDA2539350100008CC5 /* Item.swift in Sources */,
 				00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */,
 				00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */,
