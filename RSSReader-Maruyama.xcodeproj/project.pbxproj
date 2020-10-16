@@ -20,6 +20,7 @@
 		003963322535443A00DDAF8F /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003963312535443A00DDAF8F /* NotificationName+Extension.swift */; };
 		0039633B253552F100DDAF8F /* SelectFeedTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039633A253552F100DDAF8F /* SelectFeedTableDataSource.swift */; };
 		003963402535530200DDAF8F /* SelectFeedTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039633F2535530200DDAF8F /* SelectFeedTableDelegate.swift */; };
+		00919DDA2539350100008CC5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919DD92539350100008CC5 /* Item.swift */; };
 		0097EC152500AF22006779BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC142500AF22006779BE /* AppDelegate.swift */; };
 		0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC162500AF22006779BE /* SceneDelegate.swift */; };
 		0097EC1E2500AF25006779BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0097EC1D2500AF25006779BE /* Assets.xcassets */; };
@@ -78,6 +79,7 @@
 		003963312535443A00DDAF8F /* NotificationName+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		0039633A253552F100DDAF8F /* SelectFeedTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeedTableDataSource.swift; sourceTree = "<group>"; };
 		0039633F2535530200DDAF8F /* SelectFeedTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeedTableDelegate.swift; sourceTree = "<group>"; };
+		00919DD92539350100008CC5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0097EC112500AF22006779BE /* RSSReader-Maruyama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSSReader-Maruyama.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0097EC142500AF22006779BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0097EC162500AF22006779BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -315,8 +317,9 @@
 		00F64D4C2501557100F48858 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				00396327253543A700DDAF8F /* Feed.swift */,
 				0097EC522500FEA8006779BE /* User.swift */,
+				00396327253543A700DDAF8F /* Feed.swift */,
+				00919DD92539350100008CC5 /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				003963212535434100DDAF8F /* FeedTableCell.swift in Sources */,
 				0097EC512500FE50006779BE /* UserRepository.swift in Sources */,
 				00DEC71D25271517004A3BD0 /* AuthenticationStrategy.swift in Sources */,
+				00919DDA2539350100008CC5 /* Item.swift in Sources */,
 				00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */,
 				00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */,
 				003963402535530200DDAF8F /* SelectFeedTableDelegate.swift in Sources */,
