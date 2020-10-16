@@ -29,6 +29,7 @@
 		00919E3125394B0600008CC5 /* ItemListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00919E2E25394B0600008CC5 /* ItemListTableCell.xib */; };
 		00919E3225394B0600008CC5 /* ItemListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919E2F25394B0600008CC5 /* ItemListTableCell.swift */; };
 		00919E3E25397D5000008CC5 /* ItemDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919E3D25397D5000008CC5 /* ItemDownloader.swift */; };
+		00919E56253980FC00008CC5 /* ItemCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919E55253980FC00008CC5 /* ItemCreator.swift */; };
 		0097EC152500AF22006779BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC142500AF22006779BE /* AppDelegate.swift */; };
 		0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC162500AF22006779BE /* SceneDelegate.swift */; };
 		0097EC1E2500AF25006779BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0097EC1D2500AF25006779BE /* Assets.xcassets */; };
@@ -96,6 +97,7 @@
 		00919E2E25394B0600008CC5 /* ItemListTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemListTableCell.xib; sourceTree = "<group>"; };
 		00919E2F25394B0600008CC5 /* ItemListTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListTableCell.swift; sourceTree = "<group>"; };
 		00919E3D25397D5000008CC5 /* ItemDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDownloader.swift; sourceTree = "<group>"; };
+		00919E55253980FC00008CC5 /* ItemCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCreator.swift; sourceTree = "<group>"; };
 		0097EC112500AF22006779BE /* RSSReader-Maruyama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSSReader-Maruyama.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0097EC142500AF22006779BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0097EC162500AF22006779BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				00F64D45250142DB00F48858 /* ItemList.storyboard */,
 				00F64D482501444400F48858 /* ItemListTabBarController.swift */,
 				00F64D43250142CE00F48858 /* ItemListViewController.swift */,
+				00919E55253980FC00008CC5 /* ItemCreator.swift */,
 			);
 			path = ItemList;
 			sourceTree = "<group>";
@@ -710,6 +713,7 @@
 				0097EC152500AF22006779BE /* AppDelegate.swift in Sources */,
 				00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */,
 				0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */,
+				00919E56253980FC00008CC5 /* ItemCreator.swift in Sources */,
 				0039633B253552F100DDAF8F /* SelectFeedTableDataSource.swift in Sources */,
 				003963322535443A00DDAF8F /* NotificationName+Extension.swift in Sources */,
 				00DEC72E2527161D004A3BD0 /* AppleAuthenticationStrategy.swift in Sources */,

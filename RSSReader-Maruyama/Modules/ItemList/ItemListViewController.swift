@@ -48,16 +48,20 @@ class ItemListViewController: UIViewController {
     }
     
     private func getItem() {
-        for i in 0..<10 {
-            let item = Item(feed: .yahoo_Topic,
-                            title: "記事のタイトル\(i)",
-                            url: "",
-                            description_item: "説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。",
-                            pubDate: Date(),
-                            createDate: Date())
-            items.append(item)
+        let downloader = ItemDownloader()
+        downloader.fetch(feed) { (result) in
+            switch result {
+            case .success(let xmlDate):
+                let itemCreator = ItemCreator()
+                self.items = itemCreator.createItem(feed: self.feed, xmlData: xmlDate)
+                self.itemListTableView.reloadData()
+                break
+                
+            case .failure(let error):
+                self.showErrorAlert(message: error.localizedDescription)
+                break
+            }
         }
-        itemListTableView.reloadData()
     }
     
     // 以下、ログイン、ログアウト関係
