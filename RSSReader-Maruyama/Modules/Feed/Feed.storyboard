@@ -25,7 +25,7 @@
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ug-mM-fYQ" customClass="ScrollTabView" customModule="RSSReader_Maruyama" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="60"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="NYE-pi-eRo"/>
                                 </constraints>

@@ -54,8 +54,9 @@ class SettingListViewController: UIViewController {
             userSetting.set(listStyle: .collection)
             break
         default:
-            break
+            return
         }
+        NotificationCenter.default.post(name: Notification.Name.changeListStyle, object: nil)
     }
     
     // 以下、ログイン関係

@@ -10,15 +10,23 @@ import UIKit
 
 class ItemListViewController: UIViewController {
     private var itemListTableView: ItemListTableView!
+    private var itemListCollectionView: ItemListCollectionView!
+    
+    private var userSetting = UserSetting.sharedObject
     private var feed: Feed = .yahoo_Topic
     var items: [Item] = []
     var pageIndex: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        createTableView()
-        addTableView()
+        setListView()
         getItem()
+        
+        // 設定画面で表示スタイルの変更が合った時のオブザーバー
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(changeListStyle(notification:)),
+                                               name: Notification.Name.changeListStyle,
+                                               object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -31,9 +39,64 @@ class ItemListViewController: UIViewController {
         itemListTableView.itemListDataSource = self
     }
     
+    private func createCollectionView() {
+        let flowlayout = UICollectionViewFlowLayout()
+        flowlayout.scrollDirection = .vertical
+        flowlayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        flowlayout.minimumLineSpacing = 0
+        itemListCollectionView = ItemListCollectionView(frame: view.frame, collectionViewLayout: flowlayout)
+        itemListCollectionView.itemListDelegate = self
+        itemListCollectionView.itemListDataSource = self
+    }
+    
     private func addTableView() {
+        removeAllSubViews()
         view.addSubview(itemListTableView)
         itemListTableView.addFillConstraint(to: view)
+    }
+    
+    private func addCollectionView() {
+        removeAllSubViews()
+        view.addSubview(itemListCollectionView)
+        itemListCollectionView.addFillConstraint(to: view)
+    }
+    
+    private func removeAllSubViews() {
+        for view in view.subviews {
+            view.removeFromSuperview()
+        }
+    }
+    
+    private func setListView() {
+        switch userSetting.getListStyle() {
+        case .table:
+            createTableView()
+            addTableView()
+            break
+        case .collection:
+            createCollectionView()
+            addCollectionView()
+            break
+        }
+    }
+    
+    private func reloadListView() {
+        switch userSetting.getListStyle() {
+        case .table:
+            guard let tableView = itemListTableView else { return }
+            tableView.reloadData()
+            break
+        case .collection:
+            guard let collectionView = itemListCollectionView else { return }
+            collectionView.reloadData()
+            break
+        }
+        self.view.layoutIfNeeded()
+    }
+    
+    @objc func changeListStyle(notification: Notification) {
+        setListView()
+        reloadListView()
     }
     
     /// 自信のFeedの記事を取得、ListViewをリロードし表示する。
@@ -44,9 +107,7 @@ class ItemListViewController: UIViewController {
             case .success(let xmlDate):
                 let itemCreator = ItemCreator()
                 self.items = itemCreator.createItem(feed: self.feed, xmlData: xmlDate)
-                if self.itemListTableView != nil {
-                    self.itemListTableView.reloadData()
-                }
+                self.reloadListView()
                 break
                 
             case .failure(let error):
