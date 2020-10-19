@@ -21,6 +21,9 @@
 		0039633B253552F100DDAF8F /* SelectFeedTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039633A253552F100DDAF8F /* SelectFeedTableDataSource.swift */; };
 		003963402535530200DDAF8F /* SelectFeedTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039633F2535530200DDAF8F /* SelectFeedTableDelegate.swift */; };
 		005514FB253D810100938B48 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 005514FA253D810100938B48 /* Colors.xcassets */; };
+		00551504253D8BB700938B48 /* ItemListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00551500253D8BB700938B48 /* ItemListCollectionView.swift */; };
+		00551505253D8BB700938B48 /* ItemListCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00551502253D8BB700938B48 /* ItemListCollectionCell.xib */; };
+		00551506253D8BB700938B48 /* ItemListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00551503253D8BB700938B48 /* ItemListCollectionCell.swift */; };
 		00919DDA2539350100008CC5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919DD92539350100008CC5 /* Item.swift */; };
 		00919DFB2539459E00008CC5 /* ItemListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919DF72539459E00008CC5 /* ItemListDelegate.swift */; };
 		00919E09253946CC00008CC5 /* ItemListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919E08253946CC00008CC5 /* ItemListDataSource.swift */; };
@@ -97,6 +100,9 @@
 		0039633A253552F100DDAF8F /* SelectFeedTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeedTableDataSource.swift; sourceTree = "<group>"; };
 		0039633F2535530200DDAF8F /* SelectFeedTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeedTableDelegate.swift; sourceTree = "<group>"; };
 		005514FA253D810100938B48 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		00551500253D8BB700938B48 /* ItemListCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListCollectionView.swift; sourceTree = "<group>"; };
+		00551502253D8BB700938B48 /* ItemListCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemListCollectionCell.xib; sourceTree = "<group>"; };
+		00551503253D8BB700938B48 /* ItemListCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListCollectionCell.swift; sourceTree = "<group>"; };
 		00919DD92539350100008CC5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		00919DF72539459E00008CC5 /* ItemListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDelegate.swift; sourceTree = "<group>"; };
 		00919E08253946CC00008CC5 /* ItemListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDataSource.swift; sourceTree = "<group>"; };
@@ -200,6 +206,7 @@
 			children = (
 				00919DF62539459E00008CC5 /* ItemListView */,
 				00919E2B25394B0600008CC5 /* Table */,
+				005514FF253D8BB700938B48 /* Collection */,
 				00F64D43250142CE00F48858 /* ItemListViewController.swift */,
 				00919E55253980FC00008CC5 /* ItemCreator.swift */,
 			);
@@ -255,6 +262,24 @@
 				0039631D2535434100DDAF8F /* FeedTableCell.swift */,
 			);
 			path = FeedTableCell;
+			sourceTree = "<group>";
+		};
+		005514FF253D8BB700938B48 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				00551500253D8BB700938B48 /* ItemListCollectionView.swift */,
+				00551501253D8BB700938B48 /* ItemListCollectionCell */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		00551501253D8BB700938B48 /* ItemListCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				00551502253D8BB700938B48 /* ItemListCollectionCell.xib */,
+				00551503253D8BB700938B48 /* ItemListCollectionCell.swift */,
+			);
+			path = ItemListCollectionCell;
 			sourceTree = "<group>";
 		};
 		00919DF62539459E00008CC5 /* ItemListView */ = {
@@ -582,6 +607,7 @@
 				00B70EA5253D7CDA0012786C /* ScrollTabViewCell.xib in Resources */,
 				005514FB253D810100938B48 /* Colors.xcassets in Resources */,
 				003963222535434100DDAF8F /* SelectFeed.storyboard in Resources */,
+				00551505253D8BB700938B48 /* ItemListCollectionCell.xib in Resources */,
 				0097EC212500AF25006779BE /* LaunchScreen.storyboard in Resources */,
 				003963232535434100DDAF8F /* FeedTableCell.xib in Resources */,
 				0097EC1E2500AF25006779BE /* Assets.xcassets in Resources */,
@@ -751,6 +777,7 @@
 				00919E3025394B0600008CC5 /* ItemListTableView.swift in Sources */,
 				003963202535434100DDAF8F /* SelectFeedViewController.swift in Sources */,
 				00919E0E2539470A00008CC5 /* ItemListViewProtocol.swift in Sources */,
+				00551504253D8BB700938B48 /* ItemListCollectionView.swift in Sources */,
 				00339E6A25120531000B2121 /* Logger.swift in Sources */,
 				00919E3E25397D5000008CC5 /* ItemDownloader.swift in Sources */,
 				00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */,
@@ -783,6 +810,7 @@
 				00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */,
 				00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */,
 				00B70EA6253D7CDA0012786C /* ScrollTabViewCell.swift in Sources */,
+				00551506253D8BB700938B48 /* ItemListCollectionCell.swift in Sources */,
 				003963402535530200DDAF8F /* SelectFeedTableDelegate.swift in Sources */,
 				00919E132539474100008CC5 /* ItemListCellProtocol.swift in Sources */,
 				00B70EA7253D7CDA0012786C /* ScrollTabView.swift in Sources */,
