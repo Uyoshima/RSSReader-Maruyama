@@ -20,6 +20,7 @@
 		003963322535443A00DDAF8F /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003963312535443A00DDAF8F /* NotificationName+Extension.swift */; };
 		0039633B253552F100DDAF8F /* SelectFeedTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039633A253552F100DDAF8F /* SelectFeedTableDataSource.swift */; };
 		003963402535530200DDAF8F /* SelectFeedTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039633F2535530200DDAF8F /* SelectFeedTableDelegate.swift */; };
+		005514FB253D810100938B48 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 005514FA253D810100938B48 /* Colors.xcassets */; };
 		00919DDA2539350100008CC5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919DD92539350100008CC5 /* Item.swift */; };
 		00919DFB2539459E00008CC5 /* ItemListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919DF72539459E00008CC5 /* ItemListDelegate.swift */; };
 		00919E09253946CC00008CC5 /* ItemListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919E08253946CC00008CC5 /* ItemListDataSource.swift */; };
@@ -45,6 +46,11 @@
 		00B70E8F253D764C0012786C /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B70E8D253D764C0012786C /* Feed.storyboard */; };
 		00B70E90253D764C0012786C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70E8E253D764C0012786C /* FeedViewController.swift */; };
 		00B70E95253D76570012786C /* ItemListViewPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70E94253D76570012786C /* ItemListViewPageController.swift */; };
+		00B70EA3253D7CDA0012786C /* ScrollTabViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70E9D253D7CDA0012786C /* ScrollTabViewDataSource.swift */; };
+		00B70EA4253D7CDA0012786C /* ScrollTabViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70E9E253D7CDA0012786C /* ScrollTabViewDelegate.swift */; };
+		00B70EA5253D7CDA0012786C /* ScrollTabViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B70EA0253D7CDA0012786C /* ScrollTabViewCell.xib */; };
+		00B70EA6253D7CDA0012786C /* ScrollTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70EA1253D7CDA0012786C /* ScrollTabViewCell.swift */; };
+		00B70EA7253D7CDA0012786C /* ScrollTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70EA2253D7CDA0012786C /* ScrollTabView.swift */; };
 		00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */; };
 		00DEC6B62515018F004A3BD0 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */; };
 		00DEC7172527146C004A3BD0 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC7162527146C004A3BD0 /* AuthenticationService.swift */; };
@@ -90,6 +96,7 @@
 		003963312535443A00DDAF8F /* NotificationName+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		0039633A253552F100DDAF8F /* SelectFeedTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeedTableDataSource.swift; sourceTree = "<group>"; };
 		0039633F2535530200DDAF8F /* SelectFeedTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeedTableDelegate.swift; sourceTree = "<group>"; };
+		005514FA253D810100938B48 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		00919DD92539350100008CC5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		00919DF72539459E00008CC5 /* ItemListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDelegate.swift; sourceTree = "<group>"; };
 		00919E08253946CC00008CC5 /* ItemListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDataSource.swift; sourceTree = "<group>"; };
@@ -121,6 +128,11 @@
 		00B70E8D253D764C0012786C /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
 		00B70E8E253D764C0012786C /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		00B70E94253D76570012786C /* ItemListViewPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListViewPageController.swift; sourceTree = "<group>"; };
+		00B70E9D253D7CDA0012786C /* ScrollTabViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTabViewDataSource.swift; sourceTree = "<group>"; };
+		00B70E9E253D7CDA0012786C /* ScrollTabViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTabViewDelegate.swift; sourceTree = "<group>"; };
+		00B70EA0253D7CDA0012786C /* ScrollTabViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollTabViewCell.xib; sourceTree = "<group>"; };
+		00B70EA1253D7CDA0012786C /* ScrollTabViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTabViewCell.swift; sourceTree = "<group>"; };
+		00B70EA2253D7CDA0012786C /* ScrollTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTabView.swift; sourceTree = "<group>"; };
 		00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensioin.swift"; sourceTree = "<group>"; };
 		00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		00DEC7162527146C004A3BD0 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
@@ -345,16 +357,38 @@
 		00B70E7F253D75870012786C /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				00B70E9C253D7CDA0012786C /* ScrollTabView */,
 				00B70E8D253D764C0012786C /* Feed.storyboard */,
 				00B70E8E253D764C0012786C /* FeedViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
 		};
+		00B70E9C253D7CDA0012786C /* ScrollTabView */ = {
+			isa = PBXGroup;
+			children = (
+				00B70E9F253D7CDA0012786C /* ScrollTabViewCell */,
+				00B70E9D253D7CDA0012786C /* ScrollTabViewDataSource.swift */,
+				00B70E9E253D7CDA0012786C /* ScrollTabViewDelegate.swift */,
+				00B70EA2253D7CDA0012786C /* ScrollTabView.swift */,
+			);
+			path = ScrollTabView;
+			sourceTree = "<group>";
+		};
+		00B70E9F253D7CDA0012786C /* ScrollTabViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				00B70EA0253D7CDA0012786C /* ScrollTabViewCell.xib */,
+				00B70EA1253D7CDA0012786C /* ScrollTabViewCell.swift */,
+			);
+			path = ScrollTabViewCell;
+			sourceTree = "<group>";
+		};
 		00BE6F69252FF8B9003E0477 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				0097EC1D2500AF25006779BE /* Assets.xcassets */,
+				005514FA253D810100938B48 /* Colors.xcassets */,
 				0097EC1F2500AF25006779BE /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
@@ -545,6 +579,8 @@
 				00919E3125394B0600008CC5 /* ItemListTableCell.xib in Resources */,
 				00B70E8F253D764C0012786C /* Feed.storyboard in Resources */,
 				00B70E6F253D743C0012786C /* Root.storyboard in Resources */,
+				00B70EA5253D7CDA0012786C /* ScrollTabViewCell.xib in Resources */,
+				005514FB253D810100938B48 /* Colors.xcassets in Resources */,
 				003963222535434100DDAF8F /* SelectFeed.storyboard in Resources */,
 				0097EC212500AF25006779BE /* LaunchScreen.storyboard in Resources */,
 				003963232535434100DDAF8F /* FeedTableCell.xib in Resources */,
@@ -732,6 +768,7 @@
 				0039633B253552F100DDAF8F /* SelectFeedTableDataSource.swift in Sources */,
 				003963322535443A00DDAF8F /* NotificationName+Extension.swift in Sources */,
 				00DEC72E2527161D004A3BD0 /* AppleAuthenticationStrategy.swift in Sources */,
+				00B70EA3253D7CDA0012786C /* ScrollTabViewDataSource.swift in Sources */,
 				0097EC532500FEA8006779BE /* User.swift in Sources */,
 				00396328253543A700DDAF8F /* Feed.swift in Sources */,
 				00919E09253946CC00008CC5 /* ItemListDataSource.swift in Sources */,
@@ -741,11 +778,14 @@
 				00B70E90253D764C0012786C /* FeedViewController.swift in Sources */,
 				00DEC71D25271517004A3BD0 /* AuthenticationStrategy.swift in Sources */,
 				00919DFB2539459E00008CC5 /* ItemListDelegate.swift in Sources */,
+				00B70EA4253D7CDA0012786C /* ScrollTabViewDelegate.swift in Sources */,
 				00919DDA2539350100008CC5 /* Item.swift in Sources */,
 				00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */,
 				00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */,
+				00B70EA6253D7CDA0012786C /* ScrollTabViewCell.swift in Sources */,
 				003963402535530200DDAF8F /* SelectFeedTableDelegate.swift in Sources */,
 				00919E132539474100008CC5 /* ItemListCellProtocol.swift in Sources */,
+				00B70EA7253D7CDA0012786C /* ScrollTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

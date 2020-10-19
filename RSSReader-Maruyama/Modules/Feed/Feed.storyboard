@@ -18,19 +18,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4a-wZ-Xyz">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="665"/>
                                 <connections>
                                     <segue destination="4uS-6k-2t1" kind="embed" id="zDQ-7b-KTN"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Ug-mM-fYQ" customClass="ScrollTabView" customModule="RSSReader_Maruyama" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="60"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="NYE-pi-eRo"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="elS-cp-71H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="I4a-wZ-Xyz" firstAttribute="top" secondItem="elS-cp-71H" secondAttribute="top" id="2qh-aR-V9h"/>
+                            <constraint firstItem="6Ug-mM-fYQ" firstAttribute="leading" secondItem="elS-cp-71H" secondAttribute="leading" id="Jn8-Qu-4nW"/>
+                            <constraint firstItem="6Ug-mM-fYQ" firstAttribute="top" secondItem="elS-cp-71H" secondAttribute="top" id="KVF-Oo-nUE"/>
+                            <constraint firstItem="I4a-wZ-Xyz" firstAttribute="top" secondItem="6Ug-mM-fYQ" secondAttribute="bottom" id="KuW-MN-ym4"/>
                             <constraint firstItem="I4a-wZ-Xyz" firstAttribute="leading" secondItem="elS-cp-71H" secondAttribute="leading" id="fA8-Ab-ybg"/>
                             <constraint firstItem="I4a-wZ-Xyz" firstAttribute="bottom" secondItem="elS-cp-71H" secondAttribute="bottom" id="kBz-nb-M5v"/>
                             <constraint firstItem="elS-cp-71H" firstAttribute="trailing" secondItem="I4a-wZ-Xyz" secondAttribute="trailing" id="mv0-mW-ufl"/>
+                            <constraint firstItem="6Ug-mM-fYQ" firstAttribute="trailing" secondItem="elS-cp-71H" secondAttribute="trailing" id="u69-8q-FY6"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="feed" id="7n3-H6-dXb">
@@ -45,6 +55,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="scrollTabView" destination="6Ug-mM-fYQ" id="7nM-ie-dYw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RlO-v4-KHK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

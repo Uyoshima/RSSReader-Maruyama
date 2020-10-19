@@ -18,13 +18,30 @@ class FeedViewController: UIViewController {
         return AuthenticationService(locator: authenticationStrategyLocator)
     }()
     
+    @IBOutlet weak var scrollTabView: ScrollTabView!
     private var itemListViewPageController: ItemListViewPageController!
+    private var titles: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         itemListViewPageController = children.first! as? ItemListViewPageController
         itemListViewPageController.delegate = self
         itemListViewPageController.scrollToPage(0)
+        
+        // scrollTabViewの要素、選択処理をこのViewControllerで行う。
+        scrollTabView.delegate = self
+        scrollTabView.dataSouce = self
+        
+        let feedRepository = FeedRepository()
+        let subscribeFeed = feedRepository.loadSubscribeFeed()
+        setupViewContent(feeds: subscribeFeed)
+        scrollTabView.selectCell(at: IndexPath(item: 0, section: 0))
+        
+        // 購読フィードに変更が合った場合、changeSubscribeFeeds(notification:)を走らせる。
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(changeSubscribeFeeds(notification:)),
+                                               name: Notification.Name.changeSubscribeFeeds,
+                                               object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,6 +51,30 @@ class FeedViewController: UIViewController {
             return
         }
     }
+    
+    private func setupViewContent(feeds: [Feed]) {
+        setTitles(feeds: feeds)
+        scrollTabView.reloadData()
+        scrollTabView.selectCell(at: IndexPath(item: 0, section: 0))
+        itemListViewPageController.settingViewControllers()
+        itemListViewPageController.reloadInputViews()
+    }
+    
+    private func setTitles(feeds: [Feed]) {
+        titles = []
+        for feed in feeds {
+            titles.append(feed.title())
+        }
+    }
+    
+    /// 購読フィードが上書きされた時に呼ばれる。
+    @objc func changeSubscribeFeeds(notification: Notification) {
+        let feedRepository = FeedRepository()
+        let subscribeFeed = feedRepository.loadSubscribeFeed()
+        setupViewContent(feeds: subscribeFeed)
+    }
+    
+    // 以下、ログアウト関係
     
     private func loginChack() -> Bool {
         let userRepository = UserRepository()
@@ -45,7 +86,7 @@ class FeedViewController: UIViewController {
         loginViewController!.modalPresentationStyle = .overFullScreen
         present(loginViewController!, animated: true, completion: nil)
     }
-
+    
     @IBAction func didPushLogout(_ sender: Any) {
         let userRepository = UserRepository()
         let user = userRepository.load()
@@ -67,6 +108,19 @@ extension FeedViewController: UIPageViewControllerDelegate {
         }
         let pageIndex = itemListViewController.pageIndex
         itemListViewPageController.setCurrentPage(pageIndex!)
+        scrollTabView.selectCell(at: IndexPath(row: pageIndex!, section: 0))
+    }
+}
+
+extension FeedViewController: ScrollTabViewDataSource {
+    func scrollTabViewSetSubTitles() -> [String] {
+        return titles
+    }
+}
+
+extension FeedViewController: ScrollTabViewDelegate {
+    func scrollTabView(_ view: ScrollTabView, didSelectIndexPath indexPath: IndexPath) {
+        itemListViewPageController.scrollToPage(indexPath.row)
     }
 }
 
@@ -88,3 +142,4 @@ extension FeedViewController: AuthenticationDelegate {
         }
     }
 }
+
