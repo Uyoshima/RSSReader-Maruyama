@@ -24,6 +24,9 @@
 		00551504253D8BB700938B48 /* ItemListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00551500253D8BB700938B48 /* ItemListCollectionView.swift */; };
 		00551505253D8BB700938B48 /* ItemListCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00551502253D8BB700938B48 /* ItemListCollectionCell.xib */; };
 		00551506253D8BB700938B48 /* ItemListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00551503253D8BB700938B48 /* ItemListCollectionCell.swift */; };
+		0055150B253D8EA000938B48 /* SettingList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0055150A253D8EA000938B48 /* SettingList.storyboard */; };
+		00551510253D8EB100938B48 /* SettingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0055150F253D8EB100938B48 /* SettingListViewController.swift */; };
+		00551518253D90EF00938B48 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00551517253D90EE00938B48 /* UserSetting.swift */; };
 		00919DDA2539350100008CC5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919DD92539350100008CC5 /* Item.swift */; };
 		00919DFB2539459E00008CC5 /* ItemListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919DF72539459E00008CC5 /* ItemListDelegate.swift */; };
 		00919E09253946CC00008CC5 /* ItemListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919E08253946CC00008CC5 /* ItemListDataSource.swift */; };
@@ -103,6 +106,9 @@
 		00551500253D8BB700938B48 /* ItemListCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListCollectionView.swift; sourceTree = "<group>"; };
 		00551502253D8BB700938B48 /* ItemListCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemListCollectionCell.xib; sourceTree = "<group>"; };
 		00551503253D8BB700938B48 /* ItemListCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListCollectionCell.swift; sourceTree = "<group>"; };
+		0055150A253D8EA000938B48 /* SettingList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingList.storyboard; sourceTree = "<group>"; };
+		0055150F253D8EB100938B48 /* SettingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListViewController.swift; sourceTree = "<group>"; };
+		00551517253D90EE00938B48 /* UserSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
 		00919DD92539350100008CC5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		00919DF72539459E00008CC5 /* ItemListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDelegate.swift; sourceTree = "<group>"; };
 		00919E08253946CC00008CC5 /* ItemListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDataSource.swift; sourceTree = "<group>"; };
@@ -197,6 +203,8 @@
 				00B70E7F253D75870012786C /* Feed */,
 				00B70E94253D76570012786C /* ItemListViewPageController.swift */,
 				00B70E6E253D743C0012786C /* Root.storyboard */,
+				0055150A253D8EA000938B48 /* SettingList.storyboard */,
+				0055150F253D8EB100938B48 /* SettingListViewController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -449,6 +457,7 @@
 		00F64D4C2501557100F48858 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				00551517253D90EE00938B48 /* UserSetting.swift */,
 				0097EC522500FEA8006779BE /* User.swift */,
 				00396327253543A700DDAF8F /* Feed.swift */,
 				00919DD92539350100008CC5 /* Item.swift */,
@@ -611,6 +620,7 @@
 				0097EC212500AF25006779BE /* LaunchScreen.storyboard in Resources */,
 				003963232535434100DDAF8F /* FeedTableCell.xib in Resources */,
 				0097EC1E2500AF25006779BE /* Assets.xcassets in Resources */,
+				0055150B253D8EA000938B48 /* SettingList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,8 +799,10 @@
 				002C6DC22505138E00914046 /* UserDefaults+Keys.swift in Sources */,
 				0039632D253543BA00DDAF8F /* FeedRepository.swift in Sources */,
 				0097EC462500C30F006779BE /* LoginViewController.swift in Sources */,
+				00551518253D90EF00938B48 /* UserSetting.swift in Sources */,
 				0097EC152500AF22006779BE /* AppDelegate.swift in Sources */,
 				0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */,
+				00551510253D8EB100938B48 /* SettingListViewController.swift in Sources */,
 				00919E56253980FC00008CC5 /* ItemCreator.swift in Sources */,
 				0039633B253552F100DDAF8F /* SelectFeedTableDataSource.swift in Sources */,
 				003963322535443A00DDAF8F /* NotificationName+Extension.swift in Sources */,

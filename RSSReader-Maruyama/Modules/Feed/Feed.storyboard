@@ -47,10 +47,10 @@
                         <color key="badgeColor" systemColor="systemGreenColor"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="IZO-65-ubB">
-                        <barButtonItem key="rightBarButtonItem" title="ログアウト" id="Afm-d3-cyf">
+                        <barButtonItem key="rightBarButtonItem" image="gearshape" catalog="system" id="Afm-d3-cyf">
                             <color key="tintColor" systemColor="systemGreenColor"/>
                             <connections>
-                                <action selector="didPushLogout:" destination="cKn-XD-4Mb" id="4fl-68-GZE"/>
+                                <action selector="didPushSettingListButton:" destination="cKn-XD-4Mb" id="25c-wQ-wGY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -93,6 +93,7 @@
     </scenes>
     <resources>
         <image name="feed" width="20" height="14"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
