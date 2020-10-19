@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="79B-PA-WZb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="LrH-me-0y7">
+            <objects>
+                <viewController id="cKn-XD-4Mb" customClass="FeedViewController" customModule="RSSReader_Maruyama" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eTr-Pc-4Sn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I4a-wZ-Xyz">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <connections>
+                                    <segue destination="4uS-6k-2t1" kind="embed" id="zDQ-7b-KTN"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="elS-cp-71H"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="I4a-wZ-Xyz" firstAttribute="top" secondItem="elS-cp-71H" secondAttribute="top" id="2qh-aR-V9h"/>
+                            <constraint firstItem="I4a-wZ-Xyz" firstAttribute="leading" secondItem="elS-cp-71H" secondAttribute="leading" id="fA8-Ab-ybg"/>
+                            <constraint firstItem="I4a-wZ-Xyz" firstAttribute="bottom" secondItem="elS-cp-71H" secondAttribute="bottom" id="kBz-nb-M5v"/>
+                            <constraint firstItem="elS-cp-71H" firstAttribute="trailing" secondItem="I4a-wZ-Xyz" secondAttribute="trailing" id="mv0-mW-ufl"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="feed" id="7n3-H6-dXb">
+                        <color key="badgeColor" systemColor="systemGreenColor"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="IZO-65-ubB">
+                        <barButtonItem key="rightBarButtonItem" title="ログアウト" id="Afm-d3-cyf">
+                            <color key="tintColor" systemColor="systemGreenColor"/>
+                            <connections>
+                                <action selector="didPushLogout:" destination="cKn-XD-4Mb" id="4fl-68-GZE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RlO-v4-KHK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2288.4057971014495" y="772.76785714285711"/>
+        </scene>
+        <!--Item List View Page Controller-->
+        <scene sceneID="p3N-wG-js8">
+            <objects>
+                <pageViewController storyboardIdentifier="itemListViewPageController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="4uS-6k-2t1" customClass="ItemListViewPageController" customModule="RSSReader_Maruyama" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpw-41-LpC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3146" y="869"/>
+        </scene>
+        <!--フィード-->
+        <scene sceneID="mec-oS-rSV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="79B-PA-WZb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="フィード" id="9oI-Yr-bDe"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ptd-cj-cBL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cKn-XD-4Mb" kind="relationship" relationship="rootViewController" id="R7T-Sp-2KS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="66f-tG-Wfx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1378.2608695652175" y="772.76785714285711"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="feed" width="20" height="14"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

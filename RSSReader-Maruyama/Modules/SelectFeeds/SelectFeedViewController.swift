@@ -49,7 +49,7 @@ class SelectFeedViewController: UIViewController {
         let isSuccess = feedRepository.saveSubscribe(feeds)
         if isSuccess {
             navigationController?.dismiss(animated: true, completion: nil)
-            postNotification(name: Notification.Name.savedSubscribeFeeds)
+            postNotification(name: Notification.Name.changeSubscribeFeeds)
         } else {
             let closeAction = UIAlertAction(title: "閉じる", style: .default)
             showAlert(title: "エラー", message: "保存失敗", actions: [closeAction])
