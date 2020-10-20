@@ -57,6 +57,7 @@
 		00B70EA5253D7CDA0012786C /* ScrollTabViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B70EA0253D7CDA0012786C /* ScrollTabViewCell.xib */; };
 		00B70EA6253D7CDA0012786C /* ScrollTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70EA1253D7CDA0012786C /* ScrollTabViewCell.swift */; };
 		00B70EA7253D7CDA0012786C /* ScrollTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70EA2253D7CDA0012786C /* ScrollTabView.swift */; };
+		00C13909253ED0CE007A4B89 /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C13908253ED0CE007A4B89 /* ItemRepository.swift */; };
 		00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */; };
 		00DEC6B62515018F004A3BD0 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */; };
 		00DEC7172527146C004A3BD0 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC7162527146C004A3BD0 /* AuthenticationService.swift */; };
@@ -145,6 +146,7 @@
 		00B70EA0253D7CDA0012786C /* ScrollTabViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollTabViewCell.xib; sourceTree = "<group>"; };
 		00B70EA1253D7CDA0012786C /* ScrollTabViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTabViewCell.swift; sourceTree = "<group>"; };
 		00B70EA2253D7CDA0012786C /* ScrollTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTabView.swift; sourceTree = "<group>"; };
+		00C13908253ED0CE007A4B89 /* ItemRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
 		00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensioin.swift"; sourceTree = "<group>"; };
 		00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		00DEC7162527146C004A3BD0 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
@@ -201,10 +203,9 @@
 				00028CBB2502397200431E21 /* Login */,
 				00028CBA2502395600431E21 /* ItemList */,
 				00B70E7F253D75870012786C /* Feed */,
+				00C13904253ED054007A4B89 /* Settinglist */,
 				00B70E94253D76570012786C /* ItemListViewPageController.swift */,
 				00B70E6E253D743C0012786C /* Root.storyboard */,
-				0055150A253D8EA000938B48 /* SettingList.storyboard */,
-				0055150F253D8EB100938B48 /* SettingListViewController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -427,6 +428,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		00C13904253ED054007A4B89 /* Settinglist */ = {
+			isa = PBXGroup;
+			children = (
+				0055150A253D8EA000938B48 /* SettingList.storyboard */,
+				0055150F253D8EB100938B48 /* SettingListViewController.swift */,
+			);
+			path = Settinglist;
+			sourceTree = "<group>";
+		};
 		00DEC7152527123B004A3BD0 /* Serviceis */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,6 +480,7 @@
 			children = (
 				0039632C253543BA00DDAF8F /* FeedRepository.swift */,
 				0097EC502500FE50006779BE /* UserRepository.swift */,
+				00C13908253ED0CE007A4B89 /* ItemRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -821,6 +832,7 @@
 				00919DDA2539350100008CC5 /* Item.swift in Sources */,
 				00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */,
 				00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */,
+				00C13909253ED0CE007A4B89 /* ItemRepository.swift in Sources */,
 				00B70EA6253D7CDA0012786C /* ScrollTabViewCell.swift in Sources */,
 				00551506253D8BB700938B48 /* ItemListCollectionCell.swift in Sources */,
 				003963402535530200DDAF8F /* SelectFeedTableDelegate.swift in Sources */,

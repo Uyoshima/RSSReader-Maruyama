@@ -33,6 +33,19 @@ class ItemListViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
+    private func setListView() {
+        switch userSetting.getListStyle() {
+        case .table:
+            createTableView()
+            addTableView()
+            break
+        case .collection:
+            createCollectionView()
+            addCollectionView()
+            break
+        }
+    }
+    
     private func createTableView() {
         itemListTableView = ItemListTableView(frame: view.frame, style: .plain)
         itemListTableView.itemListDelegate = self
@@ -67,19 +80,6 @@ class ItemListViewController: UIViewController {
         }
     }
     
-    private func setListView() {
-        switch userSetting.getListStyle() {
-        case .table:
-            createTableView()
-            addTableView()
-            break
-        case .collection:
-            createCollectionView()
-            addCollectionView()
-            break
-        }
-    }
-    
     private func reloadListView() {
         switch userSetting.getListStyle() {
         case .table:
@@ -99,15 +99,15 @@ class ItemListViewController: UIViewController {
         reloadListView()
     }
     
-    /// 自信のFeedの記事を取得、ListViewをリロードし表示する。
+    /// 自信のFeedの記事を取得、生成する。
     private func getItem() {
         let downloader = ItemDownloader()
         downloader.fetch(feed) { (result) in
             switch result {
             case .success(let xmlDate):
                 let itemCreator = ItemCreator()
-                self.items = itemCreator.createItem(feed: self.feed, xmlData: xmlDate)
-                self.reloadListView()
+                let items = itemCreator.createItem(feed: self.feed, xmlData: xmlDate)
+                self.successGetItems(items: items)
                 break
                 
             case .failure(let error):
@@ -116,6 +116,13 @@ class ItemListViewController: UIViewController {
                 break
             }
         }
+    }
+    
+    private func successGetItems(items: [Item]) {
+        let itemRepository = ItemRepository()
+        itemRepository.save(items: items)
+        self.items = items
+        self.reloadListView()
     }
 
     /// 引数の要素をセットし、Itemの取得をする。
@@ -126,7 +133,6 @@ class ItemListViewController: UIViewController {
         self.feed = feed
         title = feed.title()
         pageIndex = index
-        getItem()
     }
 }
 
@@ -160,13 +166,15 @@ extension ItemListViewController: ItemListDelegate {
         // TODO: indexPathの記事を「後で読む」にする。
         Logger.debug("後で読むに追加したIndexPath: \(indexPath)")
         let item = items[indexPath.row]
-        item.isReadLater = true
+        let itemRepository = ItemRepository()
+        itemRepository.addReadLater(item: item)
     }
     
     func removeReadLaterAt(indexPath: IndexPath) {
         // TODO: 選択された記事に「後で読む」を解除する。
         Logger.debug("後で読むを解除したIndexPath: \(indexPath)")
         let item = items[indexPath.row]
-        item.isReadLater = false
+        let itemRepository = ItemRepository()
+        itemRepository.removeReadLater(item: item)
     }
 }

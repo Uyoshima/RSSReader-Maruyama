@@ -21,12 +21,15 @@ class ItemCreator: NSObject {
         dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.000Z'"
         
         for xmlItem in xml.rss.channel.item {
-            let item = Item(feed: feed,
+            var item = Item(feed: feed,
                             title: xmlItem["title"].text ?? "タイトルなし",
                             url: xmlItem["link"].text ?? "",
                             description_item: xmlItem["description"].text ?? "概要文なし",
                             pubDate: dateFormatter.date(from: xmlItem["pubDate"].text!) ?? Date(),
                             createDate: Date())
+            
+            let itemRepository = ItemRepository()
+            item = itemRepository.replaceItemIfAlreadyHave(item: item)
             
             items.append(item)
         }

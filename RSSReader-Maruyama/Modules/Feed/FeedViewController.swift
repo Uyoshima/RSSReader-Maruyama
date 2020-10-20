@@ -46,7 +46,6 @@ class FeedViewController: UIViewController {
         setTitles(feeds: feeds)
         scrollTabView.reloadData()
         scrollTabView.selectCell(at: IndexPath(item: 0, section: 0))
-        itemListViewPageController.settingViewControllers()
         itemListViewPageController.reloadInputViews()
     }
     
