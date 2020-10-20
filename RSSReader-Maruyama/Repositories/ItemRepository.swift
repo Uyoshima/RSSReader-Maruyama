@@ -56,4 +56,15 @@ class ItemRepository {
             return results.first!
         }
     }
+    
+    func getReadLaterItems() -> [Item] {
+        let results = realm.objects(Item.self).filter(isReadLaterPredicate)
+        
+        var items: [Item] = []
+        for item in results {
+            items.append(item)
+        }
+        
+        return items
+    }
 }
