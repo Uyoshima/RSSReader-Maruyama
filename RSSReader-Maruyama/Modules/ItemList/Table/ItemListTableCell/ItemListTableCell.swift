@@ -22,7 +22,7 @@ class ItemListTableCell:UITableViewCell, ItemListCellProtocol {
         titleLabel.text = item.title
         descriptionLabel.text = item.description_item
         
-        setReadLaterLabel(isReadLater: item.isAlreadyRead)
+        setReadLaterLabel(isReadLater: item.isReadLater)
     }
     
     func setReadLaterLabel(isReadLater: Bool) {

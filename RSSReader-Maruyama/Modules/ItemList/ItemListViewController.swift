@@ -161,7 +161,6 @@ extension ItemListViewController: ItemListDelegate {
         Logger.debug("後で読むに追加したIndexPath: \(indexPath)")
         let item = items[indexPath.row]
         item.isReadLater = true
-        reloadListView()
     }
     
     func removeReadLaterAt(indexPath: IndexPath) {
@@ -169,6 +168,5 @@ extension ItemListViewController: ItemListDelegate {
         Logger.debug("後で読むを解除したIndexPath: \(indexPath)")
         let item = items[indexPath.row]
         item.isReadLater = false
-        reloadListView()
     }
 }
