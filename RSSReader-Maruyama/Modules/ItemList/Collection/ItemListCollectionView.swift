@@ -8,6 +8,7 @@
 import UIKit
 
 class ItemListCollectionView: UICollectionView, ItemListViewProtocol {
+    
     var itemListDataSource: ItemListDataSource!
     var itemListDelegate: ItemListDelegate!
     
@@ -37,6 +38,10 @@ class ItemListCollectionView: UICollectionView, ItemListViewProtocol {
         rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
         bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
     }
+    
+    func itemListCellForRow(at indexPaht: IndexPath) -> ItemListCellProtocol {
+        return cellForItem(at: indexPaht) as! ItemListCellProtocol
+    }
 }
 
 extension ItemListCollectionView: ItemListCollectionCellDelegate {
@@ -60,11 +65,8 @@ extension ItemListCollectionView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ItemListCollectionCell
-        let item = itemListDataSource.itemList(itemForRowAt: indexPath)
-        cell.setContents(item: item, indexPath: indexPath)
         cell.delegate = self
-        
-        return cell
+        return itemListDataSource.itemList(listCell: cell, itemForRowAt: indexPath) as! UICollectionViewCell
     }
 }
 

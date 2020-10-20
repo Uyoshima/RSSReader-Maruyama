@@ -9,5 +9,5 @@ import UIKit
 
 protocol ItemListDataSource {
     func numberOfItemInsection(section: Int) -> Int
-    func itemList(itemForRowAt indexPath: IndexPath) -> Item
+    func itemList(listCell: ItemListCellProtocol, itemForRowAt indexPath: IndexPath) -> ItemListCellProtocol
 }

@@ -31,6 +31,8 @@ class ItemListCollectionCell: UICollectionViewCell, ItemListCellProtocol {
         titleLabel.text = item.title
         descriptionLabel.text = item.description_item
         
+        setReadLaterButtonImage(item.isReadLater)
+        
         wrapView.backgroundColor = UIColor(named: "card-background")
         wrapView.layer.cornerRadius = 10
         wrapView.layer.shadowColor = UIColor.black.cgColor
@@ -39,8 +41,17 @@ class ItemListCollectionCell: UICollectionViewCell, ItemListCellProtocol {
         wrapView.layer.shadowOpacity = 0.2
     }
     
+    private func setReadLaterButtonImage(_ isReadLater: Bool) {
+        if isReadLater {
+            readLaterButton.setImage(UIImage(named: "label")!, for: .normal)
+        } else {
+            readLaterButton.setImage(UIImage(named: "label-border")!, for: .normal)
+        }
+    }
+    
     @IBAction func didPushReadLaterButton(_ sender: Any) {
         guard let aDelegate = delegate else { return }
         aDelegate.didPushReadLaterButton(with: item, indexPath: indexPath)
+        setReadLaterButtonImage(item.isReadLater)
     }
 }

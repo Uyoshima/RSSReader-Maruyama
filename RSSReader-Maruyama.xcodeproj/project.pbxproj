@@ -275,8 +275,8 @@
 		005514FF253D8BB700938B48 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
-				00551500253D8BB700938B48 /* ItemListCollectionView.swift */,
 				00551501253D8BB700938B48 /* ItemListCollectionCell */,
+				00551500253D8BB700938B48 /* ItemListCollectionView.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";

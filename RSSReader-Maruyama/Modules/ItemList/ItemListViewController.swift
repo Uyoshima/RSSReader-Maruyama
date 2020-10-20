@@ -140,6 +140,15 @@ extension ItemListViewController: ItemListDataSource {
     func itemList(itemForRowAt indexPath: IndexPath) -> Item {
         return items[indexPath.row]
     }
+    
+    func itemList(listCell: ItemListCellProtocol, itemForRowAt indexPath: IndexPath) -> ItemListCellProtocol {
+        let item = items[indexPath.row]
+        Logger.debug("生成するCellのIndexPath: \(indexPath)")
+        Logger.debug("itemのReadlater: \(item.isReadLater)")
+
+        listCell.setContents(item: item, indexPath: indexPath)
+        return listCell
+    }
 }
 
 extension ItemListViewController: ItemListDelegate {
@@ -149,9 +158,17 @@ extension ItemListViewController: ItemListDelegate {
     
     func addReadLaterAt(indexPath: IndexPath) {
         // TODO: indexPathの記事を「後で読む」にする。
+        Logger.debug("後で読むに追加したIndexPath: \(indexPath)")
+        let item = items[indexPath.row]
+        item.isReadLater = true
+        reloadListView()
     }
     
     func removeReadLaterAt(indexPath: IndexPath) {
         // TODO: 選択された記事に「後で読む」を解除する。
+        Logger.debug("後で読むを解除したIndexPath: \(indexPath)")
+        let item = items[indexPath.row]
+        item.isReadLater = false
+        reloadListView()
     }
 }
