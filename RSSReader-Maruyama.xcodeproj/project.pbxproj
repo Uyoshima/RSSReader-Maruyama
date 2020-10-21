@@ -28,6 +28,8 @@
 		00919E3025394B0600008CC5 /* ItemListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919E2C25394B0600008CC5 /* ItemListTableView.swift */; };
 		00919E3125394B0600008CC5 /* ItemListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00919E2E25394B0600008CC5 /* ItemListTableCell.xib */; };
 		00919E3225394B0600008CC5 /* ItemListTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919E2F25394B0600008CC5 /* ItemListTableCell.swift */; };
+		00919E3E25397D5000008CC5 /* ItemDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919E3D25397D5000008CC5 /* ItemDownloader.swift */; };
+		00919E56253980FC00008CC5 /* ItemCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919E55253980FC00008CC5 /* ItemCreator.swift */; };
 		0097EC152500AF22006779BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC142500AF22006779BE /* AppDelegate.swift */; };
 		0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC162500AF22006779BE /* SceneDelegate.swift */; };
 		0097EC1E2500AF25006779BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0097EC1D2500AF25006779BE /* Assets.xcassets */; };
@@ -94,6 +96,8 @@
 		00919E2C25394B0600008CC5 /* ItemListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListTableView.swift; sourceTree = "<group>"; };
 		00919E2E25394B0600008CC5 /* ItemListTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemListTableCell.xib; sourceTree = "<group>"; };
 		00919E2F25394B0600008CC5 /* ItemListTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListTableCell.swift; sourceTree = "<group>"; };
+		00919E3D25397D5000008CC5 /* ItemDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDownloader.swift; sourceTree = "<group>"; };
+		00919E55253980FC00008CC5 /* ItemCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCreator.swift; sourceTree = "<group>"; };
 		0097EC112500AF22006779BE /* RSSReader-Maruyama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RSSReader-Maruyama.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0097EC142500AF22006779BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0097EC162500AF22006779BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 				00F64D45250142DB00F48858 /* ItemList.storyboard */,
 				00F64D482501444400F48858 /* ItemListTabBarController.swift */,
 				00F64D43250142CE00F48858 /* ItemListViewController.swift */,
+				00919E55253980FC00008CC5 /* ItemCreator.swift */,
 			);
 			path = ItemList;
 			sourceTree = "<group>";
@@ -264,6 +269,14 @@
 			path = ItemListTableCell;
 			sourceTree = "<group>";
 		};
+		00919E3C25397D5000008CC5 /* Downloaders */ = {
+			isa = PBXGroup;
+			children = (
+				00919E3D25397D5000008CC5 /* ItemDownloader.swift */,
+			);
+			path = Downloaders;
+			sourceTree = "<group>";
+		};
 		0097EC082500AF22006779BE = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +311,7 @@
 				00F64D4C2501557100F48858 /* Models */,
 				00DEC7152527123B004A3BD0 /* Serviceis */,
 				00DEC72425271559004A3BD0 /* Strategies */,
+				00919E3C25397D5000008CC5 /* Downloaders */,
 				00DEC76B25273F98004A3BD0 /* Locators */,
 				00BE6F69252FF8B9003E0477 /* Supporting Files */,
 				0097EC222500AF25006779BE /* Info.plist */,
@@ -686,6 +700,7 @@
 				003963202535434100DDAF8F /* SelectFeedViewController.swift in Sources */,
 				00919E0E2539470A00008CC5 /* ItemListViewProtocol.swift in Sources */,
 				00339E6A25120531000B2121 /* Logger.swift in Sources */,
+				00919E3E25397D5000008CC5 /* ItemDownloader.swift in Sources */,
 				00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */,
 				00DEC7172527146C004A3BD0 /* AuthenticationService.swift in Sources */,
 				00DEC7382527166E004A3BD0 /* FacebookAuthenticationStrategy.swift in Sources */,
@@ -698,6 +713,7 @@
 				0097EC152500AF22006779BE /* AppDelegate.swift in Sources */,
 				00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */,
 				0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */,
+				00919E56253980FC00008CC5 /* ItemCreator.swift in Sources */,
 				0039633B253552F100DDAF8F /* SelectFeedTableDataSource.swift in Sources */,
 				003963322535443A00DDAF8F /* NotificationName+Extension.swift in Sources */,
 				00DEC72E2527161D004A3BD0 /* AppleAuthenticationStrategy.swift in Sources */,
