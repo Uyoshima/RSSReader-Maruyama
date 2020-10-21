@@ -25,6 +25,9 @@ class WebViewController: UIViewController {
         // 後で読むボタンの状態をセット
         setReadLaterButton(state: item.isReadLater)
         
+        // 記事自体を既読状態にして、「既読ボタン」をセット
+        changeAlreadyRead(item: item)
+        
         // web内の戻る、進む、ボタンの状態の初期化
         backButton.isEnabled = false
         forwardButton.isEnabled = false
@@ -33,7 +36,24 @@ class WebViewController: UIViewController {
         let urlRequest = URLRequest(url: URL(string: item.url)!)
         webView.load(urlRequest)
     }
-        
+    
+    private func changeReadLater(item: Item) {
+        let itemRepository = ItemRepository()
+        if item.isReadLater {
+            itemRepository.removeReadLater(item: item)
+        } else {
+            itemRepository.addReadLater(item: item)
+        }
+        NotificationCenter.default.post(name: Notification.Name.changeReadLaterValue, object: nil)
+        setReadLaterButton(state: item.isReadLater)
+    }
+    
+    private func changeAlreadyRead(item: Item) {
+        let itemRepository = ItemRepository()
+        itemRepository.setAlreadyRead(item: item)
+        NotificationCenter.default.post(name: Notification.Name.changeAlreadyReadValue, object: nil)
+    }
+    
     /// readLaterButonの画像をBool値で切り替える
     /// - Parameter isReadLater: itemのisReadLaterを渡す。
     private func setReadLaterButton(state isReadLater: Bool) {

@@ -22,6 +22,11 @@ class ItemListTableCell:UITableViewCell, ItemListCellProtocol {
         titleLabel.text = item.title
         descriptionLabel.text = item.description_item
         
+        let textColor = getTextColor(isAlreadyRead: item.isAlreadyRead)
+        pubDateLabel.textColor     = textColor
+        titleLabel.textColor       = textColor
+        descriptionLabel.textColor = textColor
+    
         setReadLaterLabel(isReadLater: item.isReadLater)
     }
     
@@ -30,6 +35,14 @@ class ItemListTableCell:UITableViewCell, ItemListCellProtocol {
             readLaterImageView.isHidden = false
         } else {
             readLaterImageView.isHidden = true
+        }
+    }
+    
+    func getTextColor(isAlreadyRead: Bool) -> UIColor {
+        if isAlreadyRead {
+            return UIColor(named: "text-alreadyRead")!
+        } else {
+            return UIColor(named: "text-normal")!
         }
     }
 }

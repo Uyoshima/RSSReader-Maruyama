@@ -37,6 +37,12 @@ class ItemRepository {
         }
     }
     
+    func setAlreadyRead(item: Item) {
+        try! realm.write {
+            item.isAlreadyRead = true
+        }
+    }
+    
     func removeReadLater(item: Item) {
         try! realm.write {
             item.isReadLater = false

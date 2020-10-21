@@ -32,6 +32,11 @@ class ItemListViewController: UIViewController {
                                                selector: #selector(changeReadLaterValue(notification:)),
                                                name: Notification.Name.changeReadLaterValue,
                                                object: nil)
+        // 記事が既読状態に変更された時のオブザーバー
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(changeAlreadyReadValue(notification:)),
+                                               name: Notification.Name.changeAlreadyReadValue,
+                                               object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,6 +115,10 @@ class ItemListViewController: UIViewController {
     }
     
     @objc func changeReadLaterValue(notification: Notification) {
+        reloadListView()
+    }
+    
+    @objc func changeAlreadyReadValue(notification: Notification) {
         reloadListView()
     }
     
