@@ -22,10 +22,15 @@ class ItemListViewController: UIViewController {
         setListView()
         getItem()
         
-        // 設定画面で表示スタイルの変更が合った時のオブザーバー
+        // 設定画面で表示スタイルの変更があった時のオブザーバー
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(changeListStyle(notification:)),
                                                name: Notification.Name.changeListStyle,
+                                               object: nil)
+        // 記事の「後で読む」に変更があった時のオブザーバー
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(changeReadLaterValue(notification:)),
+                                               name: Notification.Name.changeReadLaterValue,
                                                object: nil)
     }
     
@@ -104,6 +109,10 @@ class ItemListViewController: UIViewController {
         reloadListView()
     }
     
+    @objc func changeReadLaterValue(notification: Notification) {
+        reloadListView()
+    }
+    
     /// 自信のFeedの記事を取得、生成する。
     private func getItem() {
         let downloader = ItemDownloader()
@@ -130,6 +139,16 @@ class ItemListViewController: UIViewController {
         self.reloadListView()
     }
 
+    private func transitionToWebViewController(with item: Item) {
+        let navigationController = UIStoryboard.init(name: "WebView", bundle: nil).instantiateInitialViewController() as! UINavigationController
+        navigationController.modalPresentationStyle = .overFullScreen
+
+        let webViewController = navigationController.viewControllers[0] as! WebViewController
+        webViewController.item = item
+        
+        present(navigationController, animated: true, completion: nil)
+    }
+    
     /// 引数の要素をセットし、Itemの取得をする。
     /// - Parameters:
     ///   - feed: 表示するフィードの種類
@@ -162,7 +181,7 @@ extension ItemListViewController: ItemListDataSource {
 
 extension ItemListViewController: ItemListDelegate {
     func itemList(didSelectedRowAt indexPath: IndexPath) {
-        // TODO: 選択された記事のWebページを表示する。
+        transitionToWebViewController(with: items[indexPath.row])
     }
     
     func addReadLaterAt(indexPath: IndexPath) {
