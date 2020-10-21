@@ -61,6 +61,7 @@ class FeedViewController: UIViewController {
         let feedRepository = FeedRepository()
         let subscribeFeed = feedRepository.loadSubscribeFeed()
         setupViewContent(feeds: subscribeFeed)
+        itemListViewPageController.settingViewControllers()
     }
     
     @IBAction func didPushSettingListButton(_ sender: Any) {

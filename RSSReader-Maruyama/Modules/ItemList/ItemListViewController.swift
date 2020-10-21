@@ -126,7 +126,7 @@ class ItemListViewController: UIViewController {
     private func successGetItems(items: [Item]) {
         let itemRepository = ItemRepository()
         itemRepository.save(items: items)
-        self.items = items
+        self.items = itemRepository.get(feed: feed)
         self.reloadListView()
     }
 

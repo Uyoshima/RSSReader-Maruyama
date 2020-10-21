@@ -27,7 +27,7 @@ class ItemListCollectionCell: UICollectionViewCell, ItemListCellProtocol {
     func setContents(item: Item, indexPath: IndexPath) {
         self.item = item
         self.indexPath = indexPath
-        pubDateLabel.text = item.pubDate.toString("yyyy年MM月D日")
+        pubDateLabel.text = item.pubDate.toString("yyyy年MM月dd日")
         titleLabel.text = item.title
         descriptionLabel.text = item.description_item
         

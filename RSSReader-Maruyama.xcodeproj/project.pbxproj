@@ -209,7 +209,6 @@
 				00B70E7F253D75870012786C /* Feed */,
 				005A93A9253EEAD800A70F1D /* ReadLater */,
 				00C13904253ED054007A4B89 /* Settinglist */,
-				00B70E94253D76570012786C /* ItemListViewPageController.swift */,
 				00B70E6E253D743C0012786C /* Root.storyboard */,
 			);
 			path = Modules;
@@ -222,6 +221,7 @@
 				00919E2B25394B0600008CC5 /* Table */,
 				005514FF253D8BB700938B48 /* Collection */,
 				00F64D43250142CE00F48858 /* ItemListViewController.swift */,
+				00B70E94253D76570012786C /* ItemListViewPageController.swift */,
 				00919E55253980FC00008CC5 /* ItemCreator.swift */,
 			);
 			path = ItemList;
@@ -372,8 +372,8 @@
 				00028CBC2502398D00431E21 /* Extensions */,
 				00339E6C251208AD000B2121 /* Utilities */,
 				00028CB92502393E00431E21 /* Modules */,
-				00F64D4D2501559F00F48858 /* Repositories */,
 				00F64D4C2501557100F48858 /* Models */,
+				00F64D4D2501559F00F48858 /* Repositories */,
 				00DEC7152527123B004A3BD0 /* Serviceis */,
 				00DEC72425271559004A3BD0 /* Strategies */,
 				00919E3C25397D5000008CC5 /* Downloaders */,
