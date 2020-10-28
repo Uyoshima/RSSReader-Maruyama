@@ -9,4 +9,5 @@ import UIKit
 
 extension Notification.Name {
     static let changeSubscribeFeeds = Notification.Name("changeSubscribeFeeds")
+    static let changeListStyle      = Notification.Name("changeListStyle")
 }

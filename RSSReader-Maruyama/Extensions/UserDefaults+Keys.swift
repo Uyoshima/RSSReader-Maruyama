@@ -12,5 +12,6 @@ extension UserDefaults {
     enum Keys: String {
         case userData
         case subscribingFeed
+        case userSetting
     }
 }
