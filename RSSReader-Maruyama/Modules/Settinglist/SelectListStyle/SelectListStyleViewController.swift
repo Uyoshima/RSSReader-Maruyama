@@ -16,6 +16,7 @@ class SelectListStyleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         settingSegmentedControl()
+        setNavBarButton()
     }
     
     private func settingSegmentedControl() {
@@ -34,7 +35,12 @@ class SelectListStyleViewController: UIViewController {
         }
     }
     
-    @IBAction func didPushSaveButton(_ sender: Any) {
+    private func setNavBarButton() {
+        let saveButton = UIBarButtonItem(title: "保存", style: .plain, target: self, action: #selector(didPushSaveButton(_:)))
+        navigationItem.setRightBarButton(saveButton, animated: true)
+    }
+    
+    @objc private func didPushSaveButton(_ sender: Any) {
         let userSetting = UserSetting.sharedObject
         switch segmentedControl.selectedSegmentIndex {
         case 0:
