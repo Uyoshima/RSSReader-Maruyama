@@ -52,6 +52,8 @@
 		0097EC4B2500C4E8006779BE /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0097EC4A2500C4E8006779BE /* AuthenticationServices.framework */; };
 		0097EC512500FE50006779BE /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC502500FE50006779BE /* UserRepository.swift */; };
 		0097EC532500FEA8006779BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC522500FEA8006779BE /* User.swift */; };
+		00A2E6F02549463900335134 /* SelectRSSIntervalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A2E6EF2549463900335134 /* SelectRSSIntervalViewController.swift */; };
+		00A2E6FB2549464B00335134 /* SelectRSSInterval.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A2E6FA2549464B00335134 /* SelectRSSInterval.storyboard */; };
 		00A38F6025492FC10076BF05 /* SelectFontSizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A38F5F25492FC10076BF05 /* SelectFontSizeViewController.swift */; };
 		00A38F6525492FDB0076BF05 /* SelectFontSize.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A38F6425492FDB0076BF05 /* SelectFontSize.storyboard */; };
 		00B70E6F253D743C0012786C /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B70E6E253D743C0012786C /* Root.storyboard */; };
@@ -149,6 +151,8 @@
 		0097EC4A2500C4E8006779BE /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		0097EC502500FE50006779BE /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		0097EC522500FEA8006779BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		00A2E6EF2549463900335134 /* SelectRSSIntervalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectRSSIntervalViewController.swift; sourceTree = "<group>"; };
+		00A2E6FA2549464B00335134 /* SelectRSSInterval.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectRSSInterval.storyboard; sourceTree = "<group>"; };
 		00A38F5F25492FC10076BF05 /* SelectFontSizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFontSizeViewController.swift; sourceTree = "<group>"; };
 		00A38F6425492FDB0076BF05 /* SelectFontSize.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectFontSize.storyboard; sourceTree = "<group>"; };
 		00B70E6E253D743C0012786C /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
@@ -222,6 +226,9 @@
 				005A93A9253EEAD800A70F1D /* ReadLater */,
 				005E0B8C253FDC0300E07373 /* WebView */,
 				00C13904253ED054007A4B89 /* Settinglist */,
+				00A38F6925492FE00076BF05 /* SelectFontSizeViewController */,
+				00E2A6F325492BF8005BFA22 /* SelectListStyle */,
+				00A2E6FF2549464F00335134 /* RSSInterval */,
 				00B70E6E253D743C0012786C /* Root.storyboard */,
 			);
 			path = Modules;
@@ -235,7 +242,6 @@
 				005514FF253D8BB700938B48 /* Collection */,
 				00F64D43250142CE00F48858 /* ItemListViewController.swift */,
 				00B70E94253D76570012786C /* ItemListViewPageController.swift */,
-				00919E55253980FC00008CC5 /* ItemCreator.swift */,
 			);
 			path = ItemList;
 			sourceTree = "<group>";
@@ -395,6 +401,7 @@
 				00339E6C251208AD000B2121 /* Utilities */,
 				00028CB92502393E00431E21 /* Modules */,
 				00F64D4C2501557100F48858 /* Models */,
+				00919E55253980FC00008CC5 /* ItemCreator.swift */,
 				00F64D4D2501559F00F48858 /* Repositories */,
 				00DEC7152527123B004A3BD0 /* Serviceis */,
 				00DEC72425271559004A3BD0 /* Strategies */,
@@ -422,6 +429,15 @@
 				0097EC382500AF25006779BE /* Info.plist */,
 			);
 			path = "RSSReader-MaruyamaUITests";
+			sourceTree = "<group>";
+		};
+		00A2E6FF2549464F00335134 /* RSSInterval */ = {
+			isa = PBXGroup;
+			children = (
+				00A2E6FA2549464B00335134 /* SelectRSSInterval.storyboard */,
+				00A2E6EF2549463900335134 /* SelectRSSIntervalViewController.swift */,
+			);
+			path = RSSInterval;
 			sourceTree = "<group>";
 		};
 		00A38F6925492FE00076BF05 /* SelectFontSizeViewController */ = {
@@ -478,8 +494,6 @@
 			children = (
 				0055150A253D8EA000938B48 /* SettingList.storyboard */,
 				0055150F253D8EB100938B48 /* SettingListViewController.swift */,
-				00A38F6925492FE00076BF05 /* SelectFontSizeViewController */,
-				00E2A6F325492BF8005BFA22 /* SelectListStyle */,
 			);
 			path = Settinglist;
 			sourceTree = "<group>";
@@ -677,6 +691,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0097EC482500C31E006779BE /* Login.storyboard in Resources */,
+				00A2E6FB2549464B00335134 /* SelectRSSInterval.storyboard in Resources */,
 				00919E3125394B0600008CC5 /* ItemListTableCell.xib in Resources */,
 				00A38F6525492FDB0076BF05 /* SelectFontSize.storyboard in Resources */,
 				00B70E8F253D764C0012786C /* Feed.storyboard in Resources */,
@@ -897,6 +912,7 @@
 				00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */,
 				00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */,
 				00C13909253ED0CE007A4B89 /* ItemRepository.swift in Sources */,
+				00A2E6F02549463900335134 /* SelectRSSIntervalViewController.swift in Sources */,
 				00B70EA6253D7CDA0012786C /* ScrollTabViewCell.swift in Sources */,
 				00551506253D8BB700938B48 /* ItemListCollectionCell.swift in Sources */,
 				003963402535530200DDAF8F /* SelectFeedTableDelegate.swift in Sources */,

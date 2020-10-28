@@ -20,8 +20,6 @@ class ItemListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setListView()
-        getItem()
-        
         // 設定画面で表示スタイルの変更があった時のオブザーバー
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(changeListStyle(notification:)),
@@ -46,7 +44,7 @@ class ItemListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        reloadListView()
+        getItem()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -123,8 +121,33 @@ class ItemListViewController: UIViewController {
         reloadListView()
     }
     
-    /// 自信のFeedの記事を取得、生成する。
+    /// Feedの記事を取得、生成する。
     private func getItem() {
+        if isDownloadItem() {
+            downloadItem()
+        } else {
+            let itemRepository = ItemRepository()
+            successGetItems(items: itemRepository.get(feed: feed))
+        }
+    }
+    
+    private func isDownloadItem() -> Bool {
+        let itemRepository = ItemRepository()
+        let item = itemRepository.newestItem(feed: feed)
+        
+        // RSS取得間隔を超えているか？
+        let userSetting = UserSetting.sharedObject
+        let rssInterval = userSetting.getRssInterval_sec()
+        let isPassedInterval = userSetting.hasIntervalPassed(from: item.createDate, interval: rssInterval)
+        
+        if isPassedInterval {
+            itemRepository.deleteOtherThanReadLater(feed: feed)
+            return true
+        }
+        return false
+    }
+    
+    private func downloadItem() {
         let downloader = ItemDownloader()
         downloader.fetch(feed) { (result) in
             switch result {

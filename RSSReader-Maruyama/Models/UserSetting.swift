@@ -64,13 +64,21 @@ class UserSetting: Codable {
         }
     }()
 
-    private var listStyle: ItemListStyle
-    private var fontSize: FontSize
+    private var listStyle: ItemListStyle = .table
+    private var fontSize: FontSize = .midum
+    private var rssInterval_sec: Double = 180
     
-    init() {
-        listStyle = .table
-        fontSize = .midum
+    
+    func hasIntervalPassed(from: Date, interval: TimeInterval) -> Bool {
+        let currentInterval = Date().timeIntervalSince(from)
+        if  currentInterval > interval {
+            return true
+        } else {
+            return false
+        }
     }
+    
+    // MARK : - getter
     
     func getListStyle() -> ItemListStyle {
         return listStyle
@@ -80,6 +88,16 @@ class UserSetting: Codable {
         return fontSize
     }
     
+    func getRssInterval_sec() -> Double {
+        return rssInterval_sec
+    }
+    
+    func getRssInterval_min() -> Int {
+        return Int(rssInterval_sec / 60)
+    }
+    
+    // MARK : - setter
+    
     func set(listStyle: ItemListStyle) {
         self.listStyle = listStyle
         save()
@@ -87,6 +105,16 @@ class UserSetting: Codable {
     
     func set(fontSize: FontSize) {
         self.fontSize = fontSize
+        save()
+    }
+    
+    func set(rssInterval_sec: Double) {
+        self.rssInterval_sec = rssInterval_sec
+        save()
+    }
+    
+    func set(rssInterval_min: Double) {
+        self.rssInterval_sec = Double(rssInterval_min * 60)
         save()
     }
     

@@ -24,12 +24,14 @@ class SettingListViewController: UIViewController {
         case subscription
         case listStyle
         case fontSize
+        case rssInterval
         
         func title() -> String {
             switch self {
             case .subscription: return "購読フィードの編集"
-            case .listStyle: return "表示形式の変更"
-            case .fontSize: return "文字サイズの変更"
+            case .listStyle:    return "表示形式の変更"
+            case .fontSize:     return "文字サイズの変更"
+            case .rssInterval:  return "RSS取得間隔の変更"
             }
         }
         
@@ -41,11 +43,13 @@ class SettingListViewController: UIViewController {
                 return UIStoryboard(name: "SelectListStyle", bundle: nil).instantiateInitialViewController()!
             case .fontSize:
                 return UIStoryboard(name: "SelectFontSize", bundle: nil).instantiateInitialViewController()!
+            case .rssInterval:
+                return UIStoryboard(name: "SelectRSSInterval", bundle: nil).instantiateInitialViewController()!
             }
         }
     }
     
-    private let cellData: [SettingDataSource] = [.subscription, .listStyle, .fontSize]
+    private let cellData: [SettingDataSource] = [.subscription, .listStyle, .fontSize, .rssInterval]
     
     override func viewDidLoad() {
         super.viewDidLoad()
