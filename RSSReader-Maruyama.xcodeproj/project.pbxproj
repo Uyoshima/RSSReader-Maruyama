@@ -70,6 +70,8 @@
 		00DEC7332527164D004A3BD0 /* GoogleAuthenticationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC7322527164D004A3BD0 /* GoogleAuthenticationStrategy.swift */; };
 		00DEC7382527166E004A3BD0 /* FacebookAuthenticationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC7372527166E004A3BD0 /* FacebookAuthenticationStrategy.swift */; };
 		00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC76C25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift */; };
+		00E2A6EA25492BE8005BFA22 /* SelectListStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E2A6E925492BE8005BFA22 /* SelectListStyleViewController.swift */; };
+		00E2A6EF25492BF4005BFA22 /* SelectListStyle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E2A6EE25492BF4005BFA22 /* SelectListStyle.storyboard */; };
 		00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D43250142CE00F48858 /* ItemListViewController.swift */; };
 		41661EF94F0F8CAC38E96D9D /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7E1306333728E5718229EE /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework */; };
 		8BC9050736C23C78627EF887 /* Pods_RSSReader_Maruyama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A702F7A9537EA0A1522B6A60 /* Pods_RSSReader_Maruyama.framework */; };
@@ -163,6 +165,8 @@
 		00DEC7322527164D004A3BD0 /* GoogleAuthenticationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthenticationStrategy.swift; sourceTree = "<group>"; };
 		00DEC7372527166E004A3BD0 /* FacebookAuthenticationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuthenticationStrategy.swift; sourceTree = "<group>"; };
 		00DEC76C25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationStrategyLocator.swift; sourceTree = "<group>"; };
+		00E2A6E925492BE8005BFA22 /* SelectListStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectListStyleViewController.swift; sourceTree = "<group>"; };
+		00E2A6EE25492BF4005BFA22 /* SelectListStyle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectListStyle.storyboard; sourceTree = "<group>"; };
 		00F64D43250142CE00F48858 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		1A7E1306333728E5718229EE /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3364534928C3D390C305D65E /* Pods_RSSReader_MaruyamaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSSReader_MaruyamaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -461,6 +465,7 @@
 			children = (
 				0055150A253D8EA000938B48 /* SettingList.storyboard */,
 				0055150F253D8EB100938B48 /* SettingListViewController.swift */,
+				00E2A6F325492BF8005BFA22 /* SelectListStyle */,
 			);
 			path = Settinglist;
 			sourceTree = "<group>";
@@ -490,6 +495,15 @@
 				00DEC76C25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift */,
 			);
 			path = Locators;
+			sourceTree = "<group>";
+		};
+		00E2A6F325492BF8005BFA22 /* SelectListStyle */ = {
+			isa = PBXGroup;
+			children = (
+				00E2A6EE25492BF4005BFA22 /* SelectListStyle.storyboard */,
+				00E2A6E925492BE8005BFA22 /* SelectListStyleViewController.swift */,
+			);
+			path = SelectListStyle;
 			sourceTree = "<group>";
 		};
 		00F64D4C2501557100F48858 /* Models */ = {
@@ -656,6 +670,7 @@
 				00B70EA5253D7CDA0012786C /* ScrollTabViewCell.xib in Resources */,
 				005514FB253D810100938B48 /* Colors.xcassets in Resources */,
 				003963222535434100DDAF8F /* SelectFeed.storyboard in Resources */,
+				00E2A6EF25492BF4005BFA22 /* SelectListStyle.storyboard in Resources */,
 				00551505253D8BB700938B48 /* ItemListCollectionCell.xib in Resources */,
 				0097EC212500AF25006779BE /* LaunchScreen.storyboard in Resources */,
 				005E0B8F253FDC0300E07373 /* WebView.storyboard in Resources */,
@@ -849,6 +864,7 @@
 				005A93AC253EEAE900A70F1D /* ReadLaterViewController.swift in Sources */,
 				005E0B90253FDC0300E07373 /* WebViewController.swift in Sources */,
 				003963322535443A00DDAF8F /* NotificationName+Extension.swift in Sources */,
+				00E2A6EA25492BE8005BFA22 /* SelectListStyleViewController.swift in Sources */,
 				00DEC72E2527161D004A3BD0 /* AppleAuthenticationStrategy.swift in Sources */,
 				00B70EA3253D7CDA0012786C /* ScrollTabViewDataSource.swift in Sources */,
 				0097EC532500FEA8006779BE /* User.swift in Sources */,

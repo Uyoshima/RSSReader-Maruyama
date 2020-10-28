@@ -18,47 +18,33 @@ class SettingListViewController: UIViewController {
         return AuthenticationService(locator: authenticationStrategyLocator)
     }()
     
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var tableView: UITableView!
     
-    private let segmentedTitles: [String] = ["TableView", "CollectionView"]
+    private enum SettingDataSource {
+        case listStyle
+        
+        func title() -> String {
+            switch self {
+            case .listStyle: return "表示形式の変更"
+            }
+        }
+        
+        func viewController() -> UIViewController {
+            switch self {
+            case .listStyle:
+                return UIStoryboard(name: "SelectListStyle", bundle: nil).instantiateInitialViewController()!
+            }
+        }
+    }
+    
+    private let cellData: [SettingDataSource] = [.listStyle]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        settingSegmentedControl()
+        tableView.dataSource = self
+        tableView.delegate = self
     }
-    
-    private func settingSegmentedControl() {
-        for i in 0 ..< segmentedTitles.count {
-            segmentedControl.setTitle(segmentedTitles[i], forSegmentAt: i)
-        }
-        
-        let currentStyle = UserSetting.sharedObject.getListStyle()
-        switch currentStyle {
-        case .table:
-            segmentedControl.selectedSegmentIndex = 0
-            break
-        case .collection:
-            segmentedControl.selectedSegmentIndex = 1
-            break
-        }
-    }
-    
-    @IBAction func didPushSaveButton(_ sender: Any) {
-        let userSetting = UserSetting.sharedObject
-        switch segmentedControl.selectedSegmentIndex {
-        case 0:
-            userSetting.set(listStyle: .table)
-            break
-        case 1:
-            userSetting.set(listStyle: .collection)
-            break
-        default:
-            return
-        }
-        NotificationCenter.default.post(name: Notification.Name.changeListStyle, object: nil)
-    }
-    
+
     // 以下、ログイン関係
     
     private func showLoginView() {
@@ -74,6 +60,26 @@ class SettingListViewController: UIViewController {
         authenticationService.logout(user!)
     }
 
+}
+
+extension SettingListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cellData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = cellData[indexPath.row].title()
+        
+        return cell
+    }
+}
+
+extension SettingListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = cellData[indexPath.row].viewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // ログアウト関係
