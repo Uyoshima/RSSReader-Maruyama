@@ -13,4 +13,5 @@ protocol ItemListViewProtocol {
     
     func initialSetting()
     func addFillConstraint(to view: UIView)
+    func itemListCellForRow(at indexPaht: IndexPath) -> ItemListCellProtocol
 }

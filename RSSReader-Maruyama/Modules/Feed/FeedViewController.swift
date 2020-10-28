@@ -46,7 +46,6 @@ class FeedViewController: UIViewController {
         setTitles(feeds: feeds)
         scrollTabView.reloadData()
         scrollTabView.selectCell(at: IndexPath(item: 0, section: 0))
-        itemListViewPageController.settingViewControllers()
         itemListViewPageController.reloadInputViews()
     }
     
@@ -62,6 +61,7 @@ class FeedViewController: UIViewController {
         let feedRepository = FeedRepository()
         let subscribeFeed = feedRepository.loadSubscribeFeed()
         setupViewContent(feeds: subscribeFeed)
+        itemListViewPageController.settingViewControllers()
     }
     
     @IBAction func didPushSettingListButton(_ sender: Any) {

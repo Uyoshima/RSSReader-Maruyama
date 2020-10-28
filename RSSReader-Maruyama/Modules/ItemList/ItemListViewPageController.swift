@@ -21,7 +21,7 @@ class ItemListViewPageController: UIPageViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        settingViewControllers()
+        settingViewControllers() //最初
     }
     
     func setCurrentPage(_ index: Int) {

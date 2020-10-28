@@ -14,6 +14,8 @@ class SelectFeedViewController: UIViewController {
     
     private let feedRepository = FeedRepository()
     
+    var isFromLoginView = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableDataSource = SelectFeedTableDataSource(tableView, feeds: feedRepository.ALL_FEEDS, cellIdentifier: "cell")

@@ -27,6 +27,8 @@
 		0055150B253D8EA000938B48 /* SettingList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0055150A253D8EA000938B48 /* SettingList.storyboard */; };
 		00551510253D8EB100938B48 /* SettingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0055150F253D8EB100938B48 /* SettingListViewController.swift */; };
 		00551518253D90EF00938B48 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00551517253D90EE00938B48 /* UserSetting.swift */; };
+		005A93AC253EEAE900A70F1D /* ReadLaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005A93AA253EEAE900A70F1D /* ReadLaterViewController.swift */; };
+		005A93AD253EEAE900A70F1D /* ReadLater.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005A93AB253EEAE900A70F1D /* ReadLater.storyboard */; };
 		00919DDA2539350100008CC5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919DD92539350100008CC5 /* Item.swift */; };
 		00919DFB2539459E00008CC5 /* ItemListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919DF72539459E00008CC5 /* ItemListDelegate.swift */; };
 		00919E09253946CC00008CC5 /* ItemListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919E08253946CC00008CC5 /* ItemListDataSource.swift */; };
@@ -57,6 +59,7 @@
 		00B70EA5253D7CDA0012786C /* ScrollTabViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B70EA0253D7CDA0012786C /* ScrollTabViewCell.xib */; };
 		00B70EA6253D7CDA0012786C /* ScrollTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70EA1253D7CDA0012786C /* ScrollTabViewCell.swift */; };
 		00B70EA7253D7CDA0012786C /* ScrollTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70EA2253D7CDA0012786C /* ScrollTabView.swift */; };
+		00C13909253ED0CE007A4B89 /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C13908253ED0CE007A4B89 /* ItemRepository.swift */; };
 		00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */; };
 		00DEC6B62515018F004A3BD0 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */; };
 		00DEC7172527146C004A3BD0 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC7162527146C004A3BD0 /* AuthenticationService.swift */; };
@@ -109,6 +112,8 @@
 		0055150A253D8EA000938B48 /* SettingList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingList.storyboard; sourceTree = "<group>"; };
 		0055150F253D8EB100938B48 /* SettingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingListViewController.swift; sourceTree = "<group>"; };
 		00551517253D90EE00938B48 /* UserSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
+		005A93AA253EEAE900A70F1D /* ReadLaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadLaterViewController.swift; sourceTree = "<group>"; };
+		005A93AB253EEAE900A70F1D /* ReadLater.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReadLater.storyboard; sourceTree = "<group>"; };
 		00919DD92539350100008CC5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		00919DF72539459E00008CC5 /* ItemListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDelegate.swift; sourceTree = "<group>"; };
 		00919E08253946CC00008CC5 /* ItemListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDataSource.swift; sourceTree = "<group>"; };
@@ -145,6 +150,7 @@
 		00B70EA0253D7CDA0012786C /* ScrollTabViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollTabViewCell.xib; sourceTree = "<group>"; };
 		00B70EA1253D7CDA0012786C /* ScrollTabViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTabViewCell.swift; sourceTree = "<group>"; };
 		00B70EA2253D7CDA0012786C /* ScrollTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTabView.swift; sourceTree = "<group>"; };
+		00C13908253ED0CE007A4B89 /* ItemRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
 		00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensioin.swift"; sourceTree = "<group>"; };
 		00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		00DEC7162527146C004A3BD0 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
@@ -201,10 +207,9 @@
 				00028CBB2502397200431E21 /* Login */,
 				00028CBA2502395600431E21 /* ItemList */,
 				00B70E7F253D75870012786C /* Feed */,
-				00B70E94253D76570012786C /* ItemListViewPageController.swift */,
+				005A93A9253EEAD800A70F1D /* ReadLater */,
+				00C13904253ED054007A4B89 /* Settinglist */,
 				00B70E6E253D743C0012786C /* Root.storyboard */,
-				0055150A253D8EA000938B48 /* SettingList.storyboard */,
-				0055150F253D8EB100938B48 /* SettingListViewController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 				00919E2B25394B0600008CC5 /* Table */,
 				005514FF253D8BB700938B48 /* Collection */,
 				00F64D43250142CE00F48858 /* ItemListViewController.swift */,
+				00B70E94253D76570012786C /* ItemListViewPageController.swift */,
 				00919E55253980FC00008CC5 /* ItemCreator.swift */,
 			);
 			path = ItemList;
@@ -275,8 +281,8 @@
 		005514FF253D8BB700938B48 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
-				00551500253D8BB700938B48 /* ItemListCollectionView.swift */,
 				00551501253D8BB700938B48 /* ItemListCollectionCell */,
+				00551500253D8BB700938B48 /* ItemListCollectionView.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -288,6 +294,15 @@
 				00551503253D8BB700938B48 /* ItemListCollectionCell.swift */,
 			);
 			path = ItemListCollectionCell;
+			sourceTree = "<group>";
+		};
+		005A93A9253EEAD800A70F1D /* ReadLater */ = {
+			isa = PBXGroup;
+			children = (
+				005A93AB253EEAE900A70F1D /* ReadLater.storyboard */,
+				005A93AA253EEAE900A70F1D /* ReadLaterViewController.swift */,
+			);
+			path = ReadLater;
 			sourceTree = "<group>";
 		};
 		00919DF62539459E00008CC5 /* ItemListView */ = {
@@ -357,8 +372,8 @@
 				00028CBC2502398D00431E21 /* Extensions */,
 				00339E6C251208AD000B2121 /* Utilities */,
 				00028CB92502393E00431E21 /* Modules */,
-				00F64D4D2501559F00F48858 /* Repositories */,
 				00F64D4C2501557100F48858 /* Models */,
+				00F64D4D2501559F00F48858 /* Repositories */,
 				00DEC7152527123B004A3BD0 /* Serviceis */,
 				00DEC72425271559004A3BD0 /* Strategies */,
 				00919E3C25397D5000008CC5 /* Downloaders */,
@@ -427,6 +442,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		00C13904253ED054007A4B89 /* Settinglist */ = {
+			isa = PBXGroup;
+			children = (
+				0055150A253D8EA000938B48 /* SettingList.storyboard */,
+				0055150F253D8EB100938B48 /* SettingListViewController.swift */,
+			);
+			path = Settinglist;
+			sourceTree = "<group>";
+		};
 		00DEC7152527123B004A3BD0 /* Serviceis */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,6 +494,7 @@
 			children = (
 				0039632C253543BA00DDAF8F /* FeedRepository.swift */,
 				0097EC502500FE50006779BE /* UserRepository.swift */,
+				00C13908253ED0CE007A4B89 /* ItemRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -612,6 +637,7 @@
 				0097EC482500C31E006779BE /* Login.storyboard in Resources */,
 				00919E3125394B0600008CC5 /* ItemListTableCell.xib in Resources */,
 				00B70E8F253D764C0012786C /* Feed.storyboard in Resources */,
+				005A93AD253EEAE900A70F1D /* ReadLater.storyboard in Resources */,
 				00B70E6F253D743C0012786C /* Root.storyboard in Resources */,
 				00B70EA5253D7CDA0012786C /* ScrollTabViewCell.xib in Resources */,
 				005514FB253D810100938B48 /* Colors.xcassets in Resources */,
@@ -805,6 +831,7 @@
 				00551510253D8EB100938B48 /* SettingListViewController.swift in Sources */,
 				00919E56253980FC00008CC5 /* ItemCreator.swift in Sources */,
 				0039633B253552F100DDAF8F /* SelectFeedTableDataSource.swift in Sources */,
+				005A93AC253EEAE900A70F1D /* ReadLaterViewController.swift in Sources */,
 				003963322535443A00DDAF8F /* NotificationName+Extension.swift in Sources */,
 				00DEC72E2527161D004A3BD0 /* AppleAuthenticationStrategy.swift in Sources */,
 				00B70EA3253D7CDA0012786C /* ScrollTabViewDataSource.swift in Sources */,
@@ -821,6 +848,7 @@
 				00919DDA2539350100008CC5 /* Item.swift in Sources */,
 				00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */,
 				00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */,
+				00C13909253ED0CE007A4B89 /* ItemRepository.swift in Sources */,
 				00B70EA6253D7CDA0012786C /* ScrollTabViewCell.swift in Sources */,
 				00551506253D8BB700938B48 /* ItemListCollectionCell.swift in Sources */,
 				003963402535530200DDAF8F /* SelectFeedTableDelegate.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ItemListViewController: UIViewController {
+class ReadLaterViewController: UIViewController {
     private var itemListTableView: ItemListTableView!
     private var itemListCollectionView: ItemListCollectionView!
     
@@ -20,8 +20,6 @@ class ItemListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setListView()
-        getItem()
-        
         // 設定画面で表示スタイルの変更が合った時のオブザーバー
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(changeListStyle(notification:)),
@@ -31,24 +29,12 @@ class ItemListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        getItem()
         reloadListView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-    }
-    
-    private func setListView() {
-        switch userSetting.getListStyle() {
-        case .table:
-            createTableView()
-            addTableView()
-            break
-        case .collection:
-            createCollectionView()
-            addCollectionView()
-            break
-        }
     }
     
     private func createTableView() {
@@ -85,6 +71,19 @@ class ItemListViewController: UIViewController {
         }
     }
     
+    private func setListView() {
+        switch userSetting.getListStyle() {
+        case .table:
+            createTableView()
+            addTableView()
+            break
+        case .collection:
+            createCollectionView()
+            addCollectionView()
+            break
+        }
+    }
+    
     private func reloadListView() {
         switch userSetting.getListStyle() {
         case .table:
@@ -104,30 +103,10 @@ class ItemListViewController: UIViewController {
         reloadListView()
     }
     
-    /// 自信のFeedの記事を取得、生成する。
+    /// 自信のFeedの記事を取得、ListViewをリロードし表示する。
     private func getItem() {
-        let downloader = ItemDownloader()
-        downloader.fetch(feed) { (result) in
-            switch result {
-            case .success(let xmlDate):
-                let itemCreator = ItemCreator()
-                let items = itemCreator.createItem(feed: self.feed, xmlData: xmlDate)
-                self.successGetItems(items: items)
-                break
-                
-            case .failure(let error):
-                let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
-                self.showAlert(title: "取得エラー", message: "\(error.localizedDescription)", actions: [closeAction])
-                break
-            }
-        }
-    }
-    
-    private func successGetItems(items: [Item]) {
         let itemRepository = ItemRepository()
-        itemRepository.save(items: items)
-        self.items = itemRepository.get(feed: feed)
-        self.reloadListView()
+        self.items = itemRepository.getReadLaterItems()
     }
 
     /// 引数の要素をセットし、Itemの取得をする。
@@ -143,7 +122,7 @@ class ItemListViewController: UIViewController {
 
 // MARK: - Extension
 
-extension ItemListViewController: ItemListDataSource {
+extension ReadLaterViewController: ItemListDataSource {
     func numberOfItemInsection(section: Int) -> Int {
         return items.count
     }
@@ -154,26 +133,33 @@ extension ItemListViewController: ItemListDataSource {
     
     func itemList(listCell: ItemListCellProtocol, itemForRowAt indexPath: IndexPath) -> ItemListCellProtocol {
         let item = items[indexPath.row]
+        Logger.debug("生成するCellのIndexPath: \(indexPath)")
+        Logger.debug("itemのReadlater: \(item.isReadLater)")
+
         listCell.setContents(item: item, indexPath: indexPath)
-        
         return listCell
     }
 }
 
-extension ItemListViewController: ItemListDelegate {
+extension ReadLaterViewController: ItemListDelegate {
     func itemList(didSelectedRowAt indexPath: IndexPath) {
         // TODO: 選択された記事のWebページを表示する。
     }
     
     func addReadLaterAt(indexPath: IndexPath) {
+        // TODO: indexPathの記事を「後で読む」にする。
+        Logger.debug("後で読むに追加したIndexPath: \(indexPath)")
         let item = items[indexPath.row]
         let itemRepository = ItemRepository()
         itemRepository.addReadLater(item: item)
     }
     
     func removeReadLaterAt(indexPath: IndexPath) {
+        // TODO: 選択された記事に「後で読む」を解除する。
+        Logger.debug("後で読むを解除したIndexPath: \(indexPath)")
         let item = items[indexPath.row]
         let itemRepository = ItemRepository()
         itemRepository.removeReadLater(item: item)
     }
 }
+
