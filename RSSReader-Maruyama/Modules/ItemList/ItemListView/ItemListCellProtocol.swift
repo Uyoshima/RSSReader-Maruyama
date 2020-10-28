@@ -11,4 +11,5 @@ protocol ItemListCellProtocol {
     var indexPath: IndexPath! { get }
     var item: Item! { get }
     func setContents(item: Item, indexPath: IndexPath)
+    func getTextColor(isAlreadyRead: Bool) -> UIColor
 }

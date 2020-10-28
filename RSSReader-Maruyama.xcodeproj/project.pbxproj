@@ -29,6 +29,8 @@
 		00551518253D90EF00938B48 /* UserSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00551517253D90EE00938B48 /* UserSetting.swift */; };
 		005A93AC253EEAE900A70F1D /* ReadLaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005A93AA253EEAE900A70F1D /* ReadLaterViewController.swift */; };
 		005A93AD253EEAE900A70F1D /* ReadLater.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005A93AB253EEAE900A70F1D /* ReadLater.storyboard */; };
+		005E0B8F253FDC0300E07373 /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 005E0B8D253FDC0300E07373 /* WebView.storyboard */; };
+		005E0B90253FDC0300E07373 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E0B8E253FDC0300E07373 /* WebViewController.swift */; };
 		00919DDA2539350100008CC5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919DD92539350100008CC5 /* Item.swift */; };
 		00919DFB2539459E00008CC5 /* ItemListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919DF72539459E00008CC5 /* ItemListDelegate.swift */; };
 		00919E09253946CC00008CC5 /* ItemListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919E08253946CC00008CC5 /* ItemListDataSource.swift */; };
@@ -114,6 +116,8 @@
 		00551517253D90EE00938B48 /* UserSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSetting.swift; sourceTree = "<group>"; };
 		005A93AA253EEAE900A70F1D /* ReadLaterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadLaterViewController.swift; sourceTree = "<group>"; };
 		005A93AB253EEAE900A70F1D /* ReadLater.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ReadLater.storyboard; sourceTree = "<group>"; };
+		005E0B8D253FDC0300E07373 /* WebView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
+		005E0B8E253FDC0300E07373 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		00919DD92539350100008CC5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		00919DF72539459E00008CC5 /* ItemListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDelegate.swift; sourceTree = "<group>"; };
 		00919E08253946CC00008CC5 /* ItemListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDataSource.swift; sourceTree = "<group>"; };
@@ -208,6 +212,7 @@
 				00028CBA2502395600431E21 /* ItemList */,
 				00B70E7F253D75870012786C /* Feed */,
 				005A93A9253EEAD800A70F1D /* ReadLater */,
+				005E0B8C253FDC0300E07373 /* WebView */,
 				00C13904253ED054007A4B89 /* Settinglist */,
 				00B70E6E253D743C0012786C /* Root.storyboard */,
 			);
@@ -303,6 +308,15 @@
 				005A93AA253EEAE900A70F1D /* ReadLaterViewController.swift */,
 			);
 			path = ReadLater;
+			sourceTree = "<group>";
+		};
+		005E0B8C253FDC0300E07373 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				005E0B8D253FDC0300E07373 /* WebView.storyboard */,
+				005E0B8E253FDC0300E07373 /* WebViewController.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		00919DF62539459E00008CC5 /* ItemListView */ = {
@@ -644,6 +658,7 @@
 				003963222535434100DDAF8F /* SelectFeed.storyboard in Resources */,
 				00551505253D8BB700938B48 /* ItemListCollectionCell.xib in Resources */,
 				0097EC212500AF25006779BE /* LaunchScreen.storyboard in Resources */,
+				005E0B8F253FDC0300E07373 /* WebView.storyboard in Resources */,
 				003963232535434100DDAF8F /* FeedTableCell.xib in Resources */,
 				0097EC1E2500AF25006779BE /* Assets.xcassets in Resources */,
 				0055150B253D8EA000938B48 /* SettingList.storyboard in Resources */,
@@ -832,6 +847,7 @@
 				00919E56253980FC00008CC5 /* ItemCreator.swift in Sources */,
 				0039633B253552F100DDAF8F /* SelectFeedTableDataSource.swift in Sources */,
 				005A93AC253EEAE900A70F1D /* ReadLaterViewController.swift in Sources */,
+				005E0B90253FDC0300E07373 /* WebViewController.swift in Sources */,
 				003963322535443A00DDAF8F /* NotificationName+Extension.swift in Sources */,
 				00DEC72E2527161D004A3BD0 /* AppleAuthenticationStrategy.swift in Sources */,
 				00B70EA3253D7CDA0012786C /* ScrollTabViewDataSource.swift in Sources */,

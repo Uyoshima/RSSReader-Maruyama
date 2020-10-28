@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tz6-Da-X96">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web View Controller-->
+        <scene sceneID="ufg-z8-iik">
+            <objects>
+                <viewController storyboardIdentifier="webView" id="nqV-yT-Qfc" customClass="WebViewController" customModule="RSS_SelectFeeds" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QfX-BZ-G77">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mKG-sG-bON">
+                                <rect key="frame" x="101" y="149" width="240" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="djg-zc-pbp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem width="15" style="plain" systemItem="fixedSpace" id="bzI-GB-yBc"/>
+                        <barButtonItem title="前のページ" image="arrow.left" catalog="system" width="60" id="92x-DP-0Gf">
+                            <connections>
+                                <action selector="didPushBackPageButton:" destination="nqV-yT-Qfc" id="0PX-5W-u4J"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="6M9-UL-26n"/>
+                        <barButtonItem title="次のページ" image="arrow.right" catalog="system" width="60" id="WjK-s3-2qK">
+                            <connections>
+                                <action selector="didPushForwardPageButton:" destination="nqV-yT-Qfc" id="m9F-dr-ZX9"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Nj9-2x-BOH"/>
+                        <barButtonItem title="後で読む" image="label" width="60" id="lYB-p4-XXH">
+                            <color key="tintColor" name="tab-text"/>
+                            <connections>
+                                <action selector="didPushReadLaterButton:" destination="nqV-yT-Qfc" id="xyV-FL-OxE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="qtp-OZ-eEm"/>
+                        <barButtonItem title="シェア" image="square.and.arrow.up" catalog="system" width="60" id="a4s-OA-lVI">
+                            <connections>
+                                <action selector="didPushShareButton:" destination="nqV-yT-Qfc" id="UTm-Ac-SBg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="15" style="plain" systemItem="fixedSpace" id="OMU-Pf-NYr"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="RJq-Km-jYv">
+                        <barButtonItem key="leftBarButtonItem" title="閉じる" id="UNO-j4-AA4">
+                            <connections>
+                                <action selector="didPushClose:" destination="nqV-yT-Qfc" id="xk6-7D-Ec5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backButton" destination="92x-DP-0Gf" id="gwT-Ol-SQi"/>
+                        <outlet property="forwardButton" destination="WjK-s3-2qK" id="awW-L8-Kz5"/>
+                        <outlet property="readLaterButton" destination="lYB-p4-XXH" id="Qqa-RR-CGZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zZH-bA-5Kl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="630.43478260869574" y="-57.589285714285708"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xgV-3G-9ZN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" hidesBarsOnSwipe="YES" id="Tz6-Da-X96" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TkF-C5-EOz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="V5m-mB-5Da">
+                        <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="nqV-yT-Qfc" kind="relationship" relationship="rootViewController" id="S9N-qs-kED"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QAX-JM-0yR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-278.26086956521743" y="-57.589285714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="label" width="15" height="27.5"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <namedColor name="tab-text">
+            <color red="0.20399999618530273" green="0.77999997138977051" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

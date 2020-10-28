@@ -31,6 +31,11 @@ class ItemListCollectionCell: UICollectionViewCell, ItemListCellProtocol {
         titleLabel.text = item.title
         descriptionLabel.text = item.description_item
         
+        let textColor = getTextColor(isAlreadyRead: item.isAlreadyRead)
+        pubDateLabel.textColor     = textColor
+        titleLabel.textColor       = textColor
+        descriptionLabel.textColor = textColor
+        
         setReadLaterButtonImage(item.isReadLater)
         
         wrapView.backgroundColor = UIColor(named: "card-background")
@@ -46,6 +51,14 @@ class ItemListCollectionCell: UICollectionViewCell, ItemListCellProtocol {
             readLaterButton.setImage(UIImage(named: "label")!, for: .normal)
         } else {
             readLaterButton.setImage(UIImage(named: "label-border")!, for: .normal)
+        }
+    }
+    
+    func getTextColor(isAlreadyRead: Bool) -> UIColor {
+        if isAlreadyRead {
+            return UIColor(named: "text-alreadyRead")!
+        } else {
+            return UIColor(named: "text-normal")!
         }
     }
     
