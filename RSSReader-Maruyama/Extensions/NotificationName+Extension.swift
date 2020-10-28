@@ -8,5 +8,5 @@
 import UIKit
 
 extension Notification.Name {
-    static let savedSubscribeFeeds = Notification.Name("savedSubscribeFeeds")
+    static let changeSubscribeFeeds = Notification.Name("changeSubscribeFeeds")
 }

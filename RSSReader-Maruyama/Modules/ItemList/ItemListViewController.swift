@@ -9,18 +9,10 @@
 import UIKit
 
 class ItemListViewController: UIViewController {
-    private lazy var authenticationService: AuthenticationService = {
-        let authenticationStrategyLocator = AuthenticationStrategyLocator()
-        authenticationStrategyLocator.add(type: .apple, strategy: AppleAuthenticationStrategy(delegate: self, presentingViewController: self))
-        authenticationStrategyLocator.add(type: .google, strategy: GoogleAuthenticationStrategy(delegate: self, presentingViewController: self))
-        authenticationStrategyLocator.add(type: .facebook, strategy: FacebookAuthenticationStrategy(delegate: self, presentingViewController: self))
-        
-        return AuthenticationService(locator: authenticationStrategyLocator)
-    }()
-    
     private var itemListTableView: ItemListTableView!
     private var feed: Feed = .yahoo_Topic
     var items: [Item] = []
+    var pageIndex: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +23,6 @@ class ItemListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if !loginChack() {
-            showLoginView()
-        }
     }
     
     private func createTableView() {
@@ -47,6 +36,7 @@ class ItemListViewController: UIViewController {
         itemListTableView.addFillConstraint(to: view)
     }
     
+    /// 自信のFeedの記事を取得、ListViewをリロードし表示する。
     private func getItem() {
         let downloader = ItemDownloader()
         downloader.fetch(feed) { (result) in
@@ -54,41 +44,28 @@ class ItemListViewController: UIViewController {
             case .success(let xmlDate):
                 let itemCreator = ItemCreator()
                 self.items = itemCreator.createItem(feed: self.feed, xmlData: xmlDate)
-                self.itemListTableView.reloadData()
+                if self.itemListTableView != nil {
+                    self.itemListTableView.reloadData()
+                }
                 break
                 
             case .failure(let error):
-                self.showErrorAlert(message: error.localizedDescription)
+                let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
+                self.showAlert(title: "取得エラー", message: "\(error.localizedDescription)", actions: [closeAction])
                 break
             }
         }
     }
-    
-    // 以下、ログイン、ログアウト関係
-    
-    private func loginChack() -> Bool {
-        let userRepository = UserRepository()
-        return userRepository.exists()
-    }
-    
-    @IBAction func didPushLogout(_ sender: Any) {
-        let userRepository = UserRepository()
-        let user = userRepository.load()
-        
-        authenticationService.logout(user!)
-    }
-    
-    private func showLoginView() {
-        let loginViewController = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController()
-        loginViewController!.modalPresentationStyle = .overFullScreen
-        present(loginViewController!, animated: true, completion: nil)
-    }
-    
-    private func showErrorAlert(message: String) {
-        let alert = UIAlertController(title: "エラー", message: message, preferredStyle: .alert)
-        let closeAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
-        alert.addAction(closeAction)
-        present(alert, animated: true, completion: nil)
+
+    /// 引数の要素をセットし、Itemの取得をする。
+    /// - Parameters:
+    ///   - feed: 表示するフィードの種類
+    ///   - index: PageViewControllerのページ番号
+    func set(_ feed: Feed, pageIndex index: Int) {
+        self.feed = feed
+        title = feed.title()
+        pageIndex = index
+        getItem()
     }
 }
 
@@ -115,24 +92,5 @@ extension ItemListViewController: ItemListDelegate {
     
     func removeReadLaterAt(indexPath: IndexPath) {
         // TODO: 選択された記事に「後で読む」を解除する。
-
-    }
-}
-
-extension ItemListViewController: AuthenticationDelegate {
-    func didLogin(_ result: Result<User, Error>) {
-    }
-    
-    func didLogout(_ result: Result<Void, Error>) {
-        switch result {
-        case .success():
-            let userRepository = UserRepository()
-            userRepository.delete()
-            showLoginView()
-            break
-        case .failure(let error):
-            Logger.debug("ログアウトエラー： \(error.localizedDescription)")
-            break
-        }
     }
 }

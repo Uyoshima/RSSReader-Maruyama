@@ -20,6 +20,7 @@
 		003963322535443A00DDAF8F /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003963312535443A00DDAF8F /* NotificationName+Extension.swift */; };
 		0039633B253552F100DDAF8F /* SelectFeedTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039633A253552F100DDAF8F /* SelectFeedTableDataSource.swift */; };
 		003963402535530200DDAF8F /* SelectFeedTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039633F2535530200DDAF8F /* SelectFeedTableDelegate.swift */; };
+		005514FB253D810100938B48 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 005514FA253D810100938B48 /* Colors.xcassets */; };
 		00919DDA2539350100008CC5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919DD92539350100008CC5 /* Item.swift */; };
 		00919DFB2539459E00008CC5 /* ItemListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919DF72539459E00008CC5 /* ItemListDelegate.swift */; };
 		00919E09253946CC00008CC5 /* ItemListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00919E08253946CC00008CC5 /* ItemListDataSource.swift */; };
@@ -41,6 +42,15 @@
 		0097EC4B2500C4E8006779BE /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0097EC4A2500C4E8006779BE /* AuthenticationServices.framework */; };
 		0097EC512500FE50006779BE /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC502500FE50006779BE /* UserRepository.swift */; };
 		0097EC532500FEA8006779BE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0097EC522500FEA8006779BE /* User.swift */; };
+		00B70E6F253D743C0012786C /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B70E6E253D743C0012786C /* Root.storyboard */; };
+		00B70E8F253D764C0012786C /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B70E8D253D764C0012786C /* Feed.storyboard */; };
+		00B70E90253D764C0012786C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70E8E253D764C0012786C /* FeedViewController.swift */; };
+		00B70E95253D76570012786C /* ItemListViewPageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70E94253D76570012786C /* ItemListViewPageController.swift */; };
+		00B70EA3253D7CDA0012786C /* ScrollTabViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70E9D253D7CDA0012786C /* ScrollTabViewDataSource.swift */; };
+		00B70EA4253D7CDA0012786C /* ScrollTabViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70E9E253D7CDA0012786C /* ScrollTabViewDelegate.swift */; };
+		00B70EA5253D7CDA0012786C /* ScrollTabViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00B70EA0253D7CDA0012786C /* ScrollTabViewCell.xib */; };
+		00B70EA6253D7CDA0012786C /* ScrollTabViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70EA1253D7CDA0012786C /* ScrollTabViewCell.swift */; };
+		00B70EA7253D7CDA0012786C /* ScrollTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B70EA2253D7CDA0012786C /* ScrollTabView.swift */; };
 		00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */; };
 		00DEC6B62515018F004A3BD0 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */; };
 		00DEC7172527146C004A3BD0 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC7162527146C004A3BD0 /* AuthenticationService.swift */; };
@@ -50,8 +60,6 @@
 		00DEC7382527166E004A3BD0 /* FacebookAuthenticationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC7372527166E004A3BD0 /* FacebookAuthenticationStrategy.swift */; };
 		00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC76C25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift */; };
 		00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D43250142CE00F48858 /* ItemListViewController.swift */; };
-		00F64D46250142DB00F48858 /* ItemList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00F64D45250142DB00F48858 /* ItemList.storyboard */; };
-		00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D482501444400F48858 /* ItemListTabBarController.swift */; };
 		41661EF94F0F8CAC38E96D9D /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7E1306333728E5718229EE /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework */; };
 		8BC9050736C23C78627EF887 /* Pods_RSSReader_Maruyama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A702F7A9537EA0A1522B6A60 /* Pods_RSSReader_Maruyama.framework */; };
 		9C889FFED5D43705EBC007D5 /* Pods_RSSReader_MaruyamaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3364534928C3D390C305D65E /* Pods_RSSReader_MaruyamaTests.framework */; };
@@ -88,6 +96,7 @@
 		003963312535443A00DDAF8F /* NotificationName+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		0039633A253552F100DDAF8F /* SelectFeedTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeedTableDataSource.swift; sourceTree = "<group>"; };
 		0039633F2535530200DDAF8F /* SelectFeedTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeedTableDelegate.swift; sourceTree = "<group>"; };
+		005514FA253D810100938B48 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		00919DD92539350100008CC5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		00919DF72539459E00008CC5 /* ItemListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDelegate.swift; sourceTree = "<group>"; };
 		00919E08253946CC00008CC5 /* ItemListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListDataSource.swift; sourceTree = "<group>"; };
@@ -115,6 +124,15 @@
 		0097EC4A2500C4E8006779BE /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
 		0097EC502500FE50006779BE /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		0097EC522500FEA8006779BE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		00B70E6E253D743C0012786C /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
+		00B70E8D253D764C0012786C /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		00B70E8E253D764C0012786C /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		00B70E94253D76570012786C /* ItemListViewPageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListViewPageController.swift; sourceTree = "<group>"; };
+		00B70E9D253D7CDA0012786C /* ScrollTabViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTabViewDataSource.swift; sourceTree = "<group>"; };
+		00B70E9E253D7CDA0012786C /* ScrollTabViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTabViewDelegate.swift; sourceTree = "<group>"; };
+		00B70EA0253D7CDA0012786C /* ScrollTabViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScrollTabViewCell.xib; sourceTree = "<group>"; };
+		00B70EA1253D7CDA0012786C /* ScrollTabViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTabViewCell.swift; sourceTree = "<group>"; };
+		00B70EA2253D7CDA0012786C /* ScrollTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTabView.swift; sourceTree = "<group>"; };
 		00DEC6A82514B62B004A3BD0 /* Date+Extensioin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensioin.swift"; sourceTree = "<group>"; };
 		00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		00DEC7162527146C004A3BD0 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
@@ -124,8 +142,6 @@
 		00DEC7372527166E004A3BD0 /* FacebookAuthenticationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookAuthenticationStrategy.swift; sourceTree = "<group>"; };
 		00DEC76C25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationStrategyLocator.swift; sourceTree = "<group>"; };
 		00F64D43250142CE00F48858 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
-		00F64D45250142DB00F48858 /* ItemList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemList.storyboard; sourceTree = "<group>"; };
-		00F64D482501444400F48858 /* ItemListTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListTabBarController.swift; sourceTree = "<group>"; };
 		1A7E1306333728E5718229EE /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3364534928C3D390C305D65E /* Pods_RSSReader_MaruyamaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSSReader_MaruyamaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65AB743606714C932764B31D /* Pods-RSSReader-MaruyamaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSReader-MaruyamaTests.release.xcconfig"; path = "Target Support Files/Pods-RSSReader-MaruyamaTests/Pods-RSSReader-MaruyamaTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,8 +186,11 @@
 			isa = PBXGroup;
 			children = (
 				0039631B2535431B00DDAF8F /* SelectFeeds */,
-				00028CBA2502395600431E21 /* ItemList */,
 				00028CBB2502397200431E21 /* Login */,
+				00028CBA2502395600431E21 /* ItemList */,
+				00B70E7F253D75870012786C /* Feed */,
+				00B70E94253D76570012786C /* ItemListViewPageController.swift */,
+				00B70E6E253D743C0012786C /* Root.storyboard */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -181,8 +200,6 @@
 			children = (
 				00919DF62539459E00008CC5 /* ItemListView */,
 				00919E2B25394B0600008CC5 /* Table */,
-				00F64D45250142DB00F48858 /* ItemList.storyboard */,
-				00F64D482501444400F48858 /* ItemListTabBarController.swift */,
 				00F64D43250142CE00F48858 /* ItemListViewController.swift */,
 				00919E55253980FC00008CC5 /* ItemCreator.swift */,
 			);
@@ -337,10 +354,41 @@
 			path = "RSSReader-MaruyamaUITests";
 			sourceTree = "<group>";
 		};
+		00B70E7F253D75870012786C /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				00B70E9C253D7CDA0012786C /* ScrollTabView */,
+				00B70E8D253D764C0012786C /* Feed.storyboard */,
+				00B70E8E253D764C0012786C /* FeedViewController.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		00B70E9C253D7CDA0012786C /* ScrollTabView */ = {
+			isa = PBXGroup;
+			children = (
+				00B70E9F253D7CDA0012786C /* ScrollTabViewCell */,
+				00B70E9D253D7CDA0012786C /* ScrollTabViewDataSource.swift */,
+				00B70E9E253D7CDA0012786C /* ScrollTabViewDelegate.swift */,
+				00B70EA2253D7CDA0012786C /* ScrollTabView.swift */,
+			);
+			path = ScrollTabView;
+			sourceTree = "<group>";
+		};
+		00B70E9F253D7CDA0012786C /* ScrollTabViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				00B70EA0253D7CDA0012786C /* ScrollTabViewCell.xib */,
+				00B70EA1253D7CDA0012786C /* ScrollTabViewCell.swift */,
+			);
+			path = ScrollTabViewCell;
+			sourceTree = "<group>";
+		};
 		00BE6F69252FF8B9003E0477 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				0097EC1D2500AF25006779BE /* Assets.xcassets */,
+				005514FA253D810100938B48 /* Colors.xcassets */,
 				0097EC1F2500AF25006779BE /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
@@ -529,8 +577,11 @@
 			files = (
 				0097EC482500C31E006779BE /* Login.storyboard in Resources */,
 				00919E3125394B0600008CC5 /* ItemListTableCell.xib in Resources */,
+				00B70E8F253D764C0012786C /* Feed.storyboard in Resources */,
+				00B70E6F253D743C0012786C /* Root.storyboard in Resources */,
+				00B70EA5253D7CDA0012786C /* ScrollTabViewCell.xib in Resources */,
+				005514FB253D810100938B48 /* Colors.xcassets in Resources */,
 				003963222535434100DDAF8F /* SelectFeed.storyboard in Resources */,
-				00F64D46250142DB00F48858 /* ItemList.storyboard in Resources */,
 				0097EC212500AF25006779BE /* LaunchScreen.storyboard in Resources */,
 				003963232535434100DDAF8F /* FeedTableCell.xib in Resources */,
 				0097EC1E2500AF25006779BE /* Assets.xcassets in Resources */,
@@ -695,6 +746,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B70E95253D76570012786C /* ItemListViewPageController.swift in Sources */,
 				00919E3225394B0600008CC5 /* ItemListTableCell.swift in Sources */,
 				00919E3025394B0600008CC5 /* ItemListTableView.swift in Sources */,
 				003963202535434100DDAF8F /* SelectFeedViewController.swift in Sources */,
@@ -711,25 +763,29 @@
 				0039632D253543BA00DDAF8F /* FeedRepository.swift in Sources */,
 				0097EC462500C30F006779BE /* LoginViewController.swift in Sources */,
 				0097EC152500AF22006779BE /* AppDelegate.swift in Sources */,
-				00F64D492501444400F48858 /* ItemListTabBarController.swift in Sources */,
 				0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */,
 				00919E56253980FC00008CC5 /* ItemCreator.swift in Sources */,
 				0039633B253552F100DDAF8F /* SelectFeedTableDataSource.swift in Sources */,
 				003963322535443A00DDAF8F /* NotificationName+Extension.swift in Sources */,
 				00DEC72E2527161D004A3BD0 /* AppleAuthenticationStrategy.swift in Sources */,
+				00B70EA3253D7CDA0012786C /* ScrollTabViewDataSource.swift in Sources */,
 				0097EC532500FEA8006779BE /* User.swift in Sources */,
 				00396328253543A700DDAF8F /* Feed.swift in Sources */,
 				00919E09253946CC00008CC5 /* ItemListDataSource.swift in Sources */,
 				00DEC7332527164D004A3BD0 /* GoogleAuthenticationStrategy.swift in Sources */,
 				003963212535434100DDAF8F /* FeedTableCell.swift in Sources */,
 				0097EC512500FE50006779BE /* UserRepository.swift in Sources */,
+				00B70E90253D764C0012786C /* FeedViewController.swift in Sources */,
 				00DEC71D25271517004A3BD0 /* AuthenticationStrategy.swift in Sources */,
 				00919DFB2539459E00008CC5 /* ItemListDelegate.swift in Sources */,
+				00B70EA4253D7CDA0012786C /* ScrollTabViewDelegate.swift in Sources */,
 				00919DDA2539350100008CC5 /* Item.swift in Sources */,
 				00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */,
 				00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */,
+				00B70EA6253D7CDA0012786C /* ScrollTabViewCell.swift in Sources */,
 				003963402535530200DDAF8F /* SelectFeedTableDelegate.swift in Sources */,
 				00919E132539474100008CC5 /* ItemListCellProtocol.swift in Sources */,
+				00B70EA7253D7CDA0012786C /* ScrollTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
