@@ -28,6 +28,16 @@ class ItemListTableCell:UITableViewCell, ItemListCellProtocol {
         descriptionLabel.textColor = textColor
     
         setReadLaterLabel(isReadLater: item.isReadLater)
+        
+        setFontSize()
+    }
+    
+    private func setFontSize() {
+        let fontSize = UserSetting.sharedObject.getFontSize()
+        
+        pubDateLabel.font     = UIFont.systemFont(ofSize: fontSize.pubTextSize())
+        titleLabel.font       = UIFont.systemFont(ofSize: fontSize.titleSize())
+        descriptionLabel.font = UIFont.systemFont(ofSize: fontSize.textSize())
     }
     
     func setReadLaterLabel(isReadLater: Bool) {

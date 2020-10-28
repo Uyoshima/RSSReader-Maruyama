@@ -12,6 +12,36 @@ enum ItemListStyle: String, Codable {
     case collection = "collectionView"
 }
 
+enum FontSize: Int, Codable {
+    case small = 0
+    case midum = 1
+    case big   = 2
+    
+    func titleSize() -> CGFloat {
+        switch self {
+        case .small: return 14.0
+        case .midum: return 18.0
+        case .big  : return 22.0
+        }
+    }
+    
+    func textSize() -> CGFloat {
+        switch self {
+        case .small: return 8.0
+        case .midum: return 12.0
+        case .big  : return 16.0
+        }
+    }
+    
+    func pubTextSize() -> CGFloat {
+        switch self {
+        case .small: return 7.0
+        case .midum: return 11.0
+        case .big  : return 15.0
+        }
+    }
+}
+
 class UserSetting: Codable {
     
     static let sharedObject: UserSetting = {
@@ -35,17 +65,28 @@ class UserSetting: Codable {
     }()
 
     private var listStyle: ItemListStyle
+    private var fontSize: FontSize
     
     init() {
         listStyle = .table
+        fontSize = .midum
     }
     
     func getListStyle() -> ItemListStyle {
         return listStyle
     }
     
+    func getFontSize() -> FontSize {
+        return fontSize
+    }
+    
     func set(listStyle: ItemListStyle) {
         self.listStyle = listStyle
+        save()
+    }
+    
+    func set(fontSize: FontSize) {
+        self.fontSize = fontSize
         save()
     }
     

@@ -12,4 +12,6 @@ extension Notification.Name {
     static let changeListStyle        = Notification.Name("changeListStyle")
     static let changeReadLaterValue   = Notification.Name("changeReadLaterValue")
     static let changeAlreadyReadValue = Notification.Name("changeAlreadyReadValue")
+    static let changeFontSize         = Notification.Name("changeFontSize")
+
 }

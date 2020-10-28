@@ -29,13 +29,18 @@ class ItemListViewController: UIViewController {
                                                object: nil)
         // 記事の「後で読む」に変更があった時のオブザーバー
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(changeReadLaterValue(notification:)),
+                                               selector: #selector(reloadListViewFromObserver(notification:)),
                                                name: Notification.Name.changeReadLaterValue,
                                                object: nil)
         // 記事が既読状態に変更された時のオブザーバー
         NotificationCenter.default.addObserver(self,
-                                               selector: #selector(changeAlreadyReadValue(notification:)),
+                                               selector: #selector(reloadListViewFromObserver(notification:)),
                                                name: Notification.Name.changeAlreadyReadValue,
+                                               object: nil)
+        
+        // フォントサイズの変更された時のオブザーバー
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadListViewFromObserver(notification:)),
+                                               name: Notification.Name.changeFontSize,
                                                object: nil)
     }
     
@@ -70,6 +75,7 @@ class ItemListViewController: UIViewController {
     private func createCollectionView() {
         let flowlayout = UICollectionViewFlowLayout()
         flowlayout.scrollDirection = .vertical
+        flowlayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         flowlayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         flowlayout.minimumLineSpacing = 0
         itemListCollectionView = ItemListCollectionView(frame: view.frame, collectionViewLayout: flowlayout)
@@ -114,11 +120,7 @@ class ItemListViewController: UIViewController {
         reloadListView()
     }
     
-    @objc func changeReadLaterValue(notification: Notification) {
-        reloadListView()
-    }
-    
-    @objc func changeAlreadyReadValue(notification: Notification) {
+    @objc func reloadListViewFromObserver(notification: Notification) {
         reloadListView()
     }
     

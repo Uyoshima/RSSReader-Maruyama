@@ -21,23 +21,31 @@ class SettingListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private enum SettingDataSource {
+        case subscription
         case listStyle
+        case fontSize
         
         func title() -> String {
             switch self {
+            case .subscription: return "購読フィードの編集"
             case .listStyle: return "表示形式の変更"
+            case .fontSize: return "文字サイズの変更"
             }
         }
         
         func viewController() -> UIViewController {
             switch self {
+            case .subscription:
+                return UIStoryboard(name:"SelectFeed", bundle: nil).instantiateInitialViewController()!
             case .listStyle:
                 return UIStoryboard(name: "SelectListStyle", bundle: nil).instantiateInitialViewController()!
+            case .fontSize:
+                return UIStoryboard(name: "SelectFontSize", bundle: nil).instantiateInitialViewController()!
             }
         }
     }
     
-    private let cellData: [SettingDataSource] = [.listStyle]
+    private let cellData: [SettingDataSource] = [.subscription, .listStyle, .fontSize]
     
     override func viewDidLoad() {
         super.viewDidLoad()
