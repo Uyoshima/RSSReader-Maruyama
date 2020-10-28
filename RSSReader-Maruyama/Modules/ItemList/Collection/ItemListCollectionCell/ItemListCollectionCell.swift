@@ -56,7 +56,7 @@ class ItemListCollectionCell: UICollectionViewCell, ItemListCellProtocol {
     
     func getTextColor(isAlreadyRead: Bool) -> UIColor {
         if isAlreadyRead {
-            return UIColor(named: "text-text-alreadyRead")!
+            return UIColor(named: "text-alreadyRead")!
         } else {
             return UIColor(named: "text-normal")!
         }
