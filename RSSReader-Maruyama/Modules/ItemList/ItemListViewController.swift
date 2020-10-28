@@ -75,7 +75,6 @@ class ItemListViewController: UIViewController {
     private func createCollectionView() {
         let flowlayout = UICollectionViewFlowLayout()
         flowlayout.scrollDirection = .vertical
-        flowlayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
         flowlayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         flowlayout.minimumLineSpacing = 0
         itemListCollectionView = ItemListCollectionView(frame: view.frame, collectionViewLayout: flowlayout)

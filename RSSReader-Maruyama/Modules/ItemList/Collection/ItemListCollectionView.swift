@@ -12,6 +12,11 @@ class ItemListCollectionView: UICollectionView, ItemListViewProtocol {
     var itemListDataSource: ItemListDataSource!
     var itemListDelegate: ItemListDelegate!
     
+    private lazy var cellHelper: ItemListCollectionCell? = {
+           let object = UINib(nibName: "ItemListCollectionCell", bundle: nil).instantiate(withOwner: nil).first
+           return object as? ItemListCollectionCell
+       }()
+    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         initialSetting()
@@ -80,6 +85,14 @@ extension ItemListCollectionView: UICollectionViewDelegate {
 extension ItemListCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
-        return CGSize(width: width, height: (width/3) )
+        let fontSize = UserSetting.sharedObject.getFontSize()
+        switch fontSize {
+        case .small:
+            return CGSize(width: width, height: (width/4) )
+        case .midum:
+            return CGSize(width: width, height: (width/3) )
+        case .big:
+            return CGSize(width: width, height: (width/2) )
+        }
     }
 }
