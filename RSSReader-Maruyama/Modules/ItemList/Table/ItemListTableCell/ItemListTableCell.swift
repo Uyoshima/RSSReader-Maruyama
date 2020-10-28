@@ -36,7 +36,7 @@ class ItemListTableCell:UITableViewCell, ItemListCellProtocol {
         let fontSize = UserSetting.sharedObject.getFontSize()
         
         pubDateLabel.font     = UIFont.systemFont(ofSize: fontSize.pubTextSize())
-        titleLabel.font       = UIFont.systemFont(ofSize: fontSize.titleSize())
+        titleLabel.font       = UIFont.systemFont(ofSize: fontSize.titleSize(), weight: .bold)
         descriptionLabel.font = UIFont.systemFont(ofSize: fontSize.textSize())
     }
     
