@@ -9,7 +9,7 @@ import UIKit
 import WebKit
 
 class WebViewController: UIViewController {
-
+    
     private var webView: WKWebView!
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var forwardButton: UIBarButtonItem!
@@ -85,11 +85,11 @@ class WebViewController: UIViewController {
                 }
             }
         })
-
+        
         observations.append(webView.observe(\.canGoForward, options: .new){ _, change in
             if let value = change.newValue {
-                 DispatchQueue.main.async {
-                self.forwardButton.isEnabled = value
+                DispatchQueue.main.async {
+                    self.forwardButton.isEnabled = value
                 }
             }
         })
@@ -113,8 +113,13 @@ class WebViewController: UIViewController {
         NotificationCenter.default.post(name: Notification.Name.changeReadLaterValue, object: nil)
         setReadLaterButton(state: item.isReadLater)
     }
-
+    
     @IBAction func didPushShareButton(_ sender: Any) {
+        let text = "【\(item.title)】\(item.description_item)"
+        let image: UIImage = UIImage(named: "yahoo")!
+        let shareItems = [image, text] as [Any]
+        let controller = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+        present(controller, animated: true, completion: nil)
     }
     
     @IBAction func didPushClose(_ sender: Any) {
@@ -124,3 +129,4 @@ class WebViewController: UIViewController {
 
 extension WebViewController: UIWebViewDelegate {
 }
+
