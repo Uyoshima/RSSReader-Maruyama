@@ -115,10 +115,8 @@ class WebViewController: UIViewController {
     }
     
     @IBAction func didPushShareButton(_ sender: Any) {
-        let text = "【\(item.title)】\(item.description_item)"
-        let image: UIImage = UIImage(named: "yahoo")!
-        let shareItems = [image, text] as [Any]
-        let controller = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+        let itemSource = ShareActivityItemSource(webView.url!)
+        let controller = UIActivityViewController(activityItems: [itemSource], applicationActivities: nil)
         present(controller, animated: true, completion: nil)
     }
     
