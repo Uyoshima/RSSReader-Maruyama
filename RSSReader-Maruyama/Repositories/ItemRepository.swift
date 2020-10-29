@@ -82,21 +82,6 @@ class ItemRepository {
         return items
     }
     
-    func deleteItemIfDontNeed(feed: Feed, newItems: [Item]) {
-        var deleteReserveItems = realm.objects(Item.self)
-            .filter("feedRawValue =\(feed.rawValue)")
-            .filter(isNotReadLaterPredicate)
-        
-        for item in newItems {
-            let predicate = NSPredicate(format: "url != %@", item.url)
-            deleteReserveItems = deleteReserveItems.filter(predicate)
-        }
-        
-        try! realm.write {
-            realm.delete(deleteReserveItems)
-        }
-    }
-    
     func newestItem(feed: Feed) -> Item? {
         let items = realm.objects(Item.self)
             .filter("feedRawValue =\(feed.rawValue)")
