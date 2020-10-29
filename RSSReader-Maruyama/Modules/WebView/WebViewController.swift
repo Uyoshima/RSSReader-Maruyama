@@ -124,7 +124,3 @@ class WebViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 }
-
-extension WebViewController: UIWebViewDelegate {
-}
-

@@ -74,7 +74,6 @@ class UserSetting: Codable {
     private var rssInterval_sec: Double = 180
     private var filter: FilterSetting =  .all
     
-    
     func hasIntervalPassed(from: Date, interval: TimeInterval) -> Bool {
         let currentInterval = Date().timeIntervalSince(from)
         if  currentInterval > interval {

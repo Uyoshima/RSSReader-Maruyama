@@ -23,7 +23,6 @@ class SelectFontSizeViewController: UIViewController {
         segmentedControl.selectedSegmentIndex = currentFontSize.rawValue
     }
 
-    
     private func setNavBarButton() {
         let saveButton = UIBarButtonItem(title: "保存", style: .plain, target: self, action: #selector(didPushSaveButton(_:)))
         navigationItem.setRightBarButton(saveButton, animated: true)
