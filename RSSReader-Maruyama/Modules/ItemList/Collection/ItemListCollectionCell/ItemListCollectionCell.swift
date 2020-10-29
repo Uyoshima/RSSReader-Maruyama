@@ -31,19 +31,35 @@ class ItemListCollectionCell: UICollectionViewCell, ItemListCellProtocol {
         titleLabel.text = item.title
         descriptionLabel.text = item.description_item
         
-        let textColor = getTextColor(isAlreadyRead: item.isAlreadyRead)
-        pubDateLabel.textColor     = textColor
-        titleLabel.textColor       = textColor
-        descriptionLabel.textColor = textColor
-        
         setReadLaterButtonImage(item.isReadLater)
         
+        settingWrapView()
+        setTextColor()
+        setFontSize()
+    }
+    
+    private func settingWrapView() {
         wrapView.backgroundColor = UIColor(named: "card-background")
         wrapView.layer.cornerRadius = 10
         wrapView.layer.shadowColor = UIColor.black.cgColor
         wrapView.layer.shadowOffset = CGSize(width: 0, height: 0)
         wrapView.layer.shadowRadius = 3
         wrapView.layer.shadowOpacity = 0.2
+    }
+    
+    private func setTextColor() {
+        let textColor = getTextColor(isAlreadyRead: item.isAlreadyRead)
+        pubDateLabel.textColor     = textColor
+        titleLabel.textColor       = textColor
+        descriptionLabel.textColor = textColor
+    }
+    
+    private func setFontSize() {
+        let fontSize = UserSetting.sharedObject.getFontSize()
+        
+        pubDateLabel.font     = UIFont.systemFont(ofSize: fontSize.pubTextSize())
+        titleLabel.font       = UIFont.systemFont(ofSize: fontSize.titleSize(), weight: .bold)
+        descriptionLabel.font = UIFont.systemFont(ofSize: fontSize.textSize())
     }
     
     private func setReadLaterButtonImage(_ isReadLater: Bool) {

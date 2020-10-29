@@ -73,4 +73,19 @@ class ItemRepository {
         
         return items
     }
+    
+    func deleteOtherThanReadLater(feed: Feed) {
+        let items = realm.objects(Item.self)
+            .filter("feedRawValue =\(feed.rawValue)")
+            .filter(isNotReadLaterPredicate)
+        
+        try! realm.write {
+            realm.delete(items)
+        }
+    }
+    
+    func newestItem(feed: Feed) -> Item {
+        let items = realm.objects(Item.self).filter("feedRawValue =\(feed.rawValue)").sorted(byKeyPath: "createDate", ascending: false)
+        return items.first!
+    }
 }
