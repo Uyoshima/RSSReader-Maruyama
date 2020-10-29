@@ -76,6 +76,7 @@
 		00DEC76D25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC76C25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift */; };
 		00E2A6EA25492BE8005BFA22 /* SelectListStyleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E2A6E925492BE8005BFA22 /* SelectListStyleViewController.swift */; };
 		00E2A6EF25492BF4005BFA22 /* SelectListStyle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00E2A6EE25492BF4005BFA22 /* SelectListStyle.storyboard */; };
+		00F18D682549675C0025F87D /* ShareActivityItemSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F18D672549675C0025F87D /* ShareActivityItemSource.swift */; };
 		00F64D44250142CE00F48858 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F64D43250142CE00F48858 /* ItemListViewController.swift */; };
 		41661EF94F0F8CAC38E96D9D /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A7E1306333728E5718229EE /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework */; };
 		8BC9050736C23C78627EF887 /* Pods_RSSReader_Maruyama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A702F7A9537EA0A1522B6A60 /* Pods_RSSReader_Maruyama.framework */; };
@@ -175,6 +176,7 @@
 		00DEC76C25273FAB004A3BD0 /* AuthenticationStrategyLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationStrategyLocator.swift; sourceTree = "<group>"; };
 		00E2A6E925492BE8005BFA22 /* SelectListStyleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectListStyleViewController.swift; sourceTree = "<group>"; };
 		00E2A6EE25492BF4005BFA22 /* SelectListStyle.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectListStyle.storyboard; sourceTree = "<group>"; };
+		00F18D672549675C0025F87D /* ShareActivityItemSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareActivityItemSource.swift; sourceTree = "<group>"; };
 		00F64D43250142CE00F48858 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		1A7E1306333728E5718229EE /* Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSSReader_Maruyama_RSSReader_MaruyamaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3364534928C3D390C305D65E /* Pods_RSSReader_MaruyamaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSSReader_MaruyamaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -329,6 +331,7 @@
 			children = (
 				005E0B8D253FDC0300E07373 /* WebView.storyboard */,
 				005E0B8E253FDC0300E07373 /* WebViewController.swift */,
+				00F18D672549675C0025F87D /* ShareActivityItemSource.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -913,6 +916,7 @@
 				00DEC6A92514B62B004A3BD0 /* Date+Extensioin.swift in Sources */,
 				00C13909253ED0CE007A4B89 /* ItemRepository.swift in Sources */,
 				00A2E6F02549463900335134 /* SelectRSSIntervalViewController.swift in Sources */,
+				00F18D682549675C0025F87D /* ShareActivityItemSource.swift in Sources */,
 				00B70EA6253D7CDA0012786C /* ScrollTabViewCell.swift in Sources */,
 				00551506253D8BB700938B48 /* ItemListCollectionCell.swift in Sources */,
 				003963402535530200DDAF8F /* SelectFeedTableDelegate.swift in Sources */,

@@ -103,6 +103,16 @@ class ReadLaterViewController: UIViewController {
         reloadListView()
     }
     
+    private func transitionToWebViewController(with item: Item) {
+        let navigationController = UIStoryboard.init(name: "WebView", bundle: nil).instantiateInitialViewController() as! UINavigationController
+        navigationController.modalPresentationStyle = .overFullScreen
+
+        let webViewController = navigationController.viewControllers[0] as! WebViewController
+        webViewController.item = item
+        
+        present(navigationController, animated: true, completion: nil)
+    }
+    
     /// 自信のFeedの記事を取得、ListViewをリロードし表示する。
     private func getItem() {
         let itemRepository = ItemRepository()
@@ -144,6 +154,7 @@ extension ReadLaterViewController: ItemListDataSource {
 extension ReadLaterViewController: ItemListDelegate {
     func itemList(didSelectedRowAt indexPath: IndexPath) {
         // TODO: 選択された記事のWebページを表示する。
+        transitionToWebViewController(with: items[indexPath.row])
     }
     
     func addReadLaterAt(indexPath: IndexPath) {
