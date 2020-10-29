@@ -28,4 +28,19 @@ class ItemOrganizer: NSObject {
             realm.delete(deleteReserveItems)
         }
     }
+    
+    func extractionUnread(items: [Item], filterSetting: FilterSetting) -> [Item] {
+        
+        if filterSetting == .all {
+            return items
+        }
+        
+        var returnItems: [Item] = []
+        for item in items {
+            if !item.isAlreadyRead {
+                returnItems.append(item)
+            }
+        }
+        return returnItems
+    }
 }

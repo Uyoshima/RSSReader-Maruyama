@@ -23,13 +23,13 @@ class ItemRepository {
     
     func get(feed: Feed) -> [Item] {
         let items = realm.objects(Item.self).filter("feedRawValue == \(feed.rawValue)")
-        var tmp: [Item] = []
+        var retunItems: [Item] = []
         for item in items {
-            tmp.append(item)
+            retunItems.append(item)
         }
-        return tmp
+        return retunItems
     }
-    
+
     func save(items: [Item]) {
         try! realm.write {
             realm.add(items)
