@@ -33,6 +33,10 @@ class SelectFeedViewController: UIViewController {
     private func setNavBarButton() {
         let saveButton = UIBarButtonItem(title: "保存", style: .plain, target: self, action: #selector(didPushSaveButton(sender:)))
         navigationItem.setRightBarButton(saveButton, animated: true)
+        
+        if isFromLoginView {
+            navigationItem.hidesBackButton = true
+        }
     }
     
     @objc private func didPushSaveButton(sender: Any) {
