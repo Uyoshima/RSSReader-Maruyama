@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		002C6DC22505138E00914046 /* UserDefaults+Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C6DC12505138E00914046 /* UserDefaults+Keys.swift */; };
 		002C6DC425066EBF00914046 /* IconableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C6DC325066EBF00914046 /* IconableButton.swift */; };
+		0032FBB0254A8D8800A1C13C /* SelectListFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0032FBAF254A8D8800A1C13C /* SelectListFilterViewController.swift */; };
+		0032FBB5254A8D9400A1C13C /* SelectListFilter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0032FBB4254A8D9400A1C13C /* SelectListFilter.storyboard */; };
 		00339E6A25120531000B2121 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00339E6925120531000B2121 /* Logger.swift */; };
 		00339E7025149712000B2121 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00339E6F25149712000B2121 /* String+Extension.swift */; };
 		003963202535434100DDAF8F /* SelectFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039631C2535434100DDAF8F /* SelectFeedViewController.swift */; };
@@ -20,6 +22,7 @@
 		003963322535443A00DDAF8F /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003963312535443A00DDAF8F /* NotificationName+Extension.swift */; };
 		0039633B253552F100DDAF8F /* SelectFeedTableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039633A253552F100DDAF8F /* SelectFeedTableDataSource.swift */; };
 		003963402535530200DDAF8F /* SelectFeedTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0039633F2535530200DDAF8F /* SelectFeedTableDelegate.swift */; };
+		00436213254A87FD00F48C9E /* ItemOrganizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00436212254A87FD00F48C9E /* ItemOrganizer.swift */; };
 		005514FB253D810100938B48 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 005514FA253D810100938B48 /* Colors.xcassets */; };
 		00551504253D8BB700938B48 /* ItemListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00551500253D8BB700938B48 /* ItemListCollectionView.swift */; };
 		00551505253D8BB700938B48 /* ItemListCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00551502253D8BB700938B48 /* ItemListCollectionCell.xib */; };
@@ -103,6 +106,8 @@
 /* Begin PBXFileReference section */
 		002C6DC12505138E00914046 /* UserDefaults+Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Keys.swift"; sourceTree = "<group>"; };
 		002C6DC325066EBF00914046 /* IconableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconableButton.swift; sourceTree = "<group>"; };
+		0032FBAF254A8D8800A1C13C /* SelectListFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectListFilterViewController.swift; sourceTree = "<group>"; };
+		0032FBB4254A8D9400A1C13C /* SelectListFilter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectListFilter.storyboard; sourceTree = "<group>"; };
 		00339E6925120531000B2121 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		00339E6F25149712000B2121 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		0039631C2535434100DDAF8F /* SelectFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFeedViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +119,7 @@
 		003963312535443A00DDAF8F /* NotificationName+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 		0039633A253552F100DDAF8F /* SelectFeedTableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeedTableDataSource.swift; sourceTree = "<group>"; };
 		0039633F2535530200DDAF8F /* SelectFeedTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFeedTableDelegate.swift; sourceTree = "<group>"; };
+		00436212254A87FD00F48C9E /* ItemOrganizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemOrganizer.swift; sourceTree = "<group>"; };
 		005514FA253D810100938B48 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		00551500253D8BB700938B48 /* ItemListCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListCollectionView.swift; sourceTree = "<group>"; };
 		00551502253D8BB700938B48 /* ItemListCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ItemListCollectionCell.xib; sourceTree = "<group>"; };
@@ -231,6 +237,7 @@
 				00A38F6925492FE00076BF05 /* SelectFontSizeViewController */,
 				00E2A6F325492BF8005BFA22 /* SelectListStyle */,
 				00A2E6FF2549464F00335134 /* RSSInterval */,
+				0032FBB9254A8D9900A1C13C /* SelectListFilter */,
 				00B70E6E253D743C0012786C /* Root.storyboard */,
 			);
 			path = Modules;
@@ -268,6 +275,15 @@
 				00DEC6B52515018F004A3BD0 /* UIViewController+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0032FBB9254A8D9900A1C13C /* SelectListFilter */ = {
+			isa = PBXGroup;
+			children = (
+				0032FBB4254A8D9400A1C13C /* SelectListFilter.storyboard */,
+				0032FBAF254A8D8800A1C13C /* SelectListFilterViewController.swift */,
+			);
+			path = SelectListFilter;
 			sourceTree = "<group>";
 		};
 		00339E6C251208AD000B2121 /* Utilities */ = {
@@ -405,6 +421,7 @@
 				00028CB92502393E00431E21 /* Modules */,
 				00F64D4C2501557100F48858 /* Models */,
 				00919E55253980FC00008CC5 /* ItemCreator.swift */,
+				00436212254A87FD00F48C9E /* ItemOrganizer.swift */,
 				00F64D4D2501559F00F48858 /* Repositories */,
 				00DEC7152527123B004A3BD0 /* Serviceis */,
 				00DEC72425271559004A3BD0 /* Strategies */,
@@ -705,6 +722,7 @@
 				003963222535434100DDAF8F /* SelectFeed.storyboard in Resources */,
 				00E2A6EF25492BF4005BFA22 /* SelectListStyle.storyboard in Resources */,
 				00551505253D8BB700938B48 /* ItemListCollectionCell.xib in Resources */,
+				0032FBB5254A8D9400A1C13C /* SelectListFilter.storyboard in Resources */,
 				0097EC212500AF25006779BE /* LaunchScreen.storyboard in Resources */,
 				005E0B8F253FDC0300E07373 /* WebView.storyboard in Resources */,
 				003963232535434100DDAF8F /* FeedTableCell.xib in Resources */,
@@ -889,6 +907,7 @@
 				0039632D253543BA00DDAF8F /* FeedRepository.swift in Sources */,
 				0097EC462500C30F006779BE /* LoginViewController.swift in Sources */,
 				00551518253D90EF00938B48 /* UserSetting.swift in Sources */,
+				00436213254A87FD00F48C9E /* ItemOrganizer.swift in Sources */,
 				0097EC152500AF22006779BE /* AppDelegate.swift in Sources */,
 				0097EC172500AF22006779BE /* SceneDelegate.swift in Sources */,
 				00551510253D8EB100938B48 /* SettingListViewController.swift in Sources */,
@@ -905,6 +924,7 @@
 				00919E09253946CC00008CC5 /* ItemListDataSource.swift in Sources */,
 				00DEC7332527164D004A3BD0 /* GoogleAuthenticationStrategy.swift in Sources */,
 				003963212535434100DDAF8F /* FeedTableCell.swift in Sources */,
+				0032FBB0254A8D8800A1C13C /* SelectListFilterViewController.swift in Sources */,
 				00A38F6025492FC10076BF05 /* SelectFontSizeViewController.swift in Sources */,
 				0097EC512500FE50006779BE /* UserRepository.swift in Sources */,
 				00B70E90253D764C0012786C /* FeedViewController.swift in Sources */,

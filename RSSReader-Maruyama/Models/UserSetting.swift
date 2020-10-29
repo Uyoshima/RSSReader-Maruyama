@@ -42,6 +42,11 @@ enum FontSize: Int, Codable {
     }
 }
 
+enum FilterSetting: Int, Codable {
+    case all    = 0
+    case unread = 1
+}
+
 class UserSetting: Codable {
     
     static let sharedObject: UserSetting = {
@@ -67,7 +72,7 @@ class UserSetting: Codable {
     private var listStyle: ItemListStyle = .table
     private var fontSize: FontSize = .midum
     private var rssInterval_sec: Double = 180
-    
+    private var filter: FilterSetting =  .all
     
     func hasIntervalPassed(from: Date, interval: TimeInterval) -> Bool {
         let currentInterval = Date().timeIntervalSince(from)
@@ -96,6 +101,10 @@ class UserSetting: Codable {
         return Int(rssInterval_sec / 60)
     }
     
+    func getFillter() -> FilterSetting {
+        return filter
+    }
+    
     // MARK : - setter
     
     func set(listStyle: ItemListStyle) {
@@ -115,6 +124,11 @@ class UserSetting: Codable {
     
     func set(rssInterval_min: Double) {
         self.rssInterval_sec = Double(rssInterval_min * 60)
+        save()
+    }
+    
+    func set(filterSetting: FilterSetting) {
+        self.filter = filterSetting
         save()
     }
     

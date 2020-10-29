@@ -20,26 +20,11 @@ class ItemListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setListView()
-        // 設定画面で表示スタイルの変更があった時のオブザーバー
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(changeListStyle(notification:)),
-                                               name: Notification.Name.changeListStyle,
-                                               object: nil)
-        // 記事の「後で読む」に変更があった時のオブザーバー
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(reloadListViewFromObserver(notification:)),
-                                               name: Notification.Name.changeReadLaterValue,
-                                               object: nil)
-        // 記事が既読状態に変更された時のオブザーバー
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(reloadListViewFromObserver(notification:)),
-                                               name: Notification.Name.changeAlreadyReadValue,
-                                               object: nil)
-        
-        // フォントサイズの変更された時のオブザーバー
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadListViewFromObserver(notification:)),
-                                               name: Notification.Name.changeFontSize,
-                                               object: nil)
+        setChangeListStyleObserver()
+        setChangeReadLaterValueObserver()
+        setChangeAlredyReadValueObserver()
+        setChangeFontSizeObserver()
+        setChangeFilterSettingObserver()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +35,52 @@ class ItemListViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
+    
+    /// 引数の要素をセットし、Itemの取得をする。
+    /// - Parameters:
+    ///   - feed: 表示するフィードの種類
+    ///   - index: PageViewControllerのページ番号
+    func set(_ feed: Feed, pageIndex index: Int) {
+        self.feed = feed
+        title = feed.title()
+        pageIndex = index
+    }
+    
+    // MARK: - setting Observers
+    private func setChangeListStyleObserver() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(changeListStyle(notification:)),
+                                               name: Notification.Name.changeListStyle,
+                                               object: nil)
+    }
+    
+    private func setChangeAlredyReadValueObserver() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadListViewFromObserver(notification:)),
+                                               name: Notification.Name.changeAlreadyReadValue,
+                                               object: nil)
+    }
+    
+    private func setChangeReadLaterValueObserver() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reloadListViewFromObserver(notification:)),
+                                               name: Notification.Name.changeReadLaterValue,
+                                               object: nil)
+    }
+    
+    private func setChangeFontSizeObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadListViewFromObserver(notification:)),
+                                               name: Notification.Name.changeFontSize,
+                                               object: nil)
+    }
+    
+    private func setChangeFilterSettingObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadListViewFromObserver(notification:)),
+                                               name: Notification.Name.changeFilterSetting,
+                                               object: nil)
+    }
+    
+    // MARK: - setting ListView
     
     private func setListView() {
         switch userSetting.getListStyle() {
@@ -63,6 +94,8 @@ class ItemListViewController: UIViewController {
             break
         }
     }
+    
+    // MARK: - create listView
     
     private func createTableView() {
         itemListTableView = ItemListTableView(frame: view.frame, style: .plain)
@@ -80,6 +113,8 @@ class ItemListViewController: UIViewController {
         itemListCollectionView.itemListDataSource = self
     }
     
+    // MARK: - add ListView
+    
     private func addTableView() {
         removeAllSubViews()
         view.addSubview(itemListTableView)
@@ -92,11 +127,15 @@ class ItemListViewController: UIViewController {
         itemListCollectionView.addFillConstraint(to: view)
     }
     
+    // MARK: - remove ListView
+    
     private func removeAllSubViews() {
         for view in view.subviews {
             view.removeFromSuperview()
         }
     }
+    
+    // MARK: - reload ListView
     
     private func reloadListView() {
         switch userSetting.getListStyle() {
@@ -120,6 +159,8 @@ class ItemListViewController: UIViewController {
     @objc func reloadListViewFromObserver(notification: Notification) {
         reloadListView()
     }
+    
+    // MARK: - setting item
     
     /// Feedの記事を取得、生成する。
     private func getItem() {
@@ -169,10 +210,15 @@ class ItemListViewController: UIViewController {
     private func successGetItems(items: [Item]) {
         let itemRepository = ItemRepository()
         itemRepository.save(items: items)
-        self.items = itemRepository.get(feed: feed)
+        let items = itemRepository.get(feed: feed)
+
+        let itemOrganizer = ItemOrganizer()
+        self.items = itemOrganizer.extractionUnread(items: items, filterSetting: userSetting.getFillter())
         self.reloadListView()
     }
-
+    
+    // MARK: - transition
+    
     private func transitionToWebViewController(with item: Item) {
         let navigationController = UIStoryboard.init(name: "WebView", bundle: nil).instantiateInitialViewController() as! UINavigationController
         navigationController.modalPresentationStyle = .overFullScreen
@@ -182,16 +228,7 @@ class ItemListViewController: UIViewController {
         
         present(navigationController, animated: true, completion: nil)
     }
-    
-    /// 引数の要素をセットし、Itemの取得をする。
-    /// - Parameters:
-    ///   - feed: 表示するフィードの種類
-    ///   - index: PageViewControllerのページ番号
-    func set(_ feed: Feed, pageIndex index: Int) {
-        self.feed = feed
-        title = feed.title()
-        pageIndex = index
-    }
+
 }
 
 // MARK: - Extension

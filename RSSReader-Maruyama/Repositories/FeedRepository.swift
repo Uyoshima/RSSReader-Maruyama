@@ -10,6 +10,7 @@ import UIKit
 class FeedRepository {
     
     private let userDefaults = UserDefaults()
+    private let databaseName = UserRepository().databaseName()
     
     let ALL_FEEDS: [Feed] = {
         return [.yahoo_Topic, .yahoo_Domestic, .yahoo_world, .yahoo_business]
@@ -18,7 +19,7 @@ class FeedRepository {
     func saveSubscribe(_ feeds: [Feed]) -> Bool {
         do {
             let feedsData = try JSONEncoder().encode(feeds)
-            userDefaults.set(feedsData, forKey: UserDefaults.Keys.subscribingFeed.rawValue)
+            userDefaults.set(feedsData, forKey: databaseName)
             return true
         } catch {
             return false
@@ -26,7 +27,7 @@ class FeedRepository {
     }
 
     func loadSubscribeFeed() -> [Feed] {
-        guard let feeds = userDefaults.data(forKey: UserDefaults.Keys.subscribingFeed.rawValue) else {
+        guard let feeds = userDefaults.data(forKey: databaseName) else {
             return []
         }
         do {

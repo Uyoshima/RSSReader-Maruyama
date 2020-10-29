@@ -24,6 +24,11 @@ class UserRepository {
         return try? JSONDecoder().decode(User.self, from: userData)
     }
     
+    func databaseName() -> String {
+        let user = UserRepository().load()!
+        return "\(user.type.rawValue)_\(user.id)"
+    }
+    
     func save(user: User) {
         let userData = try? JSONEncoder().encode(user)
         userDefaults.set(userData, forKey: UserDefaults.Keys.userData.rawValue)

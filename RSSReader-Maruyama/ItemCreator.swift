@@ -28,8 +28,10 @@ class ItemCreator: NSObject {
             items.append(item)
         }
         
+        let itemOrganizer = ItemOrganizer()
+        itemOrganizer.deleteItemIfOldItem(feed: feed, newItems: items)
+
         let itemRepository = ItemRepository()
-        itemRepository.deleteItemIfDontNeed(feed: feed, newItems: items)
         itemRepository.save(items: items)
         
         return itemRepository.get(feed: feed)

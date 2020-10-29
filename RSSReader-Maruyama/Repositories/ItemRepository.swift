@@ -15,15 +15,21 @@ class ItemRepository {
     private let isReadLaterPredicate = NSPredicate(format: "isReadLater == true")
     private let isNotReadLaterPredicate = NSPredicate(format: "isReadLater == false")
     
-    func get(feed: Feed) -> [Item] {
-        let items = realm.objects(Item.self).filter("feedRawValue =\(feed.rawValue)")
-        var tmp: [Item] = []
-        for item in items {
-            tmp.append(item)
-        }
-        return tmp
+    func setDefaultReamForUser(databaseName: String) {
+        var config = Realm.Configuration()
+        config.fileURL = config.fileURL!.deletingLastPathComponent().appendingPathComponent("\(databaseName).realm")
+        Realm.Configuration.defaultConfiguration = config
     }
     
+    func get(feed: Feed) -> [Item] {
+        let items = realm.objects(Item.self).filter("feedRawValue == \(feed.rawValue)")
+        var retunItems: [Item] = []
+        for item in items {
+            retunItems.append(item)
+        }
+        return retunItems
+    }
+
     func save(items: [Item]) {
         try! realm.write {
             realm.add(items)
@@ -76,23 +82,11 @@ class ItemRepository {
         return items
     }
     
-    func deleteItemIfDontNeed(feed: Feed, newItems: [Item]) {
-        var deleteReserveItems = realm.objects(Item.self)
-            .filter("feedRawValue =\(feed.rawValue)")
-            .filter(isNotReadLaterPredicate)
-        
-        for item in newItems {
-            let predicate = NSPredicate(format: "url != %@", item.url)
-            deleteReserveItems = deleteReserveItems.filter(predicate)
-        }
-        
-        try! realm.write {
-            realm.delete(deleteReserveItems)
-        }
-    }
-    
     func newestItem(feed: Feed) -> Item? {
-        let items = realm.objects(Item.self).filter("feedRawValue =\(feed.rawValue)").sorted(byKeyPath: "createDate", ascending: false)
+        let items = realm.objects(Item.self)
+            .filter("feedRawValue =\(feed.rawValue)")
+            .sorted(byKeyPath: "createDate", ascending: false)
+        
         return items.first
     }
 }
