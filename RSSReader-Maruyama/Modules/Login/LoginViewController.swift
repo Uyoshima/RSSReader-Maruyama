@@ -37,6 +37,8 @@ class LoginViewController: UIViewController {
     
     private func didLoginSuccess(user: User) {
         userRepository.save(user: user)
+        let databaseName = userRepository.databaseName()
+        ItemRepository().setDefaultReamForUser(databaseName: databaseName)
         transitionToSelectFeedViewController()
     }
     
