@@ -133,7 +133,9 @@ class ItemListViewController: UIViewController {
     
     private func isDownloadItem() -> Bool {
         let itemRepository = ItemRepository()
-        let item = itemRepository.newestItem(feed: feed)
+        guard let item = itemRepository.newestItem(feed: feed) else {
+            return true
+        }
         
         // RSS取得間隔を超えているか？
         let userSetting = UserSetting.sharedObject
@@ -141,7 +143,6 @@ class ItemListViewController: UIViewController {
         let isPassedInterval = userSetting.hasIntervalPassed(from: item.createDate, interval: rssInterval)
         
         if isPassedInterval {
-            itemRepository.deleteOtherThanReadLater(feed: feed)
             return true
         }
         return false
@@ -153,7 +154,7 @@ class ItemListViewController: UIViewController {
             switch result {
             case .success(let xmlDate):
                 let itemCreator = ItemCreator()
-                let items = itemCreator.createItem(feed: self.feed, xmlData: xmlDate)
+                let items = itemCreator.createItems(feed: self.feed, xmlData: xmlDate)
                 self.successGetItems(items: items)
                 break
                 

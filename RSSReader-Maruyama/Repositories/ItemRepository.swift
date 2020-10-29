@@ -54,7 +54,9 @@ class ItemRepository {
     /// - Returns: 持っている→DBのオブジェクト、持っていない→引数のItem
     func replaceItemIfAlreadyHave(item: Item) -> Item {
         let predicate = NSPredicate(format: "url == %@", item.url)
-        let results = realm.objects(Item.self).filter(predicate)
+        let results = realm.objects(Item.self)
+            .filter(predicate)
+            .filter("feedRawValue =\(item.feed.rawValue)")
         
         if results.count == 0 {
             return item
@@ -74,18 +76,23 @@ class ItemRepository {
         return items
     }
     
-    func deleteOtherThanReadLater(feed: Feed) {
-        let items = realm.objects(Item.self)
+    func deleteItemIfDontNeed(feed: Feed, newItems: [Item]) {
+        var deleteReserveItems = realm.objects(Item.self)
             .filter("feedRawValue =\(feed.rawValue)")
             .filter(isNotReadLaterPredicate)
         
+        for item in newItems {
+            let predicate = NSPredicate(format: "url != %@", item.url)
+            deleteReserveItems = deleteReserveItems.filter(predicate)
+        }
+        
         try! realm.write {
-            realm.delete(items)
+            realm.delete(deleteReserveItems)
         }
     }
     
-    func newestItem(feed: Feed) -> Item {
+    func newestItem(feed: Feed) -> Item? {
         let items = realm.objects(Item.self).filter("feedRawValue =\(feed.rawValue)").sorted(byKeyPath: "createDate", ascending: false)
-        return items.first!
+        return items.first
     }
 }
